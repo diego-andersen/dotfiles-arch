@@ -43,6 +43,7 @@ export LS_COLORS=$(cat ~/.config/zsh/ls_colors | ~/bin/gen_ls_colors)
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # Personal aliases
 source $HOME/.config/zsh/aliases
