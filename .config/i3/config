@@ -1,0 +1,212 @@
+#---------------------------------------------------#
+#---------------------Appearance--------------------#
+#---------------------------------------------------#
+
+# Font for window titles and bar
+font pango:Roboto Mono 9
+
+# Window border settings
+default_border 		pixel 1
+default_floating_border	normal
+hide_edge_borders	smart
+
+# Colour definitions
+set $text-color			#f5f6f7
+set $inactive-text-color	#676e7d
+set $bg-color			#5c616c
+set $inactive-bg-color		#676e7d
+set $border-color		#2f343f
+set $inactive-border-color	#2f343f
+set $urgent-bg-color		#e60053
+set $indicator-color		#5294e2
+set $ws-color			#5294e2
+
+# Window colours
+#			border			background		text			indicator		child_border
+client.focused		$border-color		$bg-color		$text-color		$indicator-color	$border-color
+client.focused_inactive	$inactive-border-color	$inactive-bg-color	$inactive-text-color	$indicator-color
+client.unfocused	$inactive-border-color	inactive-bg-color	$inactive-text-color	$indicator-color
+client.urgent		$urgent-bg-color	$urgent-bg-color	$text-color		$indicator-color
+
+# Status bar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Gaps
+smart_gaps on
+gaps inner 5
+gaps outer 0
+
+#---------------------------------------------------#
+#----------------------Hotkeys----------------------#
+#---------------------------------------------------#
+
+#----------------------Commands---------------------#
+
+# Use Win key
+set $mod Mod4
+
+# Start terminal
+bindsym $mod+Return exec --no-startup-id urxvt
+# Start launcher
+bindsym $mod+d exec dmenu_run
+
+# Lock screen
+bindsym $mod+Shift+x exec i3lock -i ~/Images/system/lockscreen.png
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+# Reload configuration file
+bindsym $mod+Shift+c reload
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# Exit i3 (logs out of X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Yes' 'i3-msg exit'"
+
+#----------------------Movement---------------------#
+
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Split in horizontal orientation
+bindsym $mod+semicolon split h
+# Split in vertical orientation
+bindsym $mod+v split v
+
+# Enter fullscreen for focused container
+bindsym $mod+f fullscreen toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+Shift+a focus child
+
+#----------------------Layout-----------------------#
+
+# Change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+#---------------------------------------------------#
+#---------------------Behaviour---------------------#
+#---------------------------------------------------#
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Don't shift window focus when moving the mouse
+focus_follows_mouse no
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+### APPEARANCE ###
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume	exec --no-startup-id pactl set-sink-volume 0 +5%  # Increase volume
+bindsym XF86AudioLowerVolume	exec --no-startup-id pactl set-sink-volume 0 -5%  # Decrease volume
+bindsym XF86AudioMute		exec --no-startup-id pactl set-sink-mute 0 toggle # Mute
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp	exec --no-startup-id xbacklight -inc 20 # Increase brightness
+bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight -dec 20 # Decrease brightness
+
+# Media player controls
+#bindsym XF86AudioPlay	exec --no-startup-id playerctl play
+#bindsym XF86AudioPause	exec --no-startup-id playerctl pause
+#bindsym XF86AudioNext	exec --no-startup-id playerctl next
+#bindsym XF86AudioPrev	exec --no-startup-id playerctl previous
+
+# Startup applications
+# exec --no-startup-id nm-applet
+# exec --no-startup-id pasystray
+exec_always --no-startup-id ~/.fehbg &
