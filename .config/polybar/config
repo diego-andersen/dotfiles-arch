@@ -69,7 +69,7 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 #------------------------------------------------------#
-#----------------------Left Modules--------------------#
+#----------------------Centre Modules------------------#
 #------------------------------------------------------#
 
 [module/xwindow]
@@ -145,7 +145,7 @@ label-song-maxlen = 25
 label-song-ellipsis = true
 
 #------------------------------------------------------#
-#----------------------Centre Modules------------------#
+#----------------------Left Modules--------------------#
 #------------------------------------------------------#
 
 [module/pulseaudio]
@@ -179,16 +179,6 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.background-alt}
 
-[module/filesystem]
-type = internal/fs
-interval = 25
-mount-0 = /
-mount-1 = /home
-
-label-mounted = %{F#4295e2} %mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
-
 [module/xbacklight]
 type = internal/backlight
 card = intel_backlight
@@ -206,6 +196,16 @@ bar-fill-foreground = ${colors.foreground}
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.background-alt}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+mount-0 = /
+mount-1 = /home
+
+label-mounted = %{F#4295e2} %mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/cpu]
 type = internal/cpu
