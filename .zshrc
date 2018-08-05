@@ -32,7 +32,7 @@ fi
 source ~/.config/zsh/colors
 
 # ls command color output
-export LS_COLORS=$(cat ~/.config/zsh/ls_colors | ~/bin/gen_ls_colors)
+export LS_COLORS=$(cat ~/.config/zsh/ls_colors | ~/scripts/gen_ls_colors.sh)
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
