@@ -1,0 +1,74 @@
+! rxvt options
+URxvt*font:			xft:Roboto Mono for Powerline:pixelsize=14:antialias=true,xft:Material Icons:size=14
+URxvt*cutchars: 		"()*,<>[]{}|'
+
+URxvt*secondaryScroll:		true
+URxvt*saveLines:		10000
+URxvt*scrollTtyOutput:		false
+URxvt*scrollWithBuffer:		true
+URxvt*scrollTtyKeypress:	true
+
+URxvt*visualBell:		false
+URxvt*scrollBar:		false
+URxvt*internalBorder:		10
+
+! perl extensions
+URxvt.perl-ext:			default,url-select,clipboard
+
+! url-select (part of urxvt-perls package)
+URxvt.keysym.M-u:		perl:url-select:select_next
+URxvt.url-select.autocopy:	true
+URxvt.url-select.button:	2
+URxvt.url-select.launcher:	firefox
+URxvt.url-select.underline:	true
+
+! clipboard copy
+URxvt.keysym.Shift-Control-C:	perl:clipboard:copy
+URxvt.keysym.Shift-Control-V:	perl:clipboard:paste
+
+! disable ctlr-shift "feature"
+URxvt.iso14755:		false
+URxvt.iso14755_52:	false
+
+! COLOURS
+
+*.background:	#2f343f
+*.foreground:	#d8dee8
+*.cursorColor:	#b48ead
+
+! Black
+*.color0:	#4b5262
+*.color8:	#434a5a
+
+! Red
+*.color1:	#bf616a
+*.color9:	#b3555e
+
+! Green
+*.color2:	#a3be8c
+*.color10:	#93ae7c
+
+! Yellow
+*.color3:	#ebcb8b
+*.color11:	#dbbb7b
+
+! Blue
+*.color4:	#81a1c1
+*.color12:	#7191b1
+
+! Magenta
+*.color5:	#b48ead
+*.color13:	#a6809f
+
+! Cyan
+*.color6:	#88c0d0
+*.color14:	#76aebe
+
+! White
+*.color7:	#e5e9f0
+*.color15:	#d1d5dc
+
+! Bold, Italic, Underline
+*.colorBD:	#d0d6e0
+
+! END COLORS
