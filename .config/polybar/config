@@ -4,15 +4,16 @@
 
 [colors]
 background		= #2f343f
-background-alt		= #434a5a
+background-alt		= #f5f6f7
 background-urgent	= #bf616a
 foreground		= #d8dee8
-foreground-alt		= #4295e2
-primary			= #ffb52a
-secondary		= #e60053
+foreground-alt		= #2d3036
+primary			= #d8dee8
+secondary		= #76797f
+accent			= #5294e2
 alert 			= #bd2c40
-line			= #81a1c1
-border			= #4c566a
+line			= #a8adb5
+border			= #aeb0b6
 
 [bar/bottom]
 bottom = true
@@ -96,6 +97,7 @@ label-indicator-underline = ${colors.secondary}
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
+enable-scroll = false
 wrapping-scroll = true
 padding = 2
 
@@ -103,13 +105,14 @@ padding = 2
 ;pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-foreground = ${colors.primary}
+label-mode-background = ${colors.secondary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline = ${colors.primary}
+label-focused-foreground = ${colors.primary}
+label-focused-background = ${colors.accent}
+label-focused-underline = ${colors.border}
 label-focused-padding = ${self.padding}
 
 ; unfocused = Inactive workspace on any monitor
@@ -124,6 +127,7 @@ label-visible-padding = ${self.padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
+label-urgent-foreground = ${colors.primary}
 label-urgent-background = ${colors.alert}
 label-urgent-padding = ${self.padding}
 
@@ -177,7 +181,7 @@ bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.background-alt}
+bar-volume-empty-foreground = ${colors.secondary}
 
 [module/xbacklight]
 type = internal/backlight
@@ -195,23 +199,25 @@ bar-fill-font = 2
 bar-fill-foreground = ${colors.foreground}
 bar-empty = ─
 bar-empty-font = 2
-bar-empty-foreground = ${colors.background-alt}
+bar-empty-foreground = ${colors.secondary}
 
 [module/filesystem]
 type = internal/fs
-interval = 25
+interval = 60
 mount-0 = /
 mount-1 = /home
 
-label-mounted = %{F#4295e2} %mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{F#76797f} %mountpoint%%{F-}: %free%
 label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
+label-unmounted-foreground = ${colors.secondary}
+
+;;format-mounted = <ramp-capacity>
 
 [module/cpu]
 type = internal/cpu
 interval = 2
 format-prefix = "CPU: "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.secondary}
 ;format-underline = #f90000
 label = %percentage:2%%
 
@@ -219,7 +225,7 @@ label = %percentage:2%%
 type = internal/memory
 interval = 2
 format-prefix = "RAM: "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.secondary}
 ;format-underline = #4bffdc
 label = %percentage_used%%
 
@@ -235,12 +241,12 @@ format-warn = <ramp> <label-warn>
 
 label = %temperature-c%
 label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
+label-warn-foreground = ${colors.background-urgent}
 
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+ramp-foreground = ${colors.secondary}
 
 #------------------------------------------------------#
 #----------------------Right Modules-------------------#
@@ -268,19 +274,19 @@ interval = 3.0
 
 format-connected = <label-connected>
 format-connected-underline =
-label-connected = %{F#4295e2}%{F-}  %essid%
+label-connected =   %essid%
 
 format-disconnected = <label-disconnected>
-format-disconnected-underline = ${colors.foreground-alt}
+format-disconnected-underline =
 label-disconnected = 
-label-disconnected-foreground = ${colors.background-alt}
+label-disconnected-foreground = ${colors.secondary}
 
 ramp-signal-0 = 
 ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-foreground = ${colors.secondary}
 
 [module/date]
 type = internal/date
@@ -293,7 +299,7 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = "  "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.secondary}
 ;format-underline = #0a6cf5
 
 label = %date% %time%
@@ -311,7 +317,7 @@ format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix-foreground = ${colors.secondary}
 format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = " "
@@ -319,18 +325,18 @@ ramp-capacity-1 = " "
 ramp-capacity-2 = " "
 ramp-capacity-3 = " "
 ramp-capacity-4 = " "
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = ${colors.secondary}
 
 animation-charging-0 = " "
 animation-charging-1 = " "
 animation-charging-2 = " "
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-foreground = ${colors.secondary}
 animation-charging-framerate = 750
 
 animation-discharging-0 = " "
 animation-discharging-1 = " "
 animation-discharging-2 = " "
-animation-discharging-foreground = ${colors.foreground-alt}
+animation-discharging-foreground = ${colors.secondary}
 animation-discharging-framerate = 750
 
 [module/powermenu]
