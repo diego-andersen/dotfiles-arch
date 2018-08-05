@@ -14,6 +14,7 @@ accent			= #5294e2
 alert 			= #bd2c40
 line			= #a8adb5
 border			= #aeb0b6
+; NOTE: Arch blue	= #1793d0
 
 [bar/bottom]
 bottom = true
