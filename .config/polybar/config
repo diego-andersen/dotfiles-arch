@@ -74,26 +74,6 @@ cursor-scroll = ns-resize
 #----------------------Centre Modules------------------#
 #------------------------------------------------------#
 
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
-
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
@@ -219,7 +199,6 @@ type = internal/cpu
 interval = 2
 format-prefix = "CPU: "
 format-prefix-foreground = ${colors.secondary}
-;format-underline = #f90000
 label = %percentage:2%%
 
 [module/memory]
@@ -227,7 +206,6 @@ type = internal/memory
 interval = 2
 format-prefix = "RAM: "
 format-prefix-foreground = ${colors.secondary}
-;format-underline = #4bffdc
 label = %percentage_used%%
 
 [module/temperature]
@@ -236,9 +214,8 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-;format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
-;format-warn-underline = ${self.format-underline}
+format-warn-underline = ${colors.alert}
 
 label = %temperature-c%
 label-warn = %temperature-c%
@@ -278,7 +255,7 @@ format-connected-underline =
 label-connected =   %essid%
 
 format-disconnected = <label-disconnected>
-format-disconnected-underline =
+format-disconnected-underline = ${colors.alert}
 label-disconnected = 
 label-disconnected-foreground = ${colors.secondary}
 
@@ -288,22 +265,6 @@ ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.secondary}
-
-[module/date]
-type = internal/date
-interval = 1
-
-date = "%a %e %b"
-date-alt = " %Y-%m-%d"
-
-time = %H:%M
-time-alt = %H:%M:%S
-
-format-prefix = "  "
-format-prefix-foreground = ${colors.secondary}
-;format-underline = #0a6cf5
-
-label = %date% %time%
 
 [module/battery]
 type = internal/battery
@@ -340,6 +301,22 @@ animation-discharging-2 = " "
 animation-discharging-foreground = ${colors.secondary}
 animation-discharging-framerate = 750
 
+[module/date]
+type = internal/date
+interval = 1
+
+date = "%a %e %b"
+date-alt = " %Y-%m-%d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = "  "
+format-prefix-foreground = ${colors.secondary}
+;format-underline = #0a6cf5
+
+label = %date% %time%
+
 [module/powermenu]
 type = custom/menu
 
@@ -369,12 +346,12 @@ menu-0-2-exec = menu-open-2
 
 menu-1-0 = Cancel
 menu-1-0-exec = menu-open-0
-menu-1-1 = Reboot
+menu-1-1 = Confirm
 menu-1-1-exec = reboot
 
 menu-2-0 = Cancel
 menu-2-0-exec = menu-open-0
-menu-2-1 = Shutdown
+menu-2-1 = Confirm
 menu-2-1-exec = shutdown -h now
 
 [settings]
