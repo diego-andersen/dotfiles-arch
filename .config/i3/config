@@ -6,16 +6,16 @@
 font pango:Roboto Mono 9
 
 # Window border settings
-default_border 		normal
+default_border 		pixel 3
 default_floating_border	normal
 hide_edge_borders	smart
 
 # Colour definitions
 set $text-color			#2d3036
 set $inactive-text-color	#2d3036
-set $bg-color			#d3dae3
+set $bg-color			#f5f6f7
 set $inactive-bg-color		#7f8388
-set $border-color		#d3dae3
+set $border-color		#f5f6f7
 set $inactive-border-color	#7f8388
 set $urgent-bg-color		#bd2c40
 set $accent-color		#5294e2
