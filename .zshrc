@@ -1,19 +1,18 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Fix $PATH
+export PATH=$HOME/bin:$PATH
 
-# Path to your oh-my-zsh installation.
+# Path to oh-my-zsh installation.
 export ZSH="/home/wristcontrol/.oh-my-zsh"
 
+# Oh-my-zsh theme
 ZSH_THEME="geometry/geometry"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+# Plugins
 plugins=(
   git
 )
 
+# Don't use oh-my-zsh on TTY (.psf fonts can't render most things)
 if [ "$TERM" != "linux" ]; then
   source $ZSH/oh-my-zsh.sh
 fi
@@ -22,14 +21,11 @@ fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_GB.UTF-8
-
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='nvim'
 fi
 
 # Terminal colors
@@ -41,11 +37,11 @@ export LS_COLORS=$(cat ~/.config/zsh/ls_colors | ~/bin/gen_ls_colors)
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
+# SSH
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
-# Personal aliases
+# Aliases
 source $HOME/.config/zsh/aliases
 
 # XDG variables
