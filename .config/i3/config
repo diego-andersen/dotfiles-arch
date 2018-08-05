@@ -6,27 +6,26 @@
 font pango:Roboto Mono 9
 
 # Window border settings
-default_border 		pixel 1
+default_border 		normal
 default_floating_border	normal
 hide_edge_borders	smart
 
 # Colour definitions
-set $text-color			#f5f6f7
-set $inactive-text-color	#676e7d
-set $bg-color			#5c616c
-set $inactive-bg-color		#676e7d
-set $border-color		#2f343f
-set $inactive-border-color	#2f343f
-set $urgent-bg-color		#e60053
-set $indicator-color		#5294e2
-set $ws-color			#5294e2
+set $text-color			#2d3036
+set $inactive-text-color	#2d3036
+set $bg-color			#d3dae3
+set $inactive-bg-color		#7f8388
+set $border-color		#d3dae3
+set $inactive-border-color	#7f8388
+set $urgent-bg-color		#bd2c40
+set $accent-color		#5294e2
 
 # Window colours
-#			border			background		text			indicator		child_border
-client.focused		$border-color		$bg-color		$text-color		$indicator-color	$border-color
-client.focused_inactive	$inactive-border-color	$inactive-bg-color	$inactive-text-color	$indicator-color
-client.unfocused	$inactive-border-color	inactive-bg-color	$inactive-text-color	$indicator-color
-client.urgent		$urgent-bg-color	$urgent-bg-color	$text-color		$indicator-color
+#			border			background		text			indicator	child_border
+client.focused		$border-color		$bg-color		$text-color		$accent-color	$border-color
+client.focused_inactive	$inactive-border-color	$inactive-bg-color	$inactive-text-color	$accent-color	$inactive-border-color
+client.unfocused	$inactive-border-color	$inactive-bg-color	$inactive-text-color	$accent-color	$inactive-border-color
+client.urgent		$urgent-bg-color	$urgent-bg-color	$text-color		$accent-color	$urgent-bg-color
 
 # Status bar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
