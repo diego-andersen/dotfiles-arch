@@ -36,10 +36,10 @@ gaps inner 5
 gaps outer 0
 
 #---------------------------------------------------#
-#----------------------Hotkeys----------------------#
+#---------------------Behaviour---------------------#
 #---------------------------------------------------#
 
-#----------------------Commands---------------------#
+#---------------------Shortcuts---------------------#
 
 # Use Win key
 set $mod Mod4
@@ -50,7 +50,7 @@ bindsym $mod+Return exec --no-startup-id urxvt
 bindsym $mod+d exec dmenu_run
 
 # Lock screen
-bindsym $mod+Shift+x exec i3lock -i ~/Images/system/lockscreen.png
+# bindsym $mod+Shift+x exec i3lock -i ~/Images/system/lockscreen.png
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -63,66 +63,62 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Yes' 'i3-msg e
 
 #----------------------Movement---------------------#
 
-# Change focus
+# Don't shift window focus when moving the mouse
+focus_follows_mouse no
+
+# Change focus (vim)
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# Alternatively, you can use the cursor keys:
+# Change focus (arrows)
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# Move focused window
+# Move focused window (vim)
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# Alternatively, you can use the cursor keys:
+# Move focused window (arrows)
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# Split in horizontal orientation
-bindsym $mod+semicolon split h
-# Split in vertical orientation
-bindsym $mod+v split v
+# Focus parent container
+bindsym $mod+a focus parent
+
+# Focus child container
+bindsym $mod+Shift+a focus child
 
 # Enter fullscreen for focused container
 bindsym $mod+f fullscreen toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-bindsym $mod+Shift+a focus child
-
 #----------------------Layout-----------------------#
+
+# Split horizontally
+bindsym $mod+semicolon split h
+# Split vertically
+bindsym $mod+v split v
 
 # Change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
+# Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
+# Change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
-#---------------------------------------------------#
-#---------------------Behaviour---------------------#
-#---------------------------------------------------#
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-
-# Don't shift window focus when moving the mouse
-focus_follows_mouse no
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -161,26 +157,23 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+#----------------------Modes------------------------#
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
+# Resize mode
+mode "resize" {
+	# vim bindings
         bindsym h resize shrink width 5 px or 5 ppt
-        bindsym j resize grow height 5 px or 5 ppt
-        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym j resize shrink height 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
         bindsym l resize grow width 5 px or 5 ppt
 
-        # same bindings, but for the arrow keys
+        # Arrow key bindings
         bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Down resize shrink height 10 px or 10 ppt
+        bindsym Up resize grow height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
+        # Back to normal: Enter or Esc or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
@@ -188,7 +181,24 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-### APPEARANCE ###
+# System power management mode
+set $Locker i3lock -i ~/Images/system/lockscreen.png && sleep 1
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+
+mode "$mode_system" {
+	bindsym l exec --no-startup-id $Locker, mode "default"
+	bindsym e exec --no-startup-id i3-msg exit, mode "default"
+	bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+	bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+	bindsym r exec --no-startup-id systemctl reboot, mode "default"
+	bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "deault"
+
+	# Back to normal: Enter or Esc
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+x mode "$mode_system"
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume	exec --no-startup-id pactl set-sink-volume 0 +5%  # Increase volume
