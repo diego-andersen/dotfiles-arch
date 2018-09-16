@@ -34,14 +34,14 @@ line-size = 3
 line-color = ${colors.line}
 
 border-size = 0
-border-color = #00000000
+border-color = #000000
 
 padding-left = 2
 padding-right = 0
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = Roboto Mono:size=10;2
+font-0 = SF Display Pro:size=10;2
 font-1 = MaterialIcons:size=12;2
 font-2 = FontAwesome:size=10;2
 font-3 = Wuncon Siji:size=10;2
@@ -185,10 +185,9 @@ bar-empty-foreground = ${colors.secondary}
 [module/filesystem]
 type = internal/fs
 interval = 60
-mount-0 = /
-mount-1 = /home
+mount-0 = /home
 
-label-mounted = %{F#76797f} %mountpoint%%{F-}: %free%
+label-mounted = %{F#76797f}%{F-}: %free%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.secondary}
 
@@ -278,7 +277,7 @@ format-charging-underline =
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.secondary}
 format-full-underline = ${self.format-charging-underline}
 
@@ -289,9 +288,9 @@ ramp-capacity-3 = " "
 ramp-capacity-4 = " "
 ramp-capacity-foreground = ${colors.secondary}
 
-animation-charging-0 = " "
-animation-charging-1 = " "
-animation-charging-2 = " "
+animation-charging-0 = " "
+animation-charging-1 = "  "
+animation-charging-2 = " "
 animation-charging-foreground = ${colors.secondary}
 animation-charging-framerate = 750
 
