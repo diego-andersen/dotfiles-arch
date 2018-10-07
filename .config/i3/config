@@ -214,14 +214,14 @@ bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight -dec 20 # Decrease
 #bindsym XF86AudioPrev	exec --no-startup-id playerctl previous
 
 # Startup applications
+exec_always --no-startup-id ~/.fehbg &
 # exec --no-startup-id nm-applet
 # exec --no-startup-id pasystray
-exec_always --no-startup-id ~/.fehbg &
 exec --no-startup-id light-locker
+exec --no-startup-id libinput-gestures-setup start
 
 #---------------------------------------------------#
 #------------Class-specific behaviour---------------#
 #---------------------------------------------------#
 
-# Nautilus
 for_window [class="Nautilus"] floating enable, resize set 1300 px 800 px
