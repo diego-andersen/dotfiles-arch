@@ -1,5 +1,8 @@
 ! rxvt options
-URxvt*font:			xft:Roboto Mono for Powerline:pixelsize=14:antialias=true,xft:Material Icons:size=14
+URxvt*font:			xft:Hack Nerd Font:pixelsize=14:antialias=true,\
+				xft:FontAwesome:pixelsize=16:antialias=true,\
+				xft:Material Icons:pixelsize=16:antialias=true
+
 URxvt*cutchars: 		"()*,<>[]{}|'
 
 URxvt*secondaryScroll:		true
