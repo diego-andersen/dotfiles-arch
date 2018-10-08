@@ -44,7 +44,7 @@ module-margin-right = 2
 font-0 = SF Display Pro:size=10;2
 font-1 = MaterialIcons:size=12;2
 font-2 = FontAwesome:size=12;2
-font-3 = Hack Nerd Font:size=10:2
+font-3 = Hack Nerd Font:size=12;2
 
 modules-left = powermenu filesystem memory cpu temperature pulseaudio xbacklight 
 modules-center = i3
@@ -169,7 +169,7 @@ type = internal/backlight
 card = intel_backlight
 
 format = <label>
-label =  %percentage%%
+label = %{T4}%{T-} %percentage%%
 
 bar-width = 10
 bar-indicator = |
@@ -277,22 +277,22 @@ format-charging-underline =
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.secondary}
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.primary}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = " "
-ramp-capacity-1 = " "
-ramp-capacity-2 = " "
-ramp-capacity-3 = " "
-ramp-capacity-4 = " "
-ramp-capacity-foreground = ${colors.secondary}
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
+ramp-capacity-3 = " "
+ramp-capacity-4 = " "
+ramp-capacity-foreground = ${colors.primary}
 
-animation-charging-0 = " "
-animation-charging-1 = "  "
-animation-charging-2 = " "
+animation-charging-0 = " "
+animation-charging-1 = " "
+animation-charging-2 = " "
 animation-charging-foreground = ${colors.secondary}
-animation-charging-framerate = 750
+animation-charging-framerate = 1000
 
 animation-discharging-0 = " "
 animation-discharging-1 = " "
