@@ -36,19 +36,19 @@ line-color = ${colors.line}
 border-size = 0
 border-color = #000000
 
-padding-left = 2
-padding-right = 0
+padding-left = 0
+padding-right = 2
 module-margin-left = 2
 module-margin-right = 2
 
 font-0 = SF Display Pro:size=10;2
 font-1 = MaterialIcons:size=12;2
-font-2 = FontAwesome:size=10;2
-font-3 = Wuncon Siji:size=10;2
+font-2 = FontAwesome:size=12;2
+font-3 = Hack Nerd Font:size=10:2
 
-modules-left = filesystem memory cpu temperature pulseaudio xbacklight 
+modules-left = powermenu filesystem memory cpu temperature pulseaudio xbacklight 
 modules-center = i3
-modules-right = wlan battery date powermenu
+modules-right = wlan battery date
 ;UNUSED: alsa xkeyboard mpd eth
 
 tray-position = right
@@ -136,8 +136,8 @@ label-song-ellipsis = true
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <ramp-volume> <bar-volume>
-label-volume =  %percentage%%
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
 label-volume-foreground = ${colors.foreground}
 
 ramp-volume-0 = 
@@ -168,8 +168,8 @@ bar-volume-empty-foreground = ${colors.secondary}
 type = internal/backlight
 card = intel_backlight
 
-format = <label> <bar>
-label = 
+format = <label>
+label =  %percentage%%
 
 bar-width = 10
 bar-indicator = |
@@ -251,11 +251,11 @@ interval = 3.0
 
 format-connected = <label-connected>
 format-connected-underline =
-label-connected =   %essid%
+label-connected =   %essid%
 
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${colors.alert}
-label-disconnected = 
+label-disconnected = 
 label-disconnected-foreground = ${colors.secondary}
 
 ramp-signal-0 = 
@@ -277,7 +277,7 @@ format-charging-underline =
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.secondary}
 format-full-underline = ${self.format-charging-underline}
 
@@ -319,21 +319,22 @@ label = %date% %time%
 [module/powermenu]
 type = custom/menu
 
-expand-right = false
+expand-right = true
 
 format-spacing = 0
 label-separator = |
-label-separator-margin = 1
-label-separator-foreground = ${colors.foreground-alt}
+label-separator-margin = 2
+label-separator-foreground = ${colors.foreground}
 
 label-open = 
 label-open-foreground = ${colors.foreground}
 label-open-background = ${colors.background-urgent}
 label-open-padding = 2
 label-close =  cancel
+label-close-padding = 2
 label-close-foreground = ${colors.foreground}
 
-menu-0-0 = Exit WM
+menu-0-0 = Logout
 menu-0-0-exec = i3-msg exit
 menu-0-1 = Reboot
 menu-0-1-exec = menu-open-1
