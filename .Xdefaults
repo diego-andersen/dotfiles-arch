@@ -1,5 +1,5 @@
 ! rxvt options
-URxvt*font:			xft:Hack Nerd Font:pixelsize=14:antialias=true,\
+URxvt*font:			xft:Hack Nerd Font Mono:pixelsize=16:antialias=true,\
 				xft:FontAwesome:pixelsize=16:antialias=true,\
 				xft:Material Icons:pixelsize=16:antialias=true
 
