@@ -11,7 +11,6 @@ foreground-alt		= #2d3036
 primary			= #d8dee8
 secondary		= #76797f
 accent			= #5294e2
-alert 			= #bd2c40
 line			= #a8adb5
 border			= #aeb0b6
 ; NOTE: Arch blue	= #1793d0
@@ -41,18 +40,20 @@ padding-right = 2
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = SF Display Pro:size=10;2
-font-1 = MaterialIcons:size=12;2
-font-2 = FontAwesome:size=12;2
-font-3 = Hack Nerd Font:size=12;2
+font-0 = SF Display Pro:size=10;4
+font-1 = MaterialIcons:size=12;4
+font-2 = FontAwesome:size=12;4
+font-3 = Hack Nerd Font:size=12;4
 
-modules-left = powermenu filesystem memory cpu temperature pulseaudio xbacklight 
-modules-center = i3
-modules-right = wlan battery date
-;UNUSED: alsa xkeyboard mpd eth
+modules-left = i3 mpd
+modules-center = filesystem memory cpu temperature
+modules-right = wlan xbacklight pulseaudio battery date
+;UNUSED: alsa xkeyboard eth powermenu
 
 tray-position = right
 tray-padding = 2
+tray-detached = false
+tray_scale = 1.0
 ;tray-transparent = true
 ;tray-background = #0063ff
 
@@ -109,7 +110,8 @@ label-visible-padding = ${self.padding}
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
 label-urgent-foreground = ${colors.primary}
-label-urgent-background = ${colors.alert}
+label-urgent-background = ${colors.background-urgent}
+label-urgent-underline = ${self.label-focused-underline}
 label-urgent-padding = ${self.padding}
 
 ; Separator in between workspaces
@@ -214,7 +216,7 @@ warn-temperature = 60
 
 format = <ramp> <label>
 format-warn = <ramp> <label-warn>
-format-warn-underline = ${colors.alert}
+format-warn-underline = ${colors.background-urgent}
 
 label = %temperature-c%
 label-warn = %temperature-c%
@@ -254,7 +256,7 @@ format-connected-underline =
 label-connected =   %essid%
 
 format-disconnected = <label-disconnected>
-format-disconnected-underline = ${colors.alert}
+format-disconnected-underline = ${colors.background-urgent}
 label-disconnected = 
 label-disconnected-foreground = ${colors.secondary}
 
@@ -292,7 +294,7 @@ animation-charging-0 = " "
 animation-charging-1 = " "
 animation-charging-2 = " "
 animation-charging-foreground = ${colors.secondary}
-animation-charging-framerate = 1000
+animation-charging-framerate = 500
 
 animation-discharging-0 = " "
 animation-discharging-1 = " "
@@ -307,7 +309,7 @@ interval = 1
 date = "%a %e %b"
 date-alt = " %Y-%m-%d"
 
-time = %H:%M
+time = %H:%M:%S
 time-alt = %H:%M:%S
 
 format-prefix = "  "
