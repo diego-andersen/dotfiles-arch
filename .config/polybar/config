@@ -15,14 +15,24 @@ line			= #a8adb5
 border			= #aeb0b6
 ; NOTE: Arch blue	= #1793d0
 
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
 [bar/bottom]
 bottom = true
 monitor = eDP1
 
 width = 100%
 height = 27
-;offset-x = 1%
-;offset-y = 1%
 radius = 0
 fixed-center = true
 
@@ -32,8 +42,8 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = ${colors.line}
 
-border-size = 0
-border-color = #000000
+border-top = 2
+border-color = ${colors.background}
 
 padding-left = 0
 padding-right = 2
@@ -47,32 +57,25 @@ font-3 = Hack Nerd Font:size=12;4
 
 modules-left = i3 mpd
 modules-center = filesystem memory cpu temperature
-modules-right = wlan xbacklight pulseaudio battery date
-;UNUSED: alsa xkeyboard eth powermenu
+modules-right = xbacklight pulseaudio wlan battery date
+;UNUSED: alsa xkeyboard eth powermenu 
 
 tray-position = right
-tray-padding = 2
-tray-detached = false
-tray_scale = 1.0
+tray-padding = 4
+tray-offset-x = -500
+tray-detached = true
+tray_scale = 1.5
 ;tray-transparent = true
 ;tray-background = #0063ff
 
-;wm-restack = bspwm
 ;wm-restack = i3
-
 ;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
 #------------------------------------------------------#
-#----------------------Centre Modules------------------#
+#------------------------Modules-----------------------#
 #------------------------------------------------------#
 
 [module/i3]
@@ -131,9 +134,6 @@ icon-next = 
 label-song-maxlen = 25
 label-song-ellipsis = true
 
-#------------------------------------------------------#
-#----------------------Left Modules--------------------#
-#------------------------------------------------------#
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -166,6 +166,7 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.secondary}
 
+
 [module/xbacklight]
 type = internal/backlight
 card = intel_backlight
@@ -184,6 +185,7 @@ bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.secondary}
 
+
 [module/filesystem]
 type = internal/fs
 interval = 60
@@ -193,7 +195,8 @@ label-mounted = %{F#76797f}%{F-} %free%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.secondary}
 
-;;format-mounted = <ramp-capacity>
+;format-mounted = <ramp-capacity>
+
 
 [module/cpu]
 type = internal/cpu
@@ -202,12 +205,14 @@ format-prefix = "CPU "
 format-prefix-foreground = ${colors.secondary}
 label = %percentage:2%%
 
+
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = "RAM "
 format-prefix-foreground = ${colors.secondary}
 label = %percentage_used%%
+
 
 [module/temperature]
 type = internal/temperature
@@ -227,9 +232,6 @@ ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.secondary}
 
-#------------------------------------------------------#
-#----------------------Right Modules-------------------#
-#------------------------------------------------------#
 
 [module/eth]
 type = internal/network
@@ -246,6 +248,7 @@ format-disconnected = <label-disconnected>
 label-disconnected = 
 label-disconnected-foreground = ${colors.background-alt}
 
+
 [module/wlan]
 type = internal/network
 interface = wlp58s0
@@ -253,11 +256,11 @@ interval = 3.0
 
 format-connected = <label-connected>
 format-connected-underline =
-label-connected =   %essid%
+label-connected = %{A1:nm-connection-editor &:}  %essid%%{A}
 
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${colors.background-urgent}
-label-disconnected = 
+label-disconnected = %{A1:nm-connection-editor &:}%{A}
 label-disconnected-foreground = ${colors.secondary}
 
 ramp-signal-0 = 
@@ -266,6 +269,7 @@ ramp-signal-2 =
 ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.secondary}
+
 
 [module/battery]
 type = internal/battery
@@ -302,6 +306,7 @@ animation-discharging-2 = " "
 animation-discharging-foreground = ${colors.secondary}
 animation-discharging-framerate = 750
 
+
 [module/date]
 type = internal/date
 interval = 1
@@ -317,6 +322,7 @@ format-prefix-foreground = ${colors.secondary}
 ;format-underline = #0a6cf5
 
 label = %date% %time%
+
 
 [module/powermenu]
 type = custom/menu
@@ -356,15 +362,5 @@ menu-2-0-exec = menu-open-0
 menu-2-1 = Shutdown
 menu-2-1-exec = systemctl poweroff -i
 
-[settings]
-screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-
-[global/wm]
-margin-top = 5
-margin-bottom = 5
 
 ; vim:ft=dosini
