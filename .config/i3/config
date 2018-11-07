@@ -3,7 +3,7 @@
 #---------------------------------------------------#
 
 # Font for window titles and bar
-font pango:Roboto Mono 10
+font pango:SF Pro Display 10
 
 # Window border settings
 default_border 		pixel 2
@@ -49,7 +49,7 @@ set $mod Mod4
 # Start terminal
 bindsym $mod+Return exec --no-startup-id urxvt
 # Start launcher
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show run
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -156,6 +156,9 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+# Assign workspaces
+assign [class="Firefox"] $ws2
+
 #----------------------Modes------------------------#
 
 # Resize mode
@@ -225,3 +228,4 @@ exec --no-startup-id libinput-gestures-setup start
 #---------------------------------------------------#
 
 for_window [class="Nautilus"] floating enable, resize set 1300 px 800 px
+for_window [class="Nm-connection-editor"] floating enable, resize set 500 px 500 px
