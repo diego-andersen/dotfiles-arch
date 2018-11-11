@@ -1,6 +1,4 @@
-#---------------------------------------------------#
 #---------------------Appearance--------------------#
-#---------------------------------------------------#
 
 # Font for window titles and bar
 font pango:SF Pro Display 10
@@ -11,35 +9,28 @@ default_floating_border	pixel 2
 hide_edge_borders	smart
 
 # Colour definitions
-set $text-color			#f5f6f7
-set $inactive-text-color	#2d3036
-set $bg-color			#2d3036
-set $inactive-bg-color		#abadb5
-set $border-color		#2d3036
-set $inactive-border-color	#abadb5
-set $child-border-color		#2d3036
-set $child-border-inactive	#abadb5
-set $urgent-bg-color		#bd2c40
-set $accent-color		#5294e2
+set $c-text			#f5f6f7
+set $c-text-inactive		#2d3036
+set $c-bg			#2d3036
+set $c-bg-inactive		#abadb5
+set $c-border			#2d3036
+set $c-border-inactive		#abadb5
+set $c-child-border		#2d3036
+set $c-child-border-inactive	#abadb5
+set $c-bg-urgent		#bd2c40
+set $c-accent			#5294e2
 
 # Window colours
-# colorclass		border			background		text			indicator	child_border
-client.focused		$border-color		$bg-color		$text-color		$accent-color	$child-border-color
-client.focused_inactive	$inactive-border-color	$inactive-bg-color	$inactive-text-color	$accent-color	$child-border-inactive
-client.unfocused	$inactive-border-color	$inactive-bg-color	$inactive-text-color	$accent-color	$child-border-inactive
-client.urgent		$urgent-bg-color	$urgent-bg-color	$text-color		$accent-color	$urgent-bg-color
-
-# Status bar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# colorclass		border			background	text			indicator	child_border
+client.focused		$c-border		$c-bg		$c-text			$c-accent	$c-child-border
+client.focused_inactive	$c-border-inactive	$c-bg-inactive	$c-text-inactive	$c-accent	$c-child-border-inactive
+client.unfocused	$c-border-inactive	$c-bg-inactive	$c-text-inactive	$c-accent	$c-child-border-inactive
+client.urgent		$c-bg-urgent		$c-bg-urgent	$c-text			$c-accent	$c-bg-urgent
 
 # Gaps
 smart_gaps on
 gaps inner 5
 gaps outer 0
-
-#---------------------------------------------------#
-#---------------------Behaviour---------------------#
-#---------------------------------------------------#
 
 #---------------------Shortcuts---------------------#
 
@@ -50,6 +41,10 @@ set $mod Mod4
 bindsym $mod+Return exec --no-startup-id urxvt
 # Start launcher
 bindsym $mod+d exec rofi -show run
+# Start window switcher
+bindsym $mod+Tab exec rofi -show window
+# Start file browser
+bindsym $mod+f exec nautilus
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -57,8 +52,6 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# Exit i3 (logs out of X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Yes' 'i3-msg exit'"
 
 #----------------------Movement---------------------#
 
@@ -96,7 +89,7 @@ bindsym $mod+a focus parent
 bindsym $mod+Shift+a focus child
 
 # Enter fullscreen for focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 #----------------------Layout-----------------------#
 
@@ -204,7 +197,7 @@ bindsym $mod+Shift+x mode "$mode_system"
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume	exec --no-startup-id pactl set-sink-volume 0 +10%  # Increase volume
 bindsym XF86AudioLowerVolume	exec --no-startup-id pactl set-sink-volume 0 -10%  # Decrease volume
-bindsym XF86AudioMute		exec --no-startup-id pactl set-sink-mute 0 toggle # Mute
+bindsym XF86AudioMute		exec --no-startup-id pactl set-sink-mute 0 toggle  # Mute
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp	exec --no-startup-id xbacklight -inc 20 # Increase brightness
@@ -216,16 +209,15 @@ bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight -dec 20 # Decrease
 #bindsym XF86AudioNext	exec --no-startup-id playerctl next
 #bindsym XF86AudioPrev	exec --no-startup-id playerctl previous
 
+# Status bar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 # Startup applications
 exec_always --no-startup-id ~/.fehbg &
-# exec --no-startup-id nm-applet
-# exec --no-startup-id pasystray
 exec --no-startup-id light-locker
 exec --no-startup-id libinput-gestures-setup start
 
-#---------------------------------------------------#
 #------------Class-specific behaviour---------------#
-#---------------------------------------------------#
 
 for_window [class="Nautilus"] floating enable, resize set 1300 px 800 px
 for_window [class="Nm-connection-editor"] floating enable, resize set 500 px 500 px
