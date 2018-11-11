@@ -1,5 +1,5 @@
 ! rxvt options
-URxvt*font:			xft:Hack Nerd Font Mono:pixelsize=16:antialias=true,xft:Material Icons:pixelsize=16:antialias=true
+URxvt*font:			xft:Hack Nerd Font Mono:pixelsize=16:antialias=true,xft:MaterialIcons:pixelsize=12:antialias=true
 
 URxvt*cutchars: 		"()*,<>[]{}|'
 
@@ -14,7 +14,7 @@ URxvt*scrollBar:		false
 URxvt*internalBorder:		10
 
 ! perl extensions
-URxvt.perl-ext:			default,url-select,clipboard
+URxvt.perl-ext:			default,url-select,clipboard,resize-font
 
 ! url-select (part of urxvt-perls package)
 URxvt.keysym.M-u:		perl:url-select:select_next
