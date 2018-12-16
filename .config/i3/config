@@ -54,7 +54,13 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Power menu
-# bindsym $mod+Shift+e exec --no-starup-id powermenu $(echo -e "\n\n" | rofi -dmenu -config ~/.config/rofi/powermenu.rasi)
+bindsym $mod+Shift+e exec --no-startup-id ~/scripts/powermenu.sh
+
+# Direction aliases
+set $up		k
+set $down	j
+set $left	h
+set $right	l
 
 #----------------------Movement---------------------#
 
@@ -62,28 +68,28 @@ bindsym $mod+Shift+r restart
 focus_follows_mouse no
 
 # Change focus (vim)
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+$left	focus left
+bindsym $mod+$down	focus down
+bindsym $mod+$up	focus up
+bindsym $mod+$right	focus right
 
 # Change focus (arrows)
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+Left	focus left
+bindsym $mod+Down	focus down
+bindsym $mod+Up		focus up
+bindsym $mod+Right	focus right
 
 # Move focused window (vim)
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+$left	move left
+bindsym $mod+Shift+$down	move down
+bindsym $mod+Shift+$up		move up
+bindsym $mod+Shift+$right	move right
 
 # Move focused window (arrows)
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Left		move left
+bindsym $mod+Shift+Down		move down
+bindsym $mod+Shift+Up		move up
+bindsym $mod+Shift+Right	move right
 
 # Focus parent container
 bindsym $mod+a focus parent
@@ -214,11 +220,13 @@ bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight -dec 20 # Decrease
 
 # Status bar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id xfce4-panel --disable-wm-check
 
 # Startup applications
 exec_always --no-startup-id ~/.fehbg &
 exec --no-startup-id light-locker
 exec --no-startup-id libinput-gestures-setup start
+exec --no-startup-id redshift-gtk
 
 #------------Class-specific behaviour---------------#
 
