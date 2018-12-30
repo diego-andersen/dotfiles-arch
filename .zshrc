@@ -1,5 +1,5 @@
 # Fix $PATH
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/miniconda3/bin:$HOME/bin:$PATH
 
 # Path to oh-my-zsh installation.
 export ZSH="/home/wristcontrol/.oh-my-zsh"
@@ -38,7 +38,7 @@ export LS_COLORS=$(cat ~/.config/zsh/ls_colors | ~/scripts/gen_ls_colors.sh)
 # export ARCHFLAGS="-arch x86_64"
 
 # SSH
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/id_rsa"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # Aliases
@@ -48,3 +48,6 @@ source $HOME/.config/zsh/aliases
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CACHE_HOME=$HOME/.cache
+
+# Key directories
+export USER_SCRIPTS=$HOME/scripts
