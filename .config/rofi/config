@@ -1,29 +1,19 @@
 ! "Modes"
-! rofi.combi-modi:		window,drun
 rofi.modi:			window,drun,ssh
 
 ! "Layout"
 rofi.width:			40
-rofi.lines:			10
-rofi.columns:			1
 rofi.location:			0
-! rofi.yoffset:			0
-! rofi.xoffset:			0
 rofi.fullscreen:		false
 rofi.scroll-method:		1 ! "0: Page, 1: Centered"
-! rofi.max-history-size:	10
 
 ! "Appearance"
-rofi.theme:			Arc-Dark
-rofi.font:			Hack Nerd Font Mono 14
+rofi.theme:			wristcontrol
 rofi.eh:			1 ! "Row height in chars"
-! rofi.fixed-num-lines: 	true
 rofi.show-icons:		true
 rofi.m:				-1 ! "Output monitor"
-! rofi.dpi:			-1
 rofi.show-match:		true
-! rofi.combi-hide-mode-prefix:	false
-rofi.sidebar-mode:		true
+rofi.sidebar-mode:		false
 
 ! "Behaviour"
 ! rofi.run-command:		{cmd}
@@ -56,11 +46,11 @@ rofi.case-sensitive:		false
 ! rofi.pid:			/run/user/1000/rofi.pid
 
 ! "Prompt replacements"
-! rofi.display-window:
+rofi.display-window: 
 ! rofi.display-windowcd:
-! rofi.display-run:
-! rofi.display-ssh:
-rofi.display-drun: launch
+rofi.display-run: ❱
+rofi.display-ssh: ssh:
+rofi.display-drun: ❱
 ! rofi.display-combi:
 ! rofi.display-keys:
 
