@@ -1,6 +1,4 @@
-#------------------------------------------------------#
 #------------------Global Settings---------------------#
-#------------------------------------------------------#
 
 [colors]
 background		= #2f343f
@@ -10,6 +8,7 @@ foreground		= #d8dee8
 foreground-alt		= #76797f
 accent			= #5294e2
 line			= #a8adb5
+green			= #a3be8c
 ; NOTE: Arch blue	= #1793d0
 
 [settings]
@@ -44,12 +43,11 @@ border-color = ${colors.background}
 
 padding-left = 0
 padding-right = 2
-module-margin-left = 2
-module-margin-right = 2
+module-margin = 1
 
 font-0 = SF Display Pro:size=10;4
 font-1 = MaterialIcons:size=12;4
-font-2 = FontAwesome:size=12;4
+font-2 = FontAwesome:size=10;3
 font-3 = Hack Nerd Font:size=12;4
 
 modules-left = i3 mpd
@@ -58,12 +56,10 @@ modules-right = xbacklight pulseaudio wlan battery date
 ;UNUSED: alsa xkeyboard eth powermenu 
 
 tray-position = right
+tray-detached = false
+tray_scale = 1.0
 tray-padding = 4
-tray-offset-x = -500
-tray-detached = true
-tray_scale = 1.5
-;tray-transparent = true
-;tray-background = #0063ff
+tray-offset-x = 0
 
 ;wm-restack = i3
 ;override-redirect = true
@@ -71,9 +67,7 @@ tray_scale = 1.5
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-#------------------------------------------------------#
 #------------------------Modules-----------------------#
-#------------------------------------------------------#
 
 [module/i3]
 type = internal/i3
@@ -82,9 +76,6 @@ index-sort = true
 enable-scroll = false
 wrapping-scroll = true
 padding = 2
-
-; Only show workspaces on the same output as the bar
-;pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-foreground = ${colors.foreground}
@@ -114,9 +105,6 @@ label-urgent-background = ${colors.background-urgent}
 label-urgent-underline = ${self.label-focused-underline}
 label-urgent-padding = ${self.padding}
 
-; Separator in between workspaces
-; label-separator = |
-
 
 [module/mpd]
 type = internal/mpd
@@ -136,15 +124,17 @@ label-song-ellipsis = true
 type = internal/pulseaudio
 
 format-volume = <label-volume>
-label-volume =  %percentage%%
+label-volume =  %percentage%%
 label-volume-foreground = ${colors.foreground}
+label-volume-underline = ${colors.foreground}
 
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 
-label-muted =   %percentage%%
+label-muted =  %percentage%%
 label-muted-foreground = ${colors.foreground-alt}
+label-muted-underline =
 
 bar-volume-width = 10
 bar-volume-foreground-0 = ${colors.foreground}
@@ -169,7 +159,7 @@ type = internal/backlight
 card = intel_backlight
 
 format = <label>
-label = %{T4}%{T-} %percentage%%
+label = %{T4}%{T-} %percentage%%
 
 bar-width = 10
 bar-indicator = |
@@ -252,12 +242,12 @@ interface = wlp58s0
 interval = 3.0
 
 format-connected = <label-connected>
-format-connected-underline =
-label-connected = %{A1:nm-connection-editor &:}  %essid%%{A}
+label-connected = %{A1:nm-connection-editor &:} %essid%%{A}
+format-connected-underline = ${colors.foreground}
 
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${colors.background-urgent}
-label-disconnected = %{A1:nm-connection-editor &:}%{A}
+label-disconnected = %{A1:nm-connection-editor &:}%{A}
 label-disconnected-foreground = ${colors.foreground-alt}
 
 ramp-signal-0 = 
@@ -275,50 +265,50 @@ adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline =
+format-charging-underline = ${colors.foreground}
 
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging-underline =
 
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground}
-format-full-underline = ${self.format-charging-underline}
+format-full-underline = ${colors.green}
 
-ramp-capacity-0 = " "
-ramp-capacity-1 = " "
-ramp-capacity-2 = " "
-ramp-capacity-3 = " "
-ramp-capacity-4 = " "
+ramp-capacity-0 = "%{F#bf616a}%{F-}"
+ramp-capacity-1 = ""
+ramp-capacity-2 = ""
+ramp-capacity-3 = ""
+ramp-capacity-4 = ""
 ramp-capacity-foreground = ${colors.foreground}
 
-animation-charging-0 = " "
-animation-charging-1 = " "
-animation-charging-2 = " "
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-0 = ""
+animation-charging-1 = ""
+animation-charging-2 = ""
+animation-charging-3 = ""
+animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 500
 
-animation-discharging-0 = " "
-animation-discharging-1 = " "
-animation-discharging-2 = " "
+animation-discharging-0 = ""
+animation-discharging-1 = ""
+animation-discharging-2 = ""
 animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
+animation-discharging-framerate = 500
 
 
 [module/date]
 type = internal/date
 interval = 1
 
-date = "%a %e %b"
-date-alt = " %Y-%m-%d"
+date = 
+date-alt = "%a %e %b "
 
 time = %H:%M:%S
 time-alt = %H:%M:%S
 
-format-prefix = "  "
-format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = #0a6cf5
+format-prefix = %{A1:gsimplecal &:}  %{A}
+format-prefix-foreground = ${colors.foreground}
 
-label = %date% %time%
+label = %date%%time%
 
 
 [module/powermenu]
