@@ -1,21 +1,27 @@
 #---------------------Appearance--------------------#
 
 # Font for window titles and bar
-font pango:SF Pro Display 10
+font pango:SF Pro Display 12
 
 # Window border settings
-default_border 		pixel 2
-default_floating_border	pixel 2
-hide_edge_borders	smart
+default_border 		pixel 8
+default_floating_border	normal
+hide_edge_borders	smart_no_gaps
+
+# Gaps
+smart_gaps on
+gaps inner 5
+gaps outer 0
+smart_borders no_gaps
 
 # Colour definitions
 set $c-text			#f5f6f7
 set $c-text-inactive		#2d3036
 set $c-bg			#2d3036
 set $c-bg-inactive		#abadb5
-set $c-border			#2d3036
+set $c-border			#f5f6f7
 set $c-border-inactive		#abadb5
-set $c-child-border		#2d3036
+set $c-child-border		#f5f6f7
 set $c-child-border-inactive	#abadb5
 set $c-bg-urgent		#bd2c40
 set $c-accent			#5294e2
@@ -26,11 +32,6 @@ client.focused		$c-border		$c-bg		$c-text			$c-accent	$c-child-border
 client.focused_inactive	$c-border-inactive	$c-bg-inactive	$c-text-inactive	$c-accent	$c-child-border-inactive
 client.unfocused	$c-border-inactive	$c-bg-inactive	$c-text-inactive	$c-accent	$c-child-border-inactive
 client.urgent		$c-bg-urgent		$c-bg-urgent	$c-text			$c-accent	$c-bg-urgent
-
-# Gaps
-smart_gaps on
-gaps inner 5
-gaps outer 0
 
 #---------------------Shortcuts---------------------#
 
@@ -44,7 +45,7 @@ bindsym $mod+space exec --no-startup-id rofi -show drun
 # Start window switcher
 bindsym $mod+Tab exec --no-startup-id rofi -show window
 # Start file browser
-bindsym $mod+f exec nautilus
+bindsym $mod+f exec --no-startup-id nautilus
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -54,7 +55,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Power menu
-bindsym $mod+Shift+e exec --no-startup-id ~/scripts/powermenu.sh
+bindsym $mod+Shift+e exec --no-startup-id ~/scripts/rofi/power_options.sh
 
 # Direction aliases
 set $up		k
@@ -225,9 +226,15 @@ exec_always --no-startup-id ~/.fehbg &
 exec --no-startup-id light-locker
 exec --no-startup-id libinput-gestures-setup start
 exec --no-startup-id redshift-gtk
+exec --no-startup-id $USER_SCRIPTS/conky/start_conky.sh
 
 #------------Class-specific behaviour---------------#
 
-for_window [class="Nautilus"] floating enable, resize set 1300 px 800 px
-for_window [class="Nm-connection-editor"] floating enable, resize set 500 px 500 px
-for_window [class="Gsimplecal"] floating enable, move position 1655 801
+for_window [class="Nautilus"] floating enable, resize set 1300 px 800 px, move position center
+for_window [class="Nm-connection-editor"] floating enable, resize set 500 px 500 px, move position center
+for_window [class="Gsimplecal"] floating enable, move position 1655 781
+for_window [class="Lxappearance"] floating enable, move position center
+
+
+# EXPERIMENTAL -- PLASMA-SPECIFIC CONFIG
+
