@@ -223,8 +223,10 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Startup applications
 exec_always --no-startup-id ~/.fehbg &
+exec --no-startup-id compton -b
 exec --no-startup-id light-locker
 exec --no-startup-id libinput-gestures-setup start
+exec --no-startup-id xfce4-power-manager
 exec --no-startup-id redshift-gtk
 exec --no-startup-id $USER_SCRIPTS/conky/start_conky.sh
 
