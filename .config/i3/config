@@ -1,12 +1,12 @@
 #---------------------Appearance--------------------#
 
 # Font for window titles and bar
-font pango:SF Pro Display 12
+font pango:Noto Sans 12
 
 # Window border settings
-default_border 		pixel 8
-default_floating_border	normal
-hide_edge_borders	smart_no_gaps
+default_border 		    pixel 5
+default_floating_border	pixel 1
+hide_edge_borders	    smart_no_gaps
 
 # Gaps
 smart_gaps on
@@ -15,23 +15,23 @@ gaps outer 0
 smart_borders no_gaps
 
 # Colour definitions
-set $c-text			#f5f6f7
-set $c-text-inactive		#2d3036
-set $c-bg			#2d3036
-set $c-bg-inactive		#abadb5
-set $c-border			#f5f6f7
-set $c-border-inactive		#abadb5
-set $c-child-border		#f5f6f7
-set $c-child-border-inactive	#abadb5
-set $c-bg-urgent		#bd2c40
-set $c-accent			#5294e2
+set $c-text			            #f5f6f7
+set $c-text-inactive		    #2d3036
+set $c-bg			            #2d3036
+set $c-bg-inactive		        #abadb5
+set $c-border			        #f5f6f7
+set $c-border-inactive		    #abadb5
+set $c-child-border		        #f5f6f7
+set $c-child-border-inactive    #abadb5
+set $c-bg-urgent		        #bd2c40
+set $c-accent			        #5294e2
 
 # Window colours
-# colorclass		border			background	text			indicator	child_border
-client.focused		$c-border		$c-bg		$c-text			$c-accent	$c-child-border
+# colorclass		    border			    background	    text			    indicator	child_border
+client.focused		    $c-border		    $c-bg		    $c-text			    $c-accent	$c-child-border
 client.focused_inactive	$c-border-inactive	$c-bg-inactive	$c-text-inactive	$c-accent	$c-child-border-inactive
-client.unfocused	$c-border-inactive	$c-bg-inactive	$c-text-inactive	$c-accent	$c-child-border-inactive
-client.urgent		$c-bg-urgent		$c-bg-urgent	$c-text			$c-accent	$c-bg-urgent
+client.unfocused	    $c-border-inactive	$c-bg-inactive	$c-text-inactive	$c-accent	$c-child-border-inactive
+client.urgent		    $c-bg-urgent		$c-bg-urgent	$c-text			    $c-accent	$c-bg-urgent
 
 #---------------------Shortcuts---------------------#
 
@@ -39,7 +39,7 @@ client.urgent		$c-bg-urgent		$c-bg-urgent	$c-text			$c-accent	$c-bg-urgent
 set $mod Mod4
 
 # Start terminal
-bindsym $mod+Return exec --no-startup-id urxvt
+bindsym $mod+Return exec --no-startup-id kitty
 # Start launcher
 bindsym $mod+space exec --no-startup-id rofi -show drun
 # Start window switcher
