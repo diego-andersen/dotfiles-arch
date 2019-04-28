@@ -52,7 +52,7 @@ font-3 = Hack Nerd Font:size=12;4
 
 modules-left = i3 mpd
 modules-center =
-modules-right = xbacklight pulseaudio wlan battery date
+modules-right = xbacklight pulseaudio wlan battery date time
 ;UNUSED: alsa xkeyboard eth powermenu filesystem memory cpu temperature
 
 tray-position = right
@@ -299,16 +299,24 @@ animation-discharging-framerate = 500
 type = internal/date
 interval = 1
 
-date = 
-date-alt = "%a %e %b "
+date = "%a %e %b "
 
-time = %H:%M:%S
-time-alt = %H:%M:%S
-
-format-prefix = %{A1:gsimplecal &:}  %{A}
+format-prefix = "  " 
 format-prefix-foreground = ${colors.foreground}
 
-label = %date%%time%
+label = %{A1:gsimplecal &:}%date%%{A}
+
+
+[module/time]
+type = internal/date
+interval = 1
+
+time = %T
+
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+
+label = %time%
 
 
 [module/powermenu]
