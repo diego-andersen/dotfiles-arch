@@ -1,0 +1,13 @@
+{
+    "power": {
+        "width": 1920,
+        "lines": 1,
+        "columns": 4,
+        "location": 0,
+        "prompt": "Power Options",
+        "format": "d",
+        "cmd": "echo -e \"\\n\\n\\n\"",
+        "config": "~/.config/rofi/powermenu.rasi"
+    }
+
+}

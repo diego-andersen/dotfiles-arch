@@ -8,7 +8,7 @@ rofi.fullscreen:		false
 rofi.scroll-method:		1 ! "0: Page, 1: Centered"
 
 ! "Appearance"
-rofi.theme:			wristcontrol
+rofi.theme:			launcher
 rofi.eh:			1 ! "Row height in chars"
 rofi.show-icons:		true
 rofi.m:				-1 ! "Output monitor"

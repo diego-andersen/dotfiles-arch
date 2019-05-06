@@ -1,0 +1,48 @@
+* {
+    accent-color:     #5294e2;
+    background:       #404552;
+    background-focus: #2d3036;
+    foreground:       #d8dee8;
+    background-color: @background;
+    text-color:       @foreground;
+    font:             "Font Awesome 40";
+}
+
+#window {
+    width: 1920px;
+    height: 1080px;
+    children: [ dummy, horibox, dummy ];
+}
+
+#horibox {
+    children: [ listview ];
+    padding: 50px 520px;
+    layout: horizontal;
+}
+
+#dummy {
+    expand: true;
+}
+
+#listview {
+    layout: horizontal;
+    spacing: 40px;
+    lines: 4;
+}
+
+#element {
+    /* top right bottom left */
+    /*no space is 0px 0px -8px -81px*/
+    padding: 70px 70px 62px 70px;
+    border: 0px 0px 8px 0px;
+    background-color: @background;
+    border-color: @background;
+}
+
+#element.selected {
+    background-color: @background-focus;
+    text-color: @accent-color;
+    border-color: @accent-color;
+}
+
+/* vim:ft=css

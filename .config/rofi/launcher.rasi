@@ -1,0 +1,27 @@
+* {
+    font: "SF Pro Display Light 20";
+    padding: 5px 10px;
+    background-color: #404552;
+    color: #d8dee8;
+}
+
+#inputbar {
+  //padding: 0px 0px 0px 0px;
+}
+
+#prompt {
+  color: #5294e2;
+}
+      
+#listview {
+    padding:    10px;
+    spacing:    0.5em;
+    columns:    1;
+    lines:      5;
+}
+
+#element selected {
+  text-color: #5294e2;
+}
+
+/* vim:ft=css
