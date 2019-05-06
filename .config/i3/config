@@ -5,7 +5,7 @@ font pango:Noto Sans 12
 
 # Window border settings
 default_border 		    pixel 5
-default_floating_border	pixel 1
+default_floating_border	pixel 5
 hide_edge_borders	    smart_no_gaps
 
 # Gaps
@@ -45,7 +45,7 @@ bindsym $mod+space exec --no-startup-id rofi -show drun
 # Start window switcher
 bindsym $mod+Tab exec --no-startup-id rofi -show window
 # Start file browser
-bindsym $mod+f exec --no-startup-id nautilus
+bindsym $mod+f exec --no-startup-id dolphin
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -55,7 +55,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Power menu
-bindsym $mod+Shift+e exec --no-startup-id ~/scripts/rofi/power_options.sh
+bindsym $mod+Shift+e exec --no-startup-id ~/scripts/rofi/powermenu.sh
 
 # Direction aliases
 set $up		k
@@ -219,7 +219,6 @@ bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight -dec 20 # Decrease
 
 # Status bar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-# exec_always --no-startup-id xfce4-panel --disable-wm-check
 
 # Startup applications
 exec_always --no-startup-id ~/.fehbg &
@@ -232,11 +231,7 @@ exec --no-startup-id $USER_SCRIPTS/conky/start_conky.sh
 
 #------------Class-specific behaviour---------------#
 
-for_window [class="Nautilus"] floating enable, resize set 1300 px 800 px, move position center
+for_window [class="dolphin"] floating enable, move position center
 for_window [class="Nm-connection-editor"] floating enable, resize set 500 px 500 px, move position center
-for_window [class="Gsimplecal"] floating enable, move position 1655 781
+for_window [class="Gsimplecal"] floating enable, move position 1665 800
 for_window [class="Lxappearance"] floating enable, move position center
-
-
-# EXPERIMENTAL -- PLASMA-SPECIFIC CONFIG
-
