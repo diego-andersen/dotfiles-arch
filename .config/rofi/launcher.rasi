@@ -1,27 +1,65 @@
 * {
     font: "SF Pro Display Light 20";
     padding: 5px 10px;
-    background-color: #404552;
     color: #d8dee8;
 }
 
+#window {
+    anchor: center;
+    background-color: #404552f2;
+    border-radius: 5px;
+    transparency: "real";
+    width: 50ch;
+}
+
+#mainbox {
+    background-color: #00000000;
+}
+
 #inputbar {
-  //padding: 0px 0px 0px 0px;
+    background-color: #00000000;
 }
 
 #prompt {
-  color: #5294e2;
+    background-color: #00000000;
+    color: #5e81ac;
 }
       
+#entry {
+    background-color: #00000000;
+}
+
+#case-indicator {
+    background-color: #00000000;
+}
+
 #listview {
-    padding:    10px;
-    spacing:    0.5em;
-    columns:    1;
-    lines:      5;
+    background-color: #00000000;
+    columns: 1;
+    dynamic: false;
+    fixed-height: true;
+    lines: 5;
+    padding: 10px;
+    scrollbar: true;
+    scrollbar-width: 4px;
+    spacing: 0.5em;
+}
+
+#scrollbar {
+    background-color: #4c566a;
+    border: 0px;
+    handle-color: #5e81ac;
+    handle-width: 4px;
+    margin: 0px;
+    padding: 0px;
+}
+
+#element {
+    background-color: #00000000;
 }
 
 #element selected {
-  text-color: #5294e2;
+  text-color: #5e81ac;
 }
 
 /* vim:ft=css

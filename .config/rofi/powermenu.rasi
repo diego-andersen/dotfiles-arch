@@ -1,8 +1,8 @@
 * {
-    accent-color:     #5294e2;
-    background:       #404552;
-    background-focus: #2d3036;
-    foreground:       #d8dee8;
+    accent-color:     #5e81ac;
+    background:       #434c5e;
+    background-focus: #2e3440;
+    foreground:       #e5e9f0;
     background-color: @background;
     text-color:       @foreground;
     font:             "Font Awesome 40";

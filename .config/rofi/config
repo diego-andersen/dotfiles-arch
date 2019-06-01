@@ -1,58 +1,48 @@
-! "Modes"
+! "General"
 rofi.modi:			window,drun,ssh
-
-! "Layout"
-rofi.width:			40
-rofi.location:			0
-rofi.fullscreen:		false
-rofi.scroll-method:		1 ! "0: Page, 1: Centered"
-
-! "Appearance"
 rofi.theme:			launcher
-rofi.eh:			1 ! "Row height in chars"
-rofi.show-icons:		true
-rofi.m:				-1 ! "Output monitor"
-rofi.show-match:		true
-rofi.sidebar-mode:		false
+rofi.show-icons:	true
+rofi.show-match:	true
+rofi.monitor:		-1
+rofi.terminal:		kitty
+rofi.threads:		0
 
 ! "Behaviour"
-! rofi.run-command:		{cmd}
+! rofi.run-command:		    {cmd}
 ! rofi.run-list-command:               
 ! rofi.run-shell-command:	{terminal} -e {cmd}
 ! rofi.window-command:		xkill -id {window}
-rofi.terminal:			urxvt
-rofi.cycle:			true
-rofi.auto-select:		false
-rofi.click-to-exit:		true
-rofi.threads:			0
+rofi.scroll-method:		    1 ! "0: Page 1: Centered"
+rofi.cycle:			        true
+rofi.auto-select:		    false
+rofi.click-to-exit:		    true
 
 ! "ssh options"
-rofi.ssh-client:		ssh
-! rofi.ssh-command:		{terminal} -e {ssh-client} {host}
-! rofi.parse-hosts:		false
+rofi.ssh-client:		    ssh
+! rofi.ssh-command:		    {terminal} -e {ssh-client} {host}
+! rofi.parse-hosts:		    false
 ! rofi.parse-known-hosts:	true
 
 ! "Matching"
-rofi.matching:			normal
-rofi.tokenize:			true
+rofi.matching:			    normal
+rofi.tokenize:			    true
 rofi.drun-match-fields:		name,generic,exec,categories
 rofi.window-match-fields:	all
 rofi.disable-history:		false
-rofi.sort:			true
+rofi.sort:			        true
 rofi.levenshtein-sort:		false
 rofi.case-sensitive:		false
 
 ! "Pidfile location"
-! rofi.pid:			/run/user/1000/rofi.pid
+rofi.pid: /run/user/1000/rofi.pid
 
 ! "Prompt replacements"
 rofi.display-window: 
-! rofi.display-windowcd:
-rofi.display-run: ❱
-rofi.display-ssh: ssh:
 rofi.display-drun: ❱
-! rofi.display-combi:
-! rofi.display-keys:
+rofi.display-ssh: ❱ ssh:
+
+! "Window switcher settings"
+rofi.window-format: {w} : {t}
 
 ! "Paste primary selection"
 ! rofi.kb-primary-paste:	Control+V,Shift+Insert
@@ -63,67 +53,67 @@ rofi.display-drun: ❱
 ! "Beginning of line"
 ! rofi.kb-move-front:		Control+a
 ! "End of line"
-! rofi.kb-move-end:		Control+e
+! rofi.kb-move-end:		    Control+e
 ! "Move back one word"
 ! rofi.kb-move-word-back:	Alt+b
 ! "Move forward one word"
 ! rofi.kb-move-word-forward:	Alt+f
 ! "Move back one char"
-! rofi.kb-move-char-back:	Left,Control+b
+! rofi.kb-move-char-back:	    Left,Control+b
 ! "Move forward one char"
 ! rofi.kb-move-char-forward:	Right,Control+f
 ! "Delete previous word"
-! rofi.kb-remove-word-back:	Control+Alt+h,Control+BackSpace
+! rofi.kb-remove-word-back:	    Control+Alt+h,Control+BackSpace
 ! "Delete next word"
 ! rofi.kb-remove-word-forward:	Control+Alt+d
 ! "Delete next char"
 ! rofi.kb-remove-char-forward:	Delete,Control+d
 ! "Delete previous char"
-! rofi.kb-remove-char-back:	BackSpace,Control+h
+! rofi.kb-remove-char-back:	    BackSpace,Control+h
 ! "Delete till the end of line"
-! rofi.kb-remove-to-eol:	Control+k
+! rofi.kb-remove-to-eol:	    Control+k
 ! "Delete till the start of line"
-! rofi.kb-remove-to-sol:	Control+u
+! rofi.kb-remove-to-sol:	    Control+u
 ! "Accept entry"
-! rofi.kb-accept-entry:		Control+j,Control+m,Return,KP_Enter
+! rofi.kb-accept-entry:		    Control+j,Control+m,Return,KP_Enter
 ! "Use entered text as command (in ssh/run modi)"
-! rofi.kb-accept-custom:	Control+Return
+! rofi.kb-accept-custom:	    Control+Return
 ! "Use alternate accept command."
-! rofi.kb-accept-alt:		Shift+Return
+! rofi.kb-accept-alt:		    Shift+Return
 ! "Delete entry from history"
-! rofi.kb-delete-entry:		Shift+Delete
+! rofi.kb-delete-entry:		    Shift+Delete
 ! "Switch to the next mode."
-! rofi.kb-mode-next:		Shift+Right,Control+Tab
+rofi.kb-mode-next:		    Alt+Right,Control+Tab
 ! "Switch to the previous mode."
-! rofi.kb-mode-previous:	Shift+Left,Control+ISO_Left_Tab
+rofi.kb-mode-previous:	    Alt+Left,Control+ISO_Left_Tab
 ! "Go to the previous column"
-! rofi.kb-row-left:		Control+Page_Up
+! rofi.kb-row-left:		        Control+Page_Up
 ! "Go to the next column"
-! rofi.kb-row-right:		Control+Page_Down
+! rofi.kb-row-right:		    Control+Page_Down
 ! "Select previous entry"
-! rofi.kb-row-up:		Up,Control+p,ISO_Left_Tab
+! rofi.kb-row-up:		        Up,Control+p,ISO_Left_Tab
 ! "Select next entry"
-! rofi.kb-row-down:		Down,Control+n
+! rofi.kb-row-down:		        Down,Control+n
 ! "Go to next row, if one left, accept it, if no left next mode."
-! rofi.kb-row-tab:		Tab
+! rofi.kb-row-tab:		        Tab
 ! "Go to the previous page"
-! rofi.kb-page-prev:		Page_Up
+! rofi.kb-page-prev:		    Page_Up
 ! "Go to the next page"
-! rofi.kb-page-next:		Page_Down
+! rofi.kb-page-next:		    Page_Down
 ! "Go to the first entry"
-! rofi.kb-row-first:		Home,KP_Home
+! rofi.kb-row-first:		    Home,KP_Home
 ! "Go to the last entry"
-! rofi.kb-row-last:		End,KP_End
+! rofi.kb-row-last:		        End,KP_End
 ! "Set selected item as input text"
-! rofi.kb-row-select:		Control+space
+! rofi.kb-row-select:		    Control+space
 ! "Take a screenshot of the rofi window"
-! rofi.kb-screenshot:		Alt+S
+! rofi.kb-screenshot:		    Alt+S
 ! "Toggle case sensitivity"
 ! rofi.kb-toggle-case-sensitivity: grave,dead_grave
 ! "Toggle sort"
-! rofi.kb-toggle-sort:		Alt+grave
+! rofi.kb-toggle-sort:		    Alt+grave
 ! "Quit rofi"
-! rofi.kb-cancel:		Escape,Control+g,Control+bracketleft
+! rofi.kb-cancel:		        Escape,Control+g,Control+bracketleft
 
 ! "Custom keybinding 1"
 ! rofi.kb-custom-1:		Alt+1
@@ -144,25 +134,25 @@ rofi.display-drun: ❱
 ! "Custom keybinding 9"
 ! rofi.kb-custom-9:		Alt+9
 ! "Custom keybinding 10"
-! rofi.kb-custom-10:		Alt+0
+! rofi.kb-custom-10:	Alt+0
 ! "Custom keybinding 11"
-! rofi.kb-custom-11:		Alt+exclam
+! rofi.kb-custom-11:	Alt+exclam
 ! "Custom keybinding 12"
-! rofi.kb-custom-12:		Alt+at
+! rofi.kb-custom-12:	Alt+at
 ! "Csutom keybinding 13"
-! rofi.kb-custom-13:		Alt+numbersign
+! rofi.kb-custom-13:	Alt+numbersign
 ! "Custom keybinding 14"
-! rofi.kb-custom-14:		Alt+dollar
+! rofi.kb-custom-14:	Alt+dollar
 ! "Custom keybinding 15"
-! rofi.kb-custom-15:		Alt+percent
+! rofi.kb-custom-15:	Alt+percent
 ! "Custom keybinding 16"
-! rofi.kb-custom-16:		Alt+dead_circumflex
+! rofi.kb-custom-16:	Alt+dead_circumflex
 ! "Custom keybinding 17"
-! rofi.kb-custom-17:		Alt+ampersand
+! rofi.kb-custom-17:	Alt+ampersand
 ! "Custom keybinding 18"
-! rofi.kb-custom-18:		Alt+asterisk
+! rofi.kb-custom-18:	Alt+asterisk
 ! "Custom Keybinding 19"
-! rofi.kb-custom-19:		Alt+parenleft
+! rofi.kb-custom-19:	Alt+parenleft
 
 ! "Select row 1"
 ! rofi.kb-select-1:		Super+1
@@ -183,21 +173,21 @@ rofi.display-drun: ❱
 ! "Select row 9"
 ! rofi.kb-select-9:		Super+9
 ! "Select row 10"
-! rofi.kb-select-10:		Super+0
+! rofi.kb-select-10:	Super+0
 
 ! "Go to the previous column"
 ! rofi.ml-row-left:		ScrollLeft
 ! "Go to the next column"
-! rofi.ml-row-right:		ScrollRight
+! rofi.ml-row-right:	ScrollRight
 ! "Select previous entry"
 ! rofi.ml-row-up:		ScrollUp
 ! "Select next entry"
 ! rofi.ml-row-down:		ScrollDown
 ! "Select hovered row"
-! rofi.me-select-entry:		MousePrimary
+! rofi.me-select-entry:	MousePrimary
 ! "Accept hovered row"
-! rofi.me-accept-entry:		MouseDPrimary
+! rofi.me-accept-entry:	MouseDPrimary
 ! "Accept hovered row with custom action"
-! rofi.me-accept-custom:	Control+MouseDPrimary
+! rofi.me-accept-custom:Control+MouseDPrimary
 
 /* vim:ft=css
