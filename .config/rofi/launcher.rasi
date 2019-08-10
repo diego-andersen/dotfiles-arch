@@ -1,40 +1,40 @@
 * {
-    font: "SF Pro Display Light 20";
-    padding: 5px 10px;
-    color: #d8dee8;
-    background-color: transparent;
+    font:               "SF Pro Display Light 20";
+    padding:            5px 10px;
+    color:              #d8dee8;
+    background-color:   transparent;
 }
 
 #window {
-    anchor: center;
-    background-color: #404552f2;
-    border-radius: 5px;
-    transparency: "real";
-    width: 50ch;
+    anchor:             center;
+    background-color:   #404552f2;
+    border-radius:      5px;
+    transparency:       "real";
+    width:              50ch;
 }
 
 #listview {
-    columns: 1;
-    dynamic: false;
-    fixed-height: true;
-    lines: 5;
-    padding: 10px;
-    scrollbar: true;
-    scrollbar-width: 4px;
-    spacing: 0.5em;
+    columns:            1;
+    dynamic:            false;
+    fixed-height:       true;
+    lines:              5;
+    padding:            10px;
+    scrollbar:          true;
+    scrollbar-width:    4px;
+    spacing:            0.5em;
 }
 
 #scrollbar {
-    background-color: #4c566a;
-    border: 0px;
-    handle-color: #88c0d0;
-    handle-width: 4px;
-    margin: 0px;
-    padding: 0px;
+    background-color:   #4c566a;
+    border:             0px;
+    handle-color:       #88c0d0;
+    handle-width:       4px;
+    margin:             0px;
+    padding:            0px;
 }
 
 #element selected {
-  text-color: #88c0d0;
+  text-color:           #88c0d0;
 }
 
 /* vim:ft=css
