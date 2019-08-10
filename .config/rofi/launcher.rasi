@@ -2,6 +2,7 @@
     font: "SF Pro Display Light 20";
     padding: 5px 10px;
     color: #d8dee8;
+    background-color: transparent;
 }
 
 #window {
@@ -12,29 +13,7 @@
     width: 50ch;
 }
 
-#mainbox {
-    background-color: #00000000;
-}
-
-#inputbar {
-    background-color: #00000000;
-}
-
-#prompt {
-    background-color: #00000000;
-    color: #5e81ac;
-}
-      
-#entry {
-    background-color: #00000000;
-}
-
-#case-indicator {
-    background-color: #00000000;
-}
-
 #listview {
-    background-color: #00000000;
     columns: 1;
     dynamic: false;
     fixed-height: true;
@@ -48,18 +27,14 @@
 #scrollbar {
     background-color: #4c566a;
     border: 0px;
-    handle-color: #5e81ac;
+    handle-color: #88c0d0;
     handle-width: 4px;
     margin: 0px;
     padding: 0px;
 }
 
-#element {
-    background-color: #00000000;
-}
-
 #element selected {
-  text-color: #5e81ac;
+  text-color: #88c0d0;
 }
 
 /* vim:ft=css
