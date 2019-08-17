@@ -4,8 +4,8 @@
 font pango:Noto Sans 12
 
 # Window border settings
-default_border 		    pixel 5
-default_floating_border	pixel 5
+default_border 		    pixel 2
+default_floating_border	pixel 2
 hide_edge_borders	    smart_no_gaps
 
 # Gaps
@@ -15,23 +15,22 @@ gaps outer 0
 smart_borders no_gaps
 
 # Colour definitions
-set $c-text			            #f5f6f7
-set $c-text-inactive		    #2d3036
-set $c-bg			            #2d3036
-set $c-bg-inactive		        #abadb5
-set $c-border			        #f5f6f7
-set $c-border-inactive		    #abadb5
-set $c-child-border		        #f5f6f7
-set $c-child-border-inactive    #abadb5
-set $c-bg-urgent		        #bd2c40
-set $c-accent			        #5294e2
+set $c-text			    #f5f6f7
+set $c-text-inactive	#2d3036
+set $c-bg			    #2d3036
+set $c-bg-inactive		#abadb5
+set $c-border		    #eceff4
+set $c-border-inactive  #43566a
+set $c-bg-urgent		#bd2c40
+set $c-ind      		#d08770
+set $c-ind-inactive     #43566a
 
 # Window colours
-# colorclass		    border			    background	    text			    indicator	child_border
-client.focused		    $c-border		    $c-bg		    $c-text			    $c-accent	$c-child-border
-client.focused_inactive	$c-border-inactive	$c-bg-inactive	$c-text-inactive	$c-accent	$c-child-border-inactive
-client.unfocused	    $c-border-inactive	$c-bg-inactive	$c-text-inactive	$c-accent	$c-child-border-inactive
-client.urgent		    $c-bg-urgent		$c-bg-urgent	$c-text			    $c-accent	$c-bg-urgent
+# colorclass		    border			    background	    text			    indicator	    child_border
+client.focused		    $c-bg   		    $c-bg		    $c-text			    $c-ind	        $c-border
+client.focused_inactive	$c-bg-inactive	    $c-bg-inactive	$c-text-inactive	$c-ind-inactive	$c-border-inactive
+client.unfocused	    $c-bg-inactive	    $c-bg-inactive	$c-text-inactive	$c-ind-inactive	$c-border-inactive
+client.urgent		    $c-bg-urgent		$c-bg-urgent	$c-text			    $c-ind	        $c-bg-urgent
 
 #---------------------Shortcuts---------------------#
 
@@ -40,12 +39,14 @@ set $mod Mod4
 
 # Start terminal
 bindsym $mod+Return exec --no-startup-id kitty
+# Start floating terminal
+bindsym $mod+Shift+Return exec --no-startup-id kitty --name floating
 # Start launcher
 bindsym $mod+space exec --no-startup-id rofi -show drun
 # Start window switcher
 bindsym $mod+Tab exec --no-startup-id rofi -show window
 # Start file browser
-bindsym $mod+f exec --no-startup-id dolphin
+bindsym $mod+f exec --no-startup-id thunar
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -185,7 +186,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # System power management mode
-set $mode_system System: [L] lock, [E] logout, [S] suspend, [H] hibernate, [R] reboot, [Shift+S] shutdown
+set $mode_system System: [L]ock, [E]xit, [S]uspend, [H]ibernate, [R]eboot, [Shift+S]hutdown
 
 mode "$mode_system" {
 	bindsym l exec --no-startup-id light-locker-command -l, mode "default"
@@ -205,10 +206,10 @@ bindsym $mod+Shift+x mode "$mode_system"
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume	exec --no-startup-id pactl set-sink-volume 0 +10%  # Increase volume
 bindsym XF86AudioLowerVolume	exec --no-startup-id pactl set-sink-volume 0 -10%  # Decrease volume
-bindsym XF86AudioMute		exec --no-startup-id pactl set-sink-mute 0 toggle  # Mute
+bindsym XF86AudioMute		    exec --no-startup-id pactl set-sink-mute 0 toggle  # Mute
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp	exec --no-startup-id xbacklight -inc 20 # Increase brightness
+bindsym XF86MonBrightnessUp	    exec --no-startup-id xbacklight -inc 20 # Increase brightness
 bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight -dec 20 # Decrease brightness
 
 # Media player controls
@@ -225,13 +226,14 @@ exec_always --no-startup-id ~/.fehbg &
 exec --no-startup-id compton -b
 exec --no-startup-id light-locker
 exec --no-startup-id libinput-gestures-setup start
-exec --no-startup-id xfce4-power-manager
+#exec --no-startup-id xfce4-power-manager
 exec --no-startup-id redshift-gtk
-exec --no-startup-id $USER_SCRIPTS/conky/start_conky.sh
+#exec --no-startup-id $USER_SCRIPTS/conky/start_conky.sh
 
 #------------Class-specific behaviour---------------#
 
-for_window [class="dolphin"] floating enable, move position center
+for_window [class="kitty" instance="floating"] floating enable, resize set 1100 px 700 px, move position center
+for_window [class="Thunar"] floating enable, move position center
 for_window [class="Nm-connection-editor"] floating enable, resize set 500 px 500 px, move position center
 for_window [class="Gsimplecal"] floating enable, move position 1665 800
 for_window [class="Lxappearance"] floating enable, move position center
