@@ -5,12 +5,13 @@
     foreground:       #e5e9f0;
     background-color: @background;
     text-color:       @foreground;
-    font:             "Font Awesome 40";
+    font:             "Hack Nerd Font Mono 50";
 }
 
 #window {
     width: 1920px;
     height: 1080px;
+    location: center;
     children: [ dummy, horibox, dummy ];
 }
 
