@@ -8,7 +8,6 @@ function rofi_load_vars(){
 	width=$(cat "$paramFile" | jq -r ."$1".width)
 	lines=$(cat "$paramFile" | jq -r ."$1".lines)
 	columns=$(cat "$paramFile" | jq -r ."$1".columns)
-	location=$(cat "$paramFile" | jq -r ."$1".location)
 	prompt=$(cat "$paramFile" | jq -r ."$1".prompt)
 	format=$(cat "$paramFile" | jq -r ."$1".format)
 	cmd=$(cat "$paramFile" | jq -r ."$1".cmd)
@@ -18,12 +17,12 @@ function rofi_load_vars(){
 function rofi_dmenu(){
 	if [ "$1" ]; then
 		rofi -config "$config" -width "$width" -lines "$lines" -columns "$columns" \
-		-location "$location" -dmenu -format "$format" -p "$prompt" \
+		-dmenu -format "$format" -p "$prompt" \
 		<<< $(eval "$cmd") \
 		>&3
 	else
 		rofi -config "${config}" -width "$width" -lines "$lines" -columns "$columns" \
-		-location "$location" -dmenu -format "$format" -p "$prompt" \
+		-dmenu -format "$format" -p "$prompt" \
 		<<< $(eval "$cmd") \
 		>&3
 	fi

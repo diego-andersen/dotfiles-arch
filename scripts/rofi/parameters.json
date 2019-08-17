@@ -3,11 +3,19 @@
         "width": 100,
         "lines": 1,
         "columns": 4,
-        "location": 0,
         "prompt": "Power Options",
         "format": "d",
         "cmd": "echo -e \"\\n\\n\\n\"",
         "config": "~/.config/rofi/powermenu.rasi"
+    },
+    "options": {
+        "width": 400,
+        "lines": 1,
+        "columns": 4,
+        "prompt": "System Monitor",
+        "format": "d",
+        "cmd": "echo -e \"\\n\\n\\n\"",
+        "config": "~/.config/rofi/conky.rasi"
     }
 
 }
