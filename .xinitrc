@@ -9,8 +9,5 @@ fi
 # keyboard mapping
 setxkbmap gb
 
-# wallpaper
-~/.fehbg &
-
 # start window manager
 exec i3
