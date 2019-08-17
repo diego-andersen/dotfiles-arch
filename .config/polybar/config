@@ -1,14 +1,16 @@
+; vim:ft=dosini
+
 #------------------Global Settings---------------------#
 
 [colors]
-background		= #2f343f
-background-alt		= #f5f6f7
+background		    = #4c566a
+background-alt		= #d8dee9
 background-urgent	= #bf616a
-foreground		= #d8dee8
+foreground		    = #eceff4
 foreground-alt		= #76797f
-accent			= #5294e2
-line			= #a8adb5
-green			= #a3be8c
+accent			    = #81a1c1
+line			    = #eceff4
+green			    = #a3be8c
 ; NOTE: Arch blue	= #1793d0
 
 [settings]
@@ -38,7 +40,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = ${colors.line}
 
-border-top = 2
+border-top-size = 2
 border-color = ${colors.background}
 
 padding-left = 0
@@ -51,7 +53,7 @@ font-2 = FontAwesome:size=10;3
 font-3 = Hack Nerd Font:size=12;4
 
 modules-left = i3 mpd
-modules-center =
+modules-center = title
 modules-right = xbacklight pulseaudio wlan battery date time
 ;UNUSED: alsa xkeyboard eth powermenu filesystem memory cpu temperature
 
@@ -69,41 +71,69 @@ cursor-scroll = ns-resize
 
 #------------------------Modules-----------------------#
 
+[module/title]
+type = internal/xwindow
+format = <label>
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-underline = ${colors.foreground-alt}
+label = %title%
+label-maxlen = 100
+label-empty =
+label-empty-foreground = ${self.format-foreground}
+
+
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
+enable-click = true
 enable-scroll = false
-wrapping-scroll = true
 padding = 2
+margin = 1
 
-label-mode-padding = 2
+; mode = "resize", nagbar, user-defined alt-modes, etc.
+label-mode = %mode%
+label-mode-padding = ${self.padding}
 label-mode-foreground = ${colors.foreground}
-label-mode-background = ${colors.foreground-alt}
+label-mode-background = ${colors.background-urgent}
+label-mode-underline = ${colors.background}
+label-mode-overline = ${colors.background}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-foreground = ${colors.foreground}
+label-focused-foreground = ${colors.background-alt}
 label-focused-background = ${colors.accent}
-label-focused-underline = ${colors.line}
+label-focused-underline = ${colors.background}
+label-focused-overline = ${colors.background}
 label-focused-padding = ${self.padding}
+label-focused-margin = ${self.margin}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
+label-unfocused-foreground = ${colors.background}
+label-unfocused-background = ${colors.background-alt}
+label-unfocused-underline = ${colors.background}
+label-unfocused-overline = ${colors.background}
 label-unfocused-padding = ${self.padding}
+label-unfocused-margin = ${self.margin}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
+label-visible-foreground = ${self.label-focused-foreground}
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.padding}
+label-visible-margin = ${self.margin}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
-label-urgent-foreground = ${colors.foreground}
+label-urgent-foreground = ${self.label-focused-foreground}
 label-urgent-background = ${colors.background-urgent}
 label-urgent-underline = ${self.label-focused-underline}
+label-urgent-overline = ${self.label-focused-overline}
 label-urgent-padding = ${self.padding}
+label-urgent-margin = ${self.margin}
 
 
 [module/mpd]
@@ -356,6 +386,3 @@ menu-2-0 = Cancel
 menu-2-0-exec = menu-open-0
 menu-2-1 = Shutdown
 menu-2-1-exec = systemctl poweroff -i
-
-
-; vim:ft=dosini
