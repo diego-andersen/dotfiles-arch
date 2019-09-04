@@ -1,0 +1,7 @@
+/*
+ * Use this file to set colour scheme globally.
+ * Every other .rasi file should import this.
+ */
+
+@import "colorschemes/nord_dark.rasi"
+@import "resolutions/1920x1080.rasi"

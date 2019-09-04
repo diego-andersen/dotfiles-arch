@@ -1,0 +1,39 @@
+@import "common/centered_menu.rasi"
+
+* {
+    show-icons:         false;
+}
+
+#window {
+    width:              @confirm-width;
+    height:             @confirm-height;
+    border:             @confirm-border;
+    border-radius:      @window-border-radius;
+    border-color:       @foreground;
+    padding:            @confirm-padding;
+}
+
+#textbox {
+    border:             @confirm-icon-border;
+    border-color:       @foreground;
+}
+
+#listview {
+    layout:             horizontal;
+    lines:              2;
+    fixed-height:       true;
+    cycle:              true;
+    padding:            @confirm-listview-padding;
+}
+
+#element {
+    border:             @confirm-border;
+    padding:            @confirm-text-padding;
+    horizontal-align:   0.5;
+    vertical-align:     0.5;
+}
+
+#element.selected {
+    border:             @confirm-text-border;
+    border-radius:      @confirm-text-border-radius;
+}

@@ -1,0 +1,10 @@
+@import "common/side_menu.rasi"
+
+#window {
+    x-offset:           -10px;
+}
+
+#listview {
+    spacing:            @side-spacing;
+    lines:              5;
+}

@@ -1,49 +1,10 @@
-* {
-    accent-color:     #5e81ac;
-    background:       #434c5e;
-    background-focus: #2e3440;
-    foreground:       #e5e9f0;
-    background-color: @background;
-    text-color:       @foreground;
-    font:             "Hack Nerd Font Mono 50";
-}
+@import "common/fullscreen_menu.rasi"
 
 #window {
-    width: 1920px;
-    height: 1080px;
-    location: center;
-    children: [ dummy, horibox, dummy ];
-}
-
-#horibox {
-    children: [ listview ];
-    padding: 50px 520px;
-    layout: horizontal;
-}
-
-#dummy {
-    expand: true;
+    padding:    @option-5-window-padding;
 }
 
 #listview {
-    layout: horizontal;
-    spacing: 40px;
-    lines: 4;
+    spacing:    @option-5-listview-spacing;
+    lines:      5;
 }
-
-#element {
-    /* top right bottom left */
-    /*no space is 0px 0px -8px -81px*/
-    padding: 70px 70px 62px 70px;
-    border: 0px 0px 8px 0px;
-    background-color: @background;
-    border-color: @background;
-}
-
-#element.selected {
-    background-color: @background-focus;
-    text-color: @accent-color;
-    border-color: @accent-color;
-}
-
-/* vim:ft=css

@@ -1,0 +1,41 @@
+@import "settings.rasi"
+
+* {
+    background-color:   transparent;
+    text-color:         @foreground;
+    font:               @icon-font-small;
+}
+
+#window {
+    width:              @side-width;
+    height:             @side-height;
+    location:           northeast;
+    anchor:             northeast;
+    y-offset:           @side-y-offset;
+    transparency:       "real";
+}
+
+#mainbox {
+    children:           [ listview ];
+    border:             @side-border;
+    border-color:       @foreground;
+    padding:            @side-padding;
+}
+
+#listview {
+    layout:             horizontal;
+}
+
+#element {
+    horizontal-align:   0.5;
+    vertical-align:     0.5;
+    padding:            @side-element-padding;
+    border:             @side-element-border;
+    border-radius:      @side-element-border-radius;
+}
+
+#element.selected {
+    background-color:   @background-alt;
+    text-color:         @foreground;
+    border-color:       @foreground;
+}

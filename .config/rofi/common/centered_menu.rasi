@@ -1,0 +1,37 @@
+@import "settings.rasi"
+
+* {
+    background-color:   @background;
+    text-color:         @foreground;
+    font:               @text-font;
+}
+
+#window {
+    location:           center;
+    children:           [ mainbox ];
+}
+
+#mainbox {
+    children:           [ message, listview ];
+}
+
+#textbox {
+    font:               @icon-font;
+    horizontal-align:   0.5;
+}
+
+#listview {
+    layout:             vertical;
+}
+
+#element {
+    vertical-align:     0.5;
+    text-color:         @foreground;
+    background-color:   @background;
+}
+
+#element.selected {
+    background-color:   @urgent;
+    text-color:         @foreground;
+    border-color:       @foreground;
+}
