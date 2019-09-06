@@ -1,20 +1,14 @@
-@import "common/centered_menu.rasi"
-
-* {
-    show-icons:         false;
-}
+@import "common/popup_menu.rasi"
 
 #window {
     width:              @confirm-width;
     height:             @confirm-height;
-    border:             @confirm-border;
-    border-radius:      @window-border-radius;
-    border-color:       @foreground;
+    border:             4px;
     padding:            @confirm-padding;
 }
 
 #textbox {
-    border:             @confirm-icon-border;
+    border:             @confirm-textbox-border;
     border-color:       @foreground;
 }
 
@@ -27,13 +21,10 @@
 }
 
 #element {
-    border:             @confirm-border;
-    padding:            @confirm-text-padding;
-    horizontal-align:   0.5;
-    vertical-align:     0.5;
+    font:               @text-font;
+    padding:            @confirm-element-padding;
 }
 
 #element.selected {
-    border:             @confirm-text-border;
-    border-radius:      @confirm-text-border-radius;
+    background-color:   @urgent;
 }

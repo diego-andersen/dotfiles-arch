@@ -3,12 +3,16 @@
 * {
     background-color:   @background;
     text-color:         @foreground;
-    font:               @text-font;
+    font:               @icon-font;
 }
 
 #window {
+    transparency:       "real";
     location:           center;
     children:           [ mainbox ];
+    border:             @popup-window-border;
+    border-radius:      @window-border-radius;
+    border-color:       @foreground;
 }
 
 #mainbox {
@@ -16,8 +20,8 @@
 }
 
 #textbox {
-    font:               @icon-font;
     horizontal-align:   0.5;
+    vertical-align:     0.5;
 }
 
 #listview {
@@ -25,13 +29,17 @@
 }
 
 #element {
+    horizontal-align:   0.5;
     vertical-align:     0.5;
-    text-color:         @foreground;
     background-color:   @background;
+    text-color:         @foreground;
+    padding:            @popup-element-padding;
+    border:             @popup-element-border;
+    border-radius:      @popup-element-border-radius;
 }
 
 #element.selected {
-    background-color:   @urgent;
+    background-color:   @background-alt;
     text-color:         @foreground;
     border-color:       @foreground;
 }

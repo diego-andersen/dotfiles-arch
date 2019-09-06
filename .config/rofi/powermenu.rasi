@@ -1,10 +1,10 @@
 @import "common/fullscreen_menu.rasi"
 
 #window {
-    padding:    @option-5-window-padding;
+    padding:    @fullscreen-5-window-padding;
 }
 
 #listview {
-    spacing:    @option-5-listview-spacing;
+    spacing:    @fullscreen-5-listview-spacing;
     lines:      5;
 }

@@ -12,37 +12,36 @@
 
     /* List menus: appsmenu, networkmenu and nmvpnmenu */
 
+    list-window-width:          50ch;
+    list-window-border-radius:  8px;
+    list-scrollbar-width:       4px;
     list-element-padding:       20px;
     list-element-margin:        @inputbar-margin;
     list-element-border:        0px 0px 0px 8px;
+    list-element-spacing:       0.5em;
     list-8-window-padding:      219px 360px;
 
-    /* Option menus: i3layoutmenu, mpdmenu, powermenu and scrotmenu
-     *
-     * Character padding offsets for various fonts:
-     * - RobotoMono Nerd Font Mono 60: -24px -8px -8px -7px
-     */
+    /* Fullscreen menus: i3layoutmenu, mpdmenu, powermenu and scrotmenu */
 
-    option-element-padding:     76px 87px 77px 93px;
-    option-3-window-padding:    415px 446px;
-    option-3-listview-spacing:  140px;
-    option-5-window-padding:    412px 162px;
-    option-5-listview-spacing:  100px;
-    option-6-listview-spacing:  50px;
+    fullscreen-element-padding:     76px 87px 77px 93px;
+    fullscreen-3-window-padding:    412px 446px;
+    fullscreen-3-listview-spacing:  140px;
+    fullscreen-5-window-padding:    412px 162px;
+    fullscreen-5-listview-spacing:  100px;
+    fullscreen-6-listview-spacing:  50px;
 
-    /* Confirmation dialog */
+    /* Centered menus: i3layout, scrot, mpd */
 
-    confirm-width:              400px;
-    confirm-height:             200px;
-    confirm-border:             2px;
-    confirm-padding:            10px 60px 0px;
-    confirm-icon-border:        0px 0px 2px 0px;
-    confirm-listview-padding:   21px 20px 0px; 
-    confirm-text-border:        2px;
-    confirm-text-border-radius: 4px;
-    confirm-text-padding:       8px;
+    popup-3-width:                 600px;
+    popup-3-height:                180px;
+    popup-3-window-padding:        36px 82px;
+    popup-3-listview-spacing:      60px;
+    popup-window-border:           4px;
+    popup-element-padding:         0px 25px;
+    popup-element-border:          2px;
+    popup-element-border-radius:   4px;
 
-    /* Conky menu */
+    /* Sidebar menu (e.g. Conky) */
 
     side-width:                 480px;
     side-height:                1030px;
@@ -53,6 +52,16 @@
     side-element-padding:       5px 15px;
     side-element-border:        2px;
     side-element-border-radius: 4px;
+
+    /* Confirmation dialog */
+
+    confirm-width:              400px;
+    confirm-height:             200px;
+    confirm-border:             2px;
+    confirm-padding:            10px 60px 0px;
+    confirm-textbox-border:     0px 0px 2px 0px;
+    confirm-listview-padding:   21px 20px 0px; 
+    confirm-element-padding:    8px;
 
     /* appsmenu */
 
