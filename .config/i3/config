@@ -56,7 +56,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Power menu
-bindsym $mod+Shift+e exec --no-startup-id ~/scripts/rofi/powermenu.sh
+bindsym $mod+Shift+e exec --no-startup-id rofi_dmenu power
 
 # Direction aliases
 set $up		k
