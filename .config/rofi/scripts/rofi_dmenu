@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-params=parameters.json
+params=$XDG_CONFIG_HOME/rofi/scripts/parameters.json
 
 # Set field separator to tab to exploit jq's tsv output
 IFS=$'\t'
@@ -27,7 +27,7 @@ function execute_action {
     local CONFIRM="${CONFIRM[$1]}"
 
     if $CONFIRM; then
-        if $USER_SCRIPTS/rofi/rofi_confirm $OPTION; then
+        if rofi_confirm $OPTION; then
             eval "${ACTIONS[$1]}"
         fi
     else
