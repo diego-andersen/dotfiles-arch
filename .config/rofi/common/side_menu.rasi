@@ -13,6 +13,7 @@
     anchor:             northeast;
     y-offset:           @side-y-offset;
     transparency:       "real";
+    background-color:   @background;
 }
 
 #mainbox {
