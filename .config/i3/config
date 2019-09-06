@@ -219,7 +219,7 @@ bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight -dec 20 # Decrease
 #bindsym XF86AudioPrev	exec --no-startup-id playerctl previous
 
 # Status bar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch_polybar
 
 # Startup applications
 exec_always --no-startup-id ~/.fehbg &
@@ -228,7 +228,6 @@ exec --no-startup-id light-locker
 exec --no-startup-id libinput-gestures-setup start
 #exec --no-startup-id xfce4-power-manager
 exec --no-startup-id redshift-gtk
-#exec --no-startup-id $USER_SCRIPTS/conky/start_conky.sh
 
 #------------Class-specific behaviour---------------#
 
