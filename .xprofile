@@ -1,1 +1,6 @@
+#!/bin/sh
+
 [ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"
+
+# Fix PATH before i3wm loads
+export PATH=$HOME/.config/rofi/scripts:$PATH

@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+WINDOW_ID_CONKY=/tmp/conky_window_id
+
+# Show rofi window
+rofi_dmenu conky &
+ROFI_PID=$!
+
+sleep 0.6
+
+# Show conky
+ID_CONKY=$(cat $WINDOW_ID_CONKY)
+xdotool windowmap $ID_CONKY
+xdotool windowraise $ID_CONKY
+
+wait $ROFI_PID
+
+# Hide conky
+xdotool windowunmap $ID_CONKY

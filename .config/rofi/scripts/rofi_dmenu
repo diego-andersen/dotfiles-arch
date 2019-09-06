@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+params=parameters.json
+
+# Set field separator to tab to exploit jq's tsv output
+IFS=$'\t'
+
+# Read Rofi parameters from file
+function load_rofi_params {
+	PROMPT=$(jq -cr ."$1".prompt $params)
+	FORMAT=$(jq -cr ."$1".format $params)
+    OPTIONS=( $(jq -cr '.'"$1"'.options | @tsv' $params) )
+    ACTIONS=( $(jq -cr '.'"$1"'.actions | @tsv' $params) )
+    CONFIRM=( $(jq -cr '.'"$1"'.confirm | @tsv' $params) )
+	CONFIG=$(jq -cr ."$1".config $params)
+}
+
+function list_options {
+    for i in "${OPTIONS[@]}"
+    do
+        echo "$i"
+    done
+}
+
+function execute_action {
+    local OPTION="${OPTIONS[$1]}"
+    local CONFIRM="${CONFIRM[$1]}"
+
+    if $CONFIRM; then
+        if $USER_SCRIPTS/rofi/rofi_confirm $OPTION; then
+            eval "${ACTIONS[$1]}"
+        fi
+    else
+        eval "${ACTIONS[$1]}"
+    fi
+}
+
+function rofi_dmenu {
+    list_options | rofi -dmenu -config "$CONFIG" -format "$FORMAT"
+}
+
+load_rofi_params $1
+
+# NOTE: 'rofi -format i' returns a zero-ordered index of the selected option
+SELECTION="$(rofi_dmenu)"
+
+if [[ $SELECTION ]]; then
+    execute_action $SELECTION &
+else
+    exit 1
+fi

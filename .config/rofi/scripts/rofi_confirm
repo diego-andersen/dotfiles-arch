@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+ICON="$1"
+
+case "$(echo -e "Cancel\nConfirm" | rofi -dmenu -format i -theme confirmation -mesg "$ICON")" in
+    0) exit 1;;
+    1) exit 0;;
+esac
+
+exit 1

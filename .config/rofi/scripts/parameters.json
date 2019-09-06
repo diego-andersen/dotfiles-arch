@@ -1,0 +1,94 @@
+{
+    "power": {
+        "prompt": "Power Options",
+        "format": "i",
+        "options": [
+            "",
+            "",
+            "鈴",
+            "",
+            ""
+        ],
+        "actions": [
+            "light-locker-command -l",
+            "i3-msg exit",
+            "systemctl suspend",
+            "systemctl reboot",
+            "systemctl poweroff -i"
+        ],
+        "confirm": [
+            false,
+            true,
+            true,
+            true,
+            true
+        ],
+        "config": "~/.config/rofi/powermenu.rasi"
+    },
+    "conky": {
+        "prompt": "System Monitor",
+        "format": "i",
+        "options": [
+            "",
+            "",
+            "鈴",
+            "",
+            ""
+        ],
+        "actions": [
+            "light-locker-command -l",
+            "i3-msg exit",
+            "systemctl suspend",
+            "systemctl reboot",
+            "systemctl poweroff -i"
+        ],
+        "confirm": [
+            false,
+            true,
+            true,
+            true,
+            true
+        ],
+        "config": "~/.config/rofi/conky.rasi"
+    },
+    "i3wm": {
+        "prompt": "i3wm Layout",
+        "format": "i",
+        "options": [
+            "",
+            "",
+            ""
+        ],
+        "actions": [
+            "i3-msg layout toggle split",
+            "i3-msg layout tabbed",
+            "i3-msg layout stacked"
+        ],
+        "confirm": [
+            false,
+            false,
+            false
+        ],
+        "config": "~/.config/rofi/i3layout.rasi"
+    },
+    "scrot": {
+        "prompt": "Screenshot",
+        "format": "i",
+        "options": [
+            "",
+            "",
+            ""
+        ],
+        "actions": [
+            "sleep 1; scrot '%Y-%m-%d_screenshot.png' -e 'mv $f ~/Images/screenshots/'",
+            "scrot -s '%Y-%m-%d_screenshot.png' -e 'mv $f ~/Images/screenshots/'",
+            "sleep 1; scrot -u '%Y-%m-%d_screensot.png' -e 'mv $f ~/Images/screenshots/'"
+        ],
+        "confirm": [
+            false,
+            false,
+            false
+        ],
+        "config": "~/.config/rofi/i3layout.rasi"
+    }
+}
