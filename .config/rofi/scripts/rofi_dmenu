@@ -6,7 +6,7 @@ params=$XDG_CONFIG_HOME/rofi/scripts/parameters.json
 IFS=$'\t'
 
 # Read Rofi parameters from file
-function load_rofi_params {
+load_rofi_params() {
 	PROMPT=$(jq -cr ."$1".prompt $params)
 	FORMAT=$(jq -cr ."$1".format $params)
     OPTIONS=( $(jq -cr '.'"$1"'.options | @tsv' $params) )
@@ -15,14 +15,14 @@ function load_rofi_params {
 	CONFIG=$(jq -cr ."$1".config $params)
 }
 
-function list_options {
+list_options() {
     for i in "${OPTIONS[@]}"
     do
         echo "$i"
     done
 }
 
-function execute_action {
+execute_action() {
     local OPTION="${OPTIONS[$1]}"
     local CONFIRM="${CONFIRM[$1]}"
 
@@ -35,7 +35,7 @@ function execute_action {
     fi
 }
 
-function rofi_dmenu {
+rofi_dmenu() {
     list_options | rofi -dmenu -config "$CONFIG" -format "$FORMAT"
 }
 
