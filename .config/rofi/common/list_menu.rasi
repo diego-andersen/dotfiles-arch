@@ -1,0 +1,42 @@
+@import "settings.rasi"
+
+* {
+    background-color:   transparent;
+    text-color:         @foreground;
+    font:               @text-font-large;
+    padding:            @list-padding;
+}
+
+#window {
+    transparency:       "real";
+    location:           center;
+    width:              @list-window-width;
+    background-color:   @background;
+    border:             @list-window-border;
+    border-radius:      @list-window-border-radius;
+}
+
+#listview {
+    columns:            1;
+    dynamic:            false;
+    fixed-height:       true;
+    scrollbar:          true;
+    scrollbar-width:    @list-scrollbar-width;
+    padding:            @list-listview-padding;
+    spacing:            @list-element-spacing;
+}
+
+#scrollbar {
+    background-color:   @background-alt;
+    border:             @list-scrollbar-border;
+    handle-color:       @accent;
+    handle-width:       @list-scrollbar-width;
+    padding:            @list-scrollbar-padding;
+    margin:             @list-scrollbar-margin;
+}
+
+#element.selected {
+    background-color:   @accent;
+    text-color:         @foreground;
+    border-radius:      @element-border-radius;
+}

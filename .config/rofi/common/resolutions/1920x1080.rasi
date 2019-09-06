@@ -2,6 +2,7 @@
     /* General */
 
     text-font:                  "DejaVu Sans 14";
+    text-font-large:            "DejaVu Sans 18";
     text-font-mono:             "DejaVuSansMono Nerd Font Mono 14";
     icon-font:                  "Hack Nerd Font Mono 60";
     icon-font-small:            "Hack Nerd Font Mono 24";
@@ -9,12 +10,18 @@
     prompt-padding:             16px 20px;
     entry-padding:              18px 16px 16px 0px;
     window-border-radius:       8px;
+    element-border-radius:      4px;
 
     /* List menus: appsmenu, networkmenu and nmvpnmenu */
 
     list-window-width:          50ch;
-    list-window-border-radius:  8px;
+    list-window-border:         0px;
+    list-padding:               5px 10px;
+    list-listview-padding:      10px;
     list-scrollbar-width:       4px;
+    list-scrollbar-border:      0px;
+    list-scrollbar-padding:     0px;
+    list-scrollbar-margin:      0px;
     list-element-padding:       20px;
     list-element-margin:        @inputbar-margin;
     list-element-border:        0px 0px 0px 8px;
