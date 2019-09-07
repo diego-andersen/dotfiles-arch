@@ -45,17 +45,14 @@ border-color = ${colors.background}
 
 padding-left = 0
 padding-right = 2
-module-margin = 1
+module-margin = 2
 
-font-0 = SF Display Pro:size=10;4
-font-1 = MaterialIcons:size=12;4
-font-2 = FontAwesome:size=10;3
-font-3 = Hack Nerd Font:size=12;4
+font-0 = NotoSansDisplay Nerd Font:size=11;4
 
 modules-left = i3 mpd
-modules-center = title
-modules-right = xbacklight pulseaudio wlan battery date time
-;UNUSED: alsa xkeyboard eth powermenu filesystem memory cpu temperature
+modules-center = date
+modules-right = xbacklight pulseaudio wlan battery time
+;UNUSED: alsa xkeyboard eth powermenu filesystem memory cpu temperature title
 
 tray-position = right
 tray-detached = false
@@ -154,7 +151,7 @@ label-song-ellipsis = true
 type = internal/pulseaudio
 
 format-volume = <label-volume>
-label-volume =  %percentage%%
+label-volume =  %percentage%%
 label-volume-foreground = ${colors.foreground}
 label-volume-underline = ${colors.foreground}
 
@@ -162,7 +159,7 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 
-label-muted =  %percentage%%
+label-muted =  %percentage%%
 label-muted-foreground = ${colors.foreground-alt}
 label-muted-underline =
 
@@ -189,7 +186,7 @@ type = internal/backlight
 card = intel_backlight
 
 format = <label>
-label = %{T4}%{T-} %percentage%%
+label = %{T4} %{T-} %percentage%%
 
 bar-width = 10
 bar-indicator = |
@@ -272,7 +269,7 @@ interface = wlp58s0
 interval = 3.0
 
 format-connected = <label-connected>
-label-connected = %{A1:nm-connection-editor &:} %essid%%{A}
+label-connected = %{A1:nm-connection-editor &:} %essid%%{A}
 format-connected-underline = ${colors.foreground}
 
 format-disconnected = <label-disconnected>
@@ -329,7 +326,7 @@ animation-discharging-framerate = 500
 type = internal/date
 interval = 1
 
-date = "%a %e %b "
+date = "%A %e %B %Y"
 
 format-prefix = "  " 
 format-prefix-foreground = ${colors.foreground}
@@ -343,7 +340,7 @@ interval = 1
 
 time = %T
 
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 
 label = %time%
