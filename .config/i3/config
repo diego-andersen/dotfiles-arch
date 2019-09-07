@@ -56,7 +56,9 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Power menu
-bindsym $mod+Shift+e exec --no-startup-id rofi_dmenu power
+bindsym $mod+Shift+x exec --no-startup-id rofi_dmenu power
+# Conky menu
+bindsym $mod+Shift+e exec --no-startup-id rofi_conky
 
 # Direction aliases
 set $up		k
@@ -201,7 +203,7 @@ mode "$mode_system" {
 	bindsym Escape mode "default"
 }
 
-bindsym $mod+Shift+x mode "$mode_system"
+#bindsym $mod+Shift+x mode "$mode_system"
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume	exec --no-startup-id pactl set-sink-volume 0 +10%  # Increase volume
@@ -234,5 +236,5 @@ exec --no-startup-id redshift-gtk
 for_window [class="kitty" instance="floating"] floating enable, resize set 1100 px 700 px, move position center
 for_window [class="Thunar"] floating enable, move position center
 for_window [class="Nm-connection-editor"] floating enable, resize set 500 px 500 px, move position center
-for_window [class="Gsimplecal"] floating enable, move position 1665 800
+for_window [class="Gsimplecal"] floating enable, move position 1650 800
 for_window [class="Lxappearance"] floating enable, move position center
