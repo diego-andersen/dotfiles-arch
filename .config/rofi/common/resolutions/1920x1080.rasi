@@ -1,23 +1,21 @@
 * {
     /* General */
 
-    text-font:                  "DejaVu Sans 14";
-    text-font-large:            "DejaVu Sans 18";
-    text-font-mono:             "DejaVuSansMono Nerd Font Mono 14";
+    text-font:                  "Noto Sans Display 14";
+    text-font-large:            "Noto Sans Display 18";
+    text-font-mono:             "Hack Nerd Font Mono 14";
     icon-font:                  "Hack Nerd Font Mono 60";
     icon-font-small:            "Hack Nerd Font Mono 24";
-    inputbar-margin:            0px 0px 10px;
-    prompt-padding:             16px 20px;
-    entry-padding:              10px 0px;
     window-border-radius:       8px;
     element-border-radius:      4px;
 
-    /* List menus: appsmenu, networkmenu and nmvpnmenu */
+    /* List menus: launcher, window switcher, network menu */
 
     list-window-width:          50ch;
-    list-window-border:         0px;
     list-window-padding:        10px;
-    list-prompt-padding:        5px;
+    list-window-border:         0px;
+    list-inputbar-margin:       0px 0px 10px;
+    list-prompt-padding:        10px 1ch;
     list-listview-padding:      10px;
     list-scrollbar-width:       4px;
     list-scrollbar-border:      0px;
@@ -26,9 +24,9 @@
     list-element-padding:       5px 10px;
     list-element-margin:        @inputbar-margin;
     list-element-border:        0px 0px 0px 8px;
-    list-element-spacing:       0.5em;
+    list-element-spacing:       0.25em;
 
-    /* Fullscreen menus: i3layoutmenu, mpdmenu, powermenu and scrotmenu */
+    /* Fullscreen menus: powermenu */
 
     fullscreen-element-padding:     76px 87px 77px 93px;
     fullscreen-3-window-padding:    412px 446px;
@@ -37,7 +35,7 @@
     fullscreen-5-listview-spacing:  100px;
     fullscreen-6-listview-spacing:  50px;
 
-    /* Centered menus: i3layout, scrot, mpd */
+    /* Popup menus: i3layout, scrot, mpd */
 
     popup-3-width:                 600px;
     popup-3-height:                180px;
