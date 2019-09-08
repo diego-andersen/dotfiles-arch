@@ -2,14 +2,43 @@
 
 * {
     font:               @text-font-large;
-    padding:            @list-padding;
 }
 
 #window {
     location:           center;
     width:              @list-window-width;
+	padding:			@list-window-padding;
     border:             @list-window-border;
-    border-radius:      @list-window-border-radius;
+    border-radius:      @window-border-radius;
+}
+
+#inputbar {
+    children:			[ prompt, textbox-prompt-colon, entry ];
+    margin:             @inputbar-margin;
+	background-color:	@background-alt;
+	border-radius:		@element-border-radius;
+}
+
+#prompt {
+	horizontal-align:	0.5;
+	vertical-align:		0.5;
+ 	background-color:	@accent;
+ 	text-color:			@background;
+	padding:			0ch 1ch;
+}
+
+#textbox-prompt-colon {
+	horizontal-align:	0.5;
+	vertical-align:		0.5;
+	expand:				false;
+	str:				"  : :  ";
+	//padding:			@apps-textbox-prompt-colon-padding;
+}
+
+#entry {
+	vertical-align:		0.5;
+	text-color:			@accent;
+	padding:			@entry-padding;
 }
 
 #listview {
@@ -31,7 +60,10 @@
     margin:             @list-scrollbar-margin;
 }
 
+#element {
+	padding:			@list-element-padding;
+}
+
 #element.selected {
-    background-color:   @accent;
     border-radius:      @element-border-radius;
 }

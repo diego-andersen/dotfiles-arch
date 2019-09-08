@@ -6,9 +6,9 @@
     text-font-mono:             "DejaVuSansMono Nerd Font Mono 14";
     icon-font:                  "Hack Nerd Font Mono 60";
     icon-font-small:            "Hack Nerd Font Mono 24";
-    inputbar-margin:            4px 4px;
+    inputbar-margin:            0px 0px 10px;
     prompt-padding:             16px 20px;
-    entry-padding:              18px 16px 16px 0px;
+    entry-padding:              10px 0px;
     window-border-radius:       8px;
     element-border-radius:      4px;
 
@@ -16,17 +16,17 @@
 
     list-window-width:          50ch;
     list-window-border:         0px;
-    list-padding:               5px 10px;
+    list-window-padding:        10px;
+    list-prompt-padding:        5px;
     list-listview-padding:      10px;
     list-scrollbar-width:       4px;
     list-scrollbar-border:      0px;
     list-scrollbar-padding:     0px;
     list-scrollbar-margin:      0px;
-    list-element-padding:       20px;
+    list-element-padding:       5px 10px;
     list-element-margin:        @inputbar-margin;
     list-element-border:        0px 0px 0px 8px;
     list-element-spacing:       0.5em;
-    list-8-window-padding:      219px 360px;
 
     /* Fullscreen menus: i3layoutmenu, mpdmenu, powermenu and scrotmenu */
 
