@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+$XDG_CONFIG_HOME/rofi/scripts/rofi_conky

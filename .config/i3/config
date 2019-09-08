@@ -42,9 +42,9 @@ bindsym $mod+Return exec --no-startup-id kitty
 # Start floating terminal
 bindsym $mod+Shift+Return exec --no-startup-id kitty --name floating
 # Start launcher
-bindsym $mod+space exec --no-startup-id rofi -show drun
+bindsym $mod+space exec --no-startup-id rofi_launcher
 # Start window switcher
-bindsym $mod+Tab exec --no-startup-id rofi -show window
+bindsym $mod+Tab exec --no-startup-id rofi_window_switcher
 # Start file browser
 bindsym $mod+f exec --no-startup-id thunar
 
@@ -56,7 +56,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Power menu
-bindsym $mod+Shift+x exec --no-startup-id rofi_dmenu power
+bindsym $mod+Shift+x exec --no-startup-id rofi_powermenu
 # Conky menu
 bindsym $mod+Shift+e exec --no-startup-id rofi_conky
 

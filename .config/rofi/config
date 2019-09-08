@@ -1,6 +1,4 @@
 ! "General"
-rofi.modi:			window,drun,ssh
-rofi.theme:			launcher
 rofi.show-icons:	true
 rofi.show-match:	true
 rofi.monitor:		-1
@@ -38,8 +36,8 @@ rofi.pid: /run/user/1000/rofi.pid
 
 ! "Prompt replacements"
 rofi.display-window: 
-rofi.display-drun: ❱
-rofi.display-ssh: ❱ ssh:
+rofi.display-drun: run
+rofi.display-ssh: ssh
 
 ! "Window switcher settings"
 rofi.window-format: {w} : {t}
@@ -83,9 +81,9 @@ rofi.window-format: {w} : {t}
 ! "Delete entry from history"
 ! rofi.kb-delete-entry:		    Shift+Delete
 ! "Switch to the next mode."
-rofi.kb-mode-next:		    Alt+Right,Control+Tab
+rofi.kb-mode-next:		    Alt+Right
 ! "Switch to the previous mode."
-rofi.kb-mode-previous:	    Alt+Left,Control+ISO_Left_Tab
+rofi.kb-mode-previous:	    Alt+Left
 ! "Go to the previous column"
 ! rofi.kb-row-left:		        Control+Page_Up
 ! "Go to the next column"
