@@ -27,7 +27,7 @@ execute_action() {
     local CONFIRM="${CONFIRM[$1]}"
 
     if $CONFIRM; then
-        if rofi_confirm $OPTION; then
+        if $XDG_CONFIG_HOME/rofi/scripts/rofi_confirm $OPTION; then
             eval "${ACTIONS[$1]}"
         fi
     else
