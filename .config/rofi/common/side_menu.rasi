@@ -1,8 +1,6 @@
 @import "settings.rasi"
 
 * {
-    background-color:   transparent;
-    text-color:         @foreground;
     font:               @icon-font-small;
 }
 
@@ -12,8 +10,6 @@
     location:           northeast;
     anchor:             northeast;
     y-offset:           @side-y-offset;
-    transparency:       "real";
-    background-color:   @background;
 }
 
 #mainbox {
@@ -36,7 +32,5 @@
 }
 
 #element.selected {
-    background-color:   @background-alt;
-    text-color:         @foreground;
     border-color:       @foreground;
 }

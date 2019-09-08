@@ -1,10 +1,10 @@
 * {
     accent:             #81a1c1;
     accent-alt:         #88c0d0;
-    background:         #3b4252d9;
-    background-alt:     #4c566ad9;
-    foreground:         #eceff4;
-    foreground-alt:     #d8dee9;
+    background:         #eceff4f2;
+    background-alt:     #d8dee9f2;
+    foreground:         #3b4252;
+    foreground-alt:     #4c566a;
     urgent:             #bf616a;
     urgent-alt:         #d08770;
 }

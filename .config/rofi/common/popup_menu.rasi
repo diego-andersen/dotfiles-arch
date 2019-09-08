@@ -1,13 +1,10 @@
 @import "settings.rasi"
 
 * {
-    background-color:   @background;
-    text-color:         @foreground;
     font:               @icon-font;
 }
 
 #window {
-    transparency:       "real";
     location:           center;
     children:           [ mainbox ];
     border:             @popup-window-border;
@@ -31,15 +28,11 @@
 #element {
     horizontal-align:   0.5;
     vertical-align:     0.5;
-    background-color:   @background;
-    text-color:         @foreground;
     padding:            @popup-element-padding;
     border:             @popup-element-border;
     border-radius:      @popup-element-border-radius;
 }
 
 #element.selected {
-    background-color:   @background-alt;
-    text-color:         @foreground;
     border-color:       @foreground;
 }

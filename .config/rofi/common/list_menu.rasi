@@ -1,17 +1,13 @@
 @import "settings.rasi"
 
 * {
-    background-color:   transparent;
-    text-color:         @foreground;
     font:               @text-font-large;
     padding:            @list-padding;
 }
 
 #window {
-    transparency:       "real";
     location:           center;
     width:              @list-window-width;
-    background-color:   @background;
     border:             @list-window-border;
     border-radius:      @list-window-border-radius;
 }
@@ -37,6 +33,5 @@
 
 #element.selected {
     background-color:   @accent;
-    text-color:         @foreground;
     border-radius:      @element-border-radius;
 }

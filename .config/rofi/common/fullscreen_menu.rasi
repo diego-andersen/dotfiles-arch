@@ -9,8 +9,6 @@
 @import "settings.rasi"
 
 * {
-    background-color:   @background;
-    text-color:         @foreground;
     font:               @icon-font;
 }
 
@@ -31,13 +29,10 @@
     horizontal-align:   0.5;
     vertical-align:     0.5;
     padding:            @fullscreen-element-padding;
-    background-color:   @background;
     border:             5px;
     border-radius:      8px;
 }
 
 #element.selected {
-    background-color:   @background-alt;
-    text-color:         @foreground;
     border-color:       @foreground;
 }

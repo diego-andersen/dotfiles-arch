@@ -5,3 +5,17 @@
 
 @import "colorschemes/nord_dark.rasi"
 @import "resolutions/1920x1080.rasi"
+
+* {
+    background-color:   transparent;
+    text-color:         @foreground;
+}
+
+#window {
+    transparency:       "real";
+    background-color:   @background;
+}
+
+#element.selected {
+    background-color:   @background-alt;
+}
