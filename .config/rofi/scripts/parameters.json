@@ -23,7 +23,7 @@
             true,
             true
         ],
-        "config": "~/.config/rofi/powermenu.rasi"
+        "theme": "~/.config/rofi/themes/powermenu.rasi"
     },
     "conky": {
         "prompt": "System Monitor",
@@ -49,7 +49,7 @@
             true,
             true
         ],
-        "config": "~/.config/rofi/conky.rasi"
+        "theme": "~/.config/rofi/themes/conky.rasi"
     },
     "i3wm": {
         "prompt": "i3wm Layout",
@@ -69,7 +69,7 @@
             false,
             false
         ],
-        "config": "~/.config/rofi/i3layout.rasi"
+        "theme": "~/.config/rofi/themes/i3layout.rasi"
     },
     "scrot": {
         "prompt": "Screenshot",
@@ -89,6 +89,6 @@
             false,
             false
         ],
-        "config": "~/.config/rofi/i3layout.rasi"
+        "theme": "~/.config/rofi/themes/i3layout.rasi"
     }
 }

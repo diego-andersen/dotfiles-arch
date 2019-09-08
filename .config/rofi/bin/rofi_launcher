@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-rofi -show drun -modi drun,ssh -theme launcher
+# i3wm doens't like commas in exec commands -- see rofi documentation under -modi
+rofi -show drun -modi drun#ssh -theme themes/launcher.rasi

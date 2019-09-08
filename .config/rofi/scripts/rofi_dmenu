@@ -7,12 +7,11 @@ IFS=$'\t'
 
 # Read Rofi parameters from file
 load_rofi_params() {
-	PROMPT=$(jq -cr ."$1".prompt $params)
 	FORMAT=$(jq -cr ."$1".format $params)
     OPTIONS=( $(jq -cr '.'"$1"'.options | @tsv' $params) )
     ACTIONS=( $(jq -cr '.'"$1"'.actions | @tsv' $params) )
     CONFIRM=( $(jq -cr '.'"$1"'.confirm | @tsv' $params) )
-	CONFIG=$(jq -cr ."$1".config $params)
+	THEME=$(jq -cr ."$1".theme $params)
 }
 
 list_options() {
@@ -36,7 +35,7 @@ execute_action() {
 }
 
 rofi_dmenu() {
-    list_options | rofi -dmenu -config "$CONFIG" -format "$FORMAT"
+    list_options | rofi -dmenu -theme "$THEME" -format "$FORMAT"
 }
 
 load_rofi_params $1

@@ -1,12 +1,14 @@
 @import "settings.rasi"
 
 * {
-    font:               @icon-font;
+    font:               @icon-font-medium;
 }
 
 #window {
     location:           center;
+    anchor:             center;
     children:           [ mainbox ];
+    padding:            @popup-window-padding;
     border:             @popup-window-border;
     border-radius:      @window-border-radius;
     border-color:       @foreground;
@@ -22,7 +24,7 @@
 }
 
 #listview {
-    layout:             vertical;
+    layout:             horizontal;
 }
 
 #element {
@@ -30,7 +32,7 @@
     vertical-align:     0.5;
     padding:            @popup-element-padding;
     border:             @popup-element-border;
-    border-radius:      @popup-element-border-radius;
+    border-radius:      @element-border-radius;
 }
 
 #element.selected {

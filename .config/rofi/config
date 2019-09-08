@@ -15,6 +15,9 @@ rofi.cycle:			        true
 rofi.auto-select:		    false
 rofi.click-to-exit:		    true
 
+! "Display"
+rofi.drun-display-format: {name} [<span weight='light' size='x-small'>({generic})</span>]
+
 ! "ssh options"
 rofi.ssh-client:		    ssh
 ! rofi.ssh-command:		    {terminal} -e {ssh-client} {host}
@@ -28,7 +31,7 @@ rofi.drun-match-fields:		name,generic,exec,categories
 rofi.window-match-fields:	all
 rofi.disable-history:		false
 rofi.sort:			        true
-rofi.levenshtein-sort:		false
+rofi.sorting-method:        fzf
 rofi.case-sensitive:		false
 
 ! "Pidfile location"

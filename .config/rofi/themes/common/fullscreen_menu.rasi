@@ -9,7 +9,7 @@
 @import "settings.rasi"
 
 * {
-    font:               @icon-font;
+    font:               @icon-font-large;
 }
 
 #window {
