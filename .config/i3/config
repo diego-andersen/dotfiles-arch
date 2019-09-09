@@ -1,3 +1,4 @@
+# vim:ft=i3config
 #---------------------Appearance--------------------#
 
 # Font for window titles and bar
@@ -15,15 +16,15 @@ gaps outer 0
 smart_borders no_gaps
 
 # Colour definitions
-set $c-text			    #f5f6f7
-set $c-text-inactive	#2d3036
-set $c-bg			    #2d3036
-set $c-bg-inactive		#abadb5
+set $c-text			    #2e3440
+set $c-text-inactive	#d8dee9
+set $c-bg			    #eceff4
+set $c-bg-inactive		#2e3440
 set $c-border		    #eceff4
-set $c-border-inactive  #43566a
-set $c-bg-urgent		#bd2c40
+set $c-border-inactive  #2e3440
+set $c-bg-urgent		#bf616a
 set $c-ind      		#d08770
-set $c-ind-inactive     #43566a
+set $c-ind-inactive     #4c566a
 
 # Window colours
 # colorclass		    border			    background	    text			    indicator	    child_border
@@ -186,24 +187,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-# System power management mode
-set $mode_system System: [L]ock, [E]xit, [S]uspend, [H]ibernate, [R]eboot, [Shift+S]hutdown
-
-mode "$mode_system" {
-	bindsym l exec --no-startup-id light-locker-command -l, mode "default"
-	bindsym e exec --no-startup-id i3-msg exit, mode "default"
-	bindsym s exec --no-startup-id systemctl suspend, mode "default"
-	bindsym h exec --no-startup-id systemctl hibernate, mode "default"
-	bindsym r exec --no-startup-id systemctl reboot, mode "default"
-	bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
-
-	# Back to normal: Enter or Esc
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-}
-
-#bindsym $mod+Shift+x mode "$mode_system"
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume	exec --no-startup-id pactl set-sink-volume 0 +10%  # Increase volume
