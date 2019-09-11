@@ -1,7 +1,7 @@
 @import "settings.rasi"
 
 * {
-    font:               @text-font-large;
+    font:               @text-font;
 }
 
 #window {
@@ -32,7 +32,6 @@
 	horizontal-align:	0.5;
 	vertical-align:		0.5;
 	expand:				false;
-	str:				"  : :  ";
 }
 
 #entry {
@@ -64,5 +63,15 @@
 
 #element.selected {
     background-color:   @accent;
+    border-radius:      @element-border-radius;
+}
+
+#element.active {
+    background-color:   @toggle-on;
+    border-radius:      @element-border-radius;
+}
+
+#element.urgent {
+    background-color:   @urgent;
     border-radius:      @element-border-radius;
 }
