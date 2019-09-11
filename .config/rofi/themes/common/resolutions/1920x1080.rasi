@@ -12,12 +12,12 @@
 
     /* List menus: launcher, window switcher, network menu */
 
-    list-window-width:              50ch;
+    list-window-width:              55ch;
     list-window-padding:            10px;
     list-window-border:             0px;
-    list-inputbar-margin:           0px 0px 10px;
+    list-inputbar-margin:           0px;
     list-prompt-padding:            10px 1ch;
-    list-listview-padding:          10px;
+    list-listview-padding:          20px 10px 10px;
     list-scrollbar-width:           4px;
     list-scrollbar-border:          0px;
     list-scrollbar-padding:         0px;
@@ -36,7 +36,8 @@
     /* Popup menus: i3layout, scrot, mpd */
 
     popup-3-width:                  520px;
-    popup-3-listview-spacing:       0px;
+    popup-6-width:                  930px;
+    popup-listview-spacing:         0px;
     popup-window-padding:           40px 50px;
     popup-window-border:            4px;
     popup-element-padding:          0.5ch 0ch;
