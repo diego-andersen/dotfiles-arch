@@ -1,0 +1,17 @@
+@import "common/list_menu.rasi"
+
+#window {
+    width:              65ch;
+}
+
+#textbox-separator {
+	str:				"    ";
+}
+
+#listview {
+    lines:              10;
+}
+
+#element {
+    font:               @text-font-mono;
+}

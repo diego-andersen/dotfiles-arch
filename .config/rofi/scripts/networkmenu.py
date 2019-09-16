@@ -872,7 +872,7 @@ if __name__ == '__main__':
                         help="Name of terminal command to use for nmtui.")
 
     # Rofi-specific
-    parser.add_argument("--rofi_theme", type=str, default="~/.config/rofi/themes/networkmenu.rasi",
+    parser.add_argument("--rofi_theme", type=str, default=None,
                         help="Path to .rasi file used to style rofi window.")
     parser.add_argument("--rofi_highlight_active", action='store_true',
                         help="Use rofi CSS to highlight active connections instead of prepending with '** ' like dmenu.")
