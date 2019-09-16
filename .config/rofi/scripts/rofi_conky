@@ -6,7 +6,7 @@ WINDOW_ID_CONKY=/tmp/conky_window_id
 $XDG_CONFIG_HOME/rofi/scripts/rofi_dmenu conky &
 ROFI_PID=$!
 
-sleep 0.8
+sleep 1.0
 
 # Show conky
 ID_CONKY=$(cat $WINDOW_ID_CONKY)
