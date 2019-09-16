@@ -16,12 +16,12 @@ gaps outer 0
 smart_borders no_gaps
 
 # Colour definitions
-set $c-text			    #2e3440
+set $c-text			    #4c566a
 set $c-text-inactive	#d8dee9
 set $c-bg			    #eceff4
-set $c-bg-inactive		#2e3440
+set $c-bg-inactive		#4c566a
 set $c-border		    #eceff4
-set $c-border-inactive  #2e3440
+set $c-border-inactive  #4c566a
 set $c-bg-urgent		#bf616a
 set $c-ind      		#d08770
 set $c-ind-inactive     #4c566a
@@ -32,6 +32,19 @@ client.focused		    $c-bg   		    $c-bg		    $c-text			    $c-ind	        $c-bor
 client.focused_inactive	$c-bg-inactive	    $c-bg-inactive	$c-text-inactive	$c-ind-inactive	$c-border-inactive
 client.unfocused	    $c-bg-inactive	    $c-bg-inactive	$c-text-inactive	$c-ind-inactive	$c-border-inactive
 client.urgent		    $c-bg-urgent		$c-bg-urgent	$c-text			    $c-ind	        $c-bg-urgent
+
+#---------------------Auto-start--------------------#
+
+# Status bar
+exec_always --no-startup-id $HOME/.config/polybar/launch_polybar
+
+# Startup applications
+exec_always --no-startup-id ~/.fehbg &
+exec --no-startup-id compton -b
+exec --no-startup-id light-locker
+exec --no-startup-id libinput-gestures-setup start
+#exec --no-startup-id xfce4-power-manager
+exec --no-startup-id redshift-gtk
 
 #---------------------Shortcuts---------------------#
 
@@ -48,6 +61,8 @@ bindsym $mod+space exec --no-startup-id rofi_launcher
 bindsym $mod+Tab exec --no-startup-id rofi_window_switcher
 # Start file browser
 bindsym $mod+f exec --no-startup-id thunar
+# Take screenshot
+bindsym $mod+Print exec --no-startup-id scrot '%Y-%m-%d_screenshot.png' -e 'mv $f ~/Images/screenshots/'
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -56,21 +71,23 @@ bindsym $mod+Shift+c reload
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# Power menu
+# Rofi menus
 bindsym $mod+Shift+x exec --no-startup-id rofi_powermenu
-# Conky menu
-bindsym $mod+Shift+e exec --no-startup-id rofi_conky
+bindsym $mod+Shift+i exec --no-startup-id rofi_conky
+bindsym $mod+Shift+n exec --no-startup-id rofi_networkmenu
+bindsym $mod+Shift+e exec --no-startup-id rofi_i3layout
+bindsym $mod+Shift+Print exec --no-startup-id rofi_scrot
+
+#----------------------Movement---------------------#
+
+# Don't shift window focus when moving the mouse
+focus_follows_mouse no
 
 # Direction aliases
 set $up		k
 set $down	j
 set $left	h
 set $right	l
-
-#----------------------Movement---------------------#
-
-# Don't shift window focus when moving the mouse
-focus_follows_mouse no
 
 # Change focus (vim)
 bindsym $mod+$left	focus left
@@ -194,25 +211,14 @@ bindsym XF86AudioLowerVolume	exec --no-startup-id pactl set-sink-volume 0 -10%  
 bindsym XF86AudioMute		    exec --no-startup-id pactl set-sink-mute 0 toggle  # Mute
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp	    exec --no-startup-id xbacklight -inc 20 # Increase brightness
-bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight -dec 20 # Decrease brightness
+bindsym XF86MonBrightnessUp	    exec --no-startup-id xbacklight -inc 10 # Increase brightness
+bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight -dec 10 # Decrease brightness
 
 # Media player controls
 #bindsym XF86AudioPlay	exec --no-startup-id playerctl play
 #bindsym XF86AudioPause	exec --no-startup-id playerctl pause
 #bindsym XF86AudioNext	exec --no-startup-id playerctl next
 #bindsym XF86AudioPrev	exec --no-startup-id playerctl previous
-
-# Status bar
-exec_always --no-startup-id $HOME/.config/polybar/launch_polybar
-
-# Startup applications
-exec_always --no-startup-id ~/.fehbg &
-exec --no-startup-id compton -b
-exec --no-startup-id light-locker
-exec --no-startup-id libinput-gestures-setup start
-#exec --no-startup-id xfce4-power-manager
-exec --no-startup-id redshift-gtk
 
 #------------Class-specific behaviour---------------#
 
