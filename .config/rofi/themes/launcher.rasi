@@ -1,5 +1,9 @@
 @import "common/list_menu.rasi"
 
+#textbox-separator {
+	str:				"  : :  ";
+}
+
 #listview {
     lines:              5;
 }
