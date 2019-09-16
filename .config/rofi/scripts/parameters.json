@@ -1,6 +1,5 @@
 {
     "power": {
-        "prompt": "Power Options",
         "format": "i",
         "options": [
             "",
@@ -26,7 +25,6 @@
         "theme": "~/.config/rofi/themes/powermenu.rasi"
     },
     "conky": {
-        "prompt": "System Monitor",
         "format": "i",
         "options": [
             "",
@@ -52,7 +50,6 @@
         "theme": "~/.config/rofi/themes/conky.rasi"
     },
     "i3wm": {
-        "prompt": "i3wm Layout",
         "format": "i",
         "options": [
             "",
@@ -69,10 +66,9 @@
             false,
             false
         ],
-        "theme": "~/.config/rofi/themes/i3layout.rasi"
+        "theme": "~/.config/rofi/themes/3_item_popup.rasi"
     },
     "scrot": {
-        "prompt": "Screenshot",
         "format": "i",
         "options": [
             "",
@@ -80,15 +76,40 @@
             ""
         ],
         "actions": [
-            "sleep 1; scrot '%Y-%m-%d_screenshot.png' -e 'mv $f ~/Images/screenshots/'",
-            "scrot -s '%Y-%m-%d_screenshot.png' -e 'mv $f ~/Images/screenshots/'",
-            "sleep 1; scrot -u '%Y-%m-%d_screensot.png' -e 'mv $f ~/Images/screenshots/'"
+            "sleep 1; scrot 'screenshot_%Y-%m-%d_%H-%M-%S.png' -e 'mv $f ~/Images/screenshots/'",
+            "scrot -s 'screenshot_%Y-%m-%d_%H-%M-%S.png' -e 'mv $f ~/Images/screenshots/'",
+            "sleep 1; scrot -u 'screenshot_%Y-%m-%d_%H-%M-%S.png' -e 'mv $f ~/Images/screenshots/'"
         ],
         "confirm": [
             false,
             false,
             false
         ],
-        "theme": "~/.config/rofi/themes/i3layout.rasi"
+        "theme": "~/.config/rofi/themes/3_item_popup.rasi"
+    },
+    "mpd": {
+        "format": "i",
+        "options": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "actions": [
+            "mpc -q prev",
+            "mpc -q stop",
+            "mpc -q toggle",
+            "mpc -q next",
+            "mpc -q repeat",
+            "mpc -q random"
+        ],
+        "confirm": [
+            false,
+            false,
+            false
+        ],
+        "theme": "~/.config/rofi/themes/6_item_popup.rasi"
     }
 }
