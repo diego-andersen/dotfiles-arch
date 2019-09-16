@@ -12,6 +12,7 @@
 
     /* List menus: launcher, window switcher, network menu */
 
+    list-y-offset:                  -150px;
     list-window-width:              55ch;
     list-window-padding:            10px;
     list-window-border:             0px;

@@ -6,7 +6,8 @@
 
 #window {
     location:           center;
-    anchor:             center;
+    anchor:             north;
+    y-offset:           @list-y-offset;
     width:              @list-window-width;
 	padding:			@list-window-padding;
     border:             @list-window-border;
