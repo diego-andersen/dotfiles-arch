@@ -2,6 +2,7 @@
 
 python $XDG_CONFIG_HOME/rofi/scripts/networkmenu.py \
     -rofi \
+    --rofi_theme $XDG_CONFIG_HOME/rofi/themes/networkmenu.rasi \
     --rofi_highlight_active \
     --rofi_obscure_pw \
     --use_gui_nm_editor \
