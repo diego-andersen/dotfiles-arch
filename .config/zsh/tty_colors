@@ -1,0 +1,21 @@
+# Change TTY colours
+
+if [ "$TERM" = "linux" ]; then
+  echo -en "\e]P0232323" # black
+  echo -en "\e]P82B2B2B" # bright black (grey)
+  echo -en "\e]P1D75F5F" # red
+  echo -en "\e]P9E33636" # bright red
+  echo -en "\e]P287A5F5" # green
+  echo -en "\e]PA98E34D" # bright green
+  echo -en "\e]P3D7AF87" # yellow
+  echo -en "\e]PBFFD75F" # bright yellow
+  echo -en "\e]P48787AF" # blue
+  echo -en "\e]PC7373C9" # bright blue
+  echo -en "\e]P5BD53A5" # magenta
+  echo -en "\e]PDD633B2" # bright magenta
+  echo -en "\e]P65FAFAF" # cyan
+  echo -en "\e]PE44C9C9" # bright cyan
+  echo -en "\e]P7E5E5E5" # white
+  echo -en "\e]PFFFFFFF" # bright white
+  clear	# for background artifacting
+fi
