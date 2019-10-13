@@ -210,8 +210,8 @@ class NetworkMenu():
 
         if is_modemmanager_installed():
             gsms = [c for c in self.conns if c.is_type(NM.SETTING_GSM_SETTING_NAME)]
-            self.gsm_actions = create_gsm_actions(gsms, active_connections)
-            self.wwan_actions = create_wwan_actions(self.client)
+            self.gsm_actions = self.create_gsm_actions(gsms)
+            self.wwan_actions = self.create_wwan_actions()
         else:
             self.gsm_actions = []
             self.wwan_actions = []
@@ -787,12 +787,12 @@ class NetworkMenu():
             Action(
                 name="{} Wifi".format(wifi_action),
                 func=self.toggle_wifi,
-                args=not wifi_enabled
+                args=[not wifi_enabled]
                 ),
             Action(
                 name="{} Networking".format(networking_action),
                 func=self.toggle_networking,
-                args=not networking_enabled
+                args=[not networking_enabled]
                 ),
             Action(
                 name="Launch Connection Manager",
