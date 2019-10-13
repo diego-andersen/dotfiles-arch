@@ -1,36 +1,3 @@
-! rxvt options
-URxvt*font:			xft:Hack Nerd Font Mono:pixelsize=16:antialias=true,xft:MaterialIcons:pixelsize=12:antialias=true
-
-URxvt*cutchars: 		"()*,<>[]{}|'
-
-URxvt*secondaryScroll:		true
-URxvt*saveLines:		10000
-URxvt*scrollTtyOutput:		false
-URxvt*scrollWithBuffer:		true
-URxvt*scrollTtyKeypress:	true
-
-URxvt*visualBell:		false
-URxvt*scrollBar:		false
-URxvt*internalBorder:		10
-
-! perl extensions
-URxvt.perl-ext:			default,url-select,clipboard,resize-font
-
-! url-select (part of urxvt-perls package)
-URxvt.keysym.M-u:		perl:url-select:select_next
-URxvt.url-select.autocopy:	true
-URxvt.url-select.button:	2
-URxvt.url-select.launcher:	firefox
-URxvt.url-select.underline:	true
-
-! clipboard copy
-URxvt.keysym.Shift-Control-C:	perl:clipboard:copy
-URxvt.keysym.Shift-Control-V:	perl:clipboard:paste
-
-! disable ctlr-shift "feature"
-URxvt.iso14755:		false
-URxvt.iso14755_52:	false
-
 ! COLOURS
 
 *.background:	#2f343f
