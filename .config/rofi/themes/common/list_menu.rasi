@@ -69,6 +69,7 @@
 
 #element.active {
     background-color:   @toggle-on;
+    text-color:   @toggle-off;
     border-radius:      @element-border-radius;
 }
 
