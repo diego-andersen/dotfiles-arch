@@ -8,6 +8,6 @@
     urgent:             #bf616a;
     urgent-alt:         #d08770;
 
-    toggle-on:          #a3be8c;
-    toggle-off:         #bf616a;
+    toggle-on:          #d8dee9;
+    toggle-off:         #3b4252;
 }
