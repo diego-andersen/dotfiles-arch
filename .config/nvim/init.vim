@@ -40,7 +40,7 @@ endif
 
 " General options
 set encoding=utf-8
-set showmode
+set noshowmode
 set showcmd	" Show last typed command in status bar
 
 " Color scheme
