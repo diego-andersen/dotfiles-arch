@@ -7,8 +7,8 @@ if [ "$TERM" != "linux" ]; then
     export ZSH="/home/wristcontrol/.oh-my-zsh"
     
     # Oh-my-zsh theme
-    source $HOME/.config/zsh/geometry_prompt
-    ZSH_THEME="geometry/geometry"
+    ZSH_THEME="spaceship"
+    source $HOME/.config/zsh/spaceship_prompt
 
     # Plugins
     plugins=(
