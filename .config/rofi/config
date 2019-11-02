@@ -38,8 +38,8 @@ rofi.case-sensitive:		false
 rofi.pid: /run/user/1000/rofi.pid
 
 ! "Prompt replacements"
-rofi.display-window: 
-rofi.display-drun: run
+rofi.display-window: window
+rofi.display-drun: drun
 rofi.display-ssh: ssh
 
 ! "Window switcher settings"
