@@ -1,7 +1,7 @@
 @import "common/side_menu.rasi"
 
 #window {
-    x-offset:           -10px;
+    x-offset:           0px;
 }
 
 #listview {

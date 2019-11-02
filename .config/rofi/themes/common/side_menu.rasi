@@ -5,18 +5,19 @@
 }
 
 #window {
+    location:           south east;
+    anchor:             south east;
+    y-offset:           @side-y-offset;
     width:              @side-width;
     height:             @side-height;
-    location:           northeast;
-    anchor:             northeast;
-    y-offset:           @side-y-offset;
+    padding:            @side-padding;
+    border:             @side-border;
+    border-color:       @foreground;
+    border-radius:      @window-border-radius;
 }
 
 #mainbox {
     children:           [ listview ];
-    border:             @side-border;
-    border-color:       @foreground;
-    padding:            @side-padding;
 }
 
 #listview {
