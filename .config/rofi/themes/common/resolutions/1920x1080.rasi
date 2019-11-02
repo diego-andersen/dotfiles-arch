@@ -7,8 +7,14 @@
     icon-font-large:                "Hack Nerd Font Mono 60";
     icon-font-small:                "Hack Nerd Font Mono 24";
     icon-font-medium:               "Hack Nerd Font Mono 50";
+
     window-border-radius:           8px;
     element-border-radius:          4px;
+
+    scrollbar-width:                4px;
+    scrollbar-border:               0px;
+    scrollbar-padding:              0px;
+    scrollbar-margin:               0px;
 
     /* List menus: launcher, window switcher, network menu */
 
@@ -19,10 +25,6 @@
     list-inputbar-margin:           0px;
     list-prompt-padding:            10px 1ch;
     list-listview-padding:          20px 10px 10px;
-    list-scrollbar-width:           4px;
-    list-scrollbar-border:          0px;
-    list-scrollbar-padding:         0px;
-    list-scrollbar-margin:          0px;
     list-element-padding:           5px 10px;
     list-element-margin:            @inputbar-margin;
     list-element-border:            0px 0px 0px 8px;
@@ -47,8 +49,8 @@
     /* Sidebar menu (e.g. Conky) */
 
     side-width:                 480px;
-    side-height:                1030px;
-    side-y-offset:              10px;
+    side-height:                1049px;
+    side-y-offset:              -31px;
     side-padding:               20px 32px;
     side-spacing:               1ch;
     side-border:                2px;
@@ -68,7 +70,9 @@
 
     /* appsmenu */
 
-    apps-textbox-prompt-colon-padding:    16px;
+    apps-window-width:          40ch;
+    apps-y-offset:              -35px;
+    apps-prompt-padding:        5px 1ch;
 
     /* mpdmenu */
 
