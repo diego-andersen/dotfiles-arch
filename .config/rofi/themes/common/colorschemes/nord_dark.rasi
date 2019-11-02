@@ -1,8 +1,8 @@
 * {
     accent:             #81a1c1;
     accent-alt:         #88c0d0;
-    background:         #3b4252d9;
-    background-alt:     #4c566ad9;
+    background:         #4c566ad9;
+    background-alt:     #434c5ed9;
     foreground:         #eceff4;
     foreground-alt:     #d8dee9;
     urgent:             #bf616a;
