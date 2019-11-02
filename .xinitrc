@@ -10,4 +10,5 @@ fi
 setxkbmap gb
 
 # start window manager
-exec i3
+echo "Starting at $(date)" >> ~/.config/i3/logfile
+exec /usr/bin/i3 -V -d all >> ~/.config/i3/logfile
