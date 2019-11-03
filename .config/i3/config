@@ -8,6 +8,7 @@ font pango:Noto Sans 12
 default_border 		    pixel 2
 default_floating_border	pixel 2
 hide_edge_borders	    smart_no_gaps
+title_align             center
 
 # Gaps
 smart_gaps on
@@ -16,10 +17,10 @@ gaps outer 0
 smart_borders no_gaps
 
 # Colour definitions
-set $c-text			    #4c566a
-set $c-text-inactive	#d8dee9
-set $c-bg			    #eceff4
-set $c-bg-inactive		#4c566a
+set $c-text			    #d8dee9
+set $c-text-inactive	#999999
+set $c-bg			    #3b4252
+set $c-bg-inactive		#3b4252
 set $c-border		    #eceff4
 set $c-border-inactive  #4c566a
 set $c-bg-urgent		#bf616a
@@ -28,23 +29,24 @@ set $c-ind-inactive     #4c566a
 
 # Window colours
 # colorclass		    border			    background	    text			    indicator	    child_border
-client.focused		    $c-bg   		    $c-bg		    $c-text			    $c-ind	        $c-border
-client.focused_inactive	$c-bg-inactive	    $c-bg-inactive	$c-text-inactive	$c-ind-inactive	$c-border-inactive
-client.unfocused	    $c-bg-inactive	    $c-bg-inactive	$c-text-inactive	$c-ind-inactive	$c-border-inactive
+client.focused		    $c-border   		$c-bg		    $c-text			    $c-ind	        $c-border
+client.focused_inactive	$c-border-inactive	$c-bg-inactive	$c-text-inactive	$c-ind-inactive	$c-border-inactive
+client.unfocused	    $c-border-inactive	$c-bg-inactive	$c-text-inactive	$c-ind-inactive	$c-border-inactive
 client.urgent		    $c-bg-urgent		$c-bg-urgent	$c-text			    $c-ind	        $c-bg-urgent
 
 #---------------------Auto-start--------------------#
 
 # Status bar
-exec_always --no-startup-id $HOME/.config/polybar/launch_polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Startup applications
 exec_always --no-startup-id ~/.fehbg &
+exec --no-startup-id xfce4-power-manager
 exec --no-startup-id compton -b
 exec --no-startup-id light-locker
 exec --no-startup-id libinput-gestures-setup start
-#exec --no-startup-id xfce4-power-manager
 exec --no-startup-id redshift-gtk
+exec --no-startup-id unclutter
 
 #---------------------Shortcuts---------------------#
 
@@ -55,14 +57,10 @@ set $mod Mod4
 bindsym $mod+Return exec --no-startup-id kitty
 # Start floating terminal
 bindsym $mod+Shift+Return exec --no-startup-id kitty --name floating
-# Start launcher
-bindsym $mod+space exec --no-startup-id rofi_launcher
-# Start window switcher
-bindsym $mod+Tab exec --no-startup-id rofi_window_switcher
 # Start file browser
 bindsym $mod+f exec --no-startup-id thunar
 # Take screenshot
-bindsym $mod+Print exec --no-startup-id scrot '%Y-%m-%d_screenshot.png' -e 'mv $f ~/Images/screenshots/'
+bindsym $mod+Print exec --no-startup-id scrot '%Y-%m-%d-%H%M%S_screenshot.png' -e 'mv $f ~/Images/screenshots/'
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -72,6 +70,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Rofi menus
+bindsym $mod+space exec --no-startup-id rofi_launcher
+bindsym $mod+Tab exec --no-startup-id rofi_window_switcher
 bindsym $mod+Shift+x exec --no-startup-id rofi_powermenu
 bindsym $mod+Shift+i exec --no-startup-id rofi_conky
 bindsym $mod+Shift+n exec --no-startup-id rofi_networkmenu
