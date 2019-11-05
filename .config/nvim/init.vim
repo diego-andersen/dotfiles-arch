@@ -38,26 +38,30 @@ if (has("autocmd") && !has("gui_running"))
   augroup END
 endif
 
-" General options
-set encoding=utf-8
-set noshowmode
-set showcmd	" Show last typed command in status bar
-
 " Color scheme
 syntax on
 colorscheme onedark
 let g:onedark_terminal_italics = 1
-let g:lightline = {'colorscheme': 'onedark'}
 
-" Pane splitting behaviour
-set splitbelow
-set splitright
+" Lightline options
+let g:lightline = {
+    \ 'colorscheme': 'onedark',
+    \ 'active': {
+    \   'left': [['mode', 'paste'], ['readonly', 'absolutepath', 'modified']]
+    \ }
+\ }
 
-" Pane navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" General options
+set encoding=utf-8
+set noshowmode      " Don't show Vim mode in input bar (Airline already does)
+set showcmd         " Show last typed command in status bar
+
+" Appearance
+set number	        " Show line numbers
+set nowrap	        " Don't wrap lines
+set ruler	        " Show cursor line/col position
+set wildmenu	    " Visual auto-complete menu on tab
+set showmatch	    " Highlight matching brackets
 
 " Indentation
 set tabstop=4		" Pressing TAB inserts X spaces
@@ -66,19 +70,34 @@ set shiftwidth=4    " One indent level = one tab
 set expandtab		" Replace tabs with spaces
 set autoindent
 
-" Appearance
-set number	    " Show line numbers
-set nowrap	    " Don't wrap lines
-set ruler	    " Show cursor line/col position
-set wildmenu	" Visual auto-complete menu on tab
-set showmatch	" Highlight matching brackets
+" Pane splitting behaviour
+set splitbelow
+set splitright
+
+" Disable automatic commenting on newline
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Search
 set hlsearch	" Highlight search matches
 set incsearch	" Highlight search results as you type
+
+" Delete trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
+
+" KEYBINDS
+
+" Single-keypress pane navigation
+nnoremap <C-h> <C-w><C-h>
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+
+" Enter clears search result highlighting
 nnoremap <silent> <CR> :noh<CR><CR>
 
-" Python-specific behaviour
+" LANGUAGE-SPECIFIC BEHAVIOUR
+
+" Python
 au BufNewFile,BufRead *.py
     \ | setlocal tabstop=4
     \ | setlocal softtabstop=4
