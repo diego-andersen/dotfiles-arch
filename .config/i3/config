@@ -8,7 +8,7 @@ font pango:Noto Sans 12
 default_border 		    pixel 2
 default_floating_border	pixel 2
 hide_edge_borders	    smart_no_gaps
-title_align             center
+title_align             left
 
 # Gaps
 smart_gaps on
@@ -180,9 +180,6 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 
-# Assign workspaces
-assign [class="Firefox"] $ws2
-
 #----------------------Modes------------------------#
 
 # Resize mode
@@ -224,6 +221,7 @@ bindsym XF86MonBrightnessDown	exec --no-startup-id $SCRIPTS/brightness_control.s
 
 #------------Class-specific behaviour---------------#
 
+for_window [class=".*"] title_format "  %title"
 for_window [class="kitty" instance="floating"] floating enable, resize set 1100 px 700 px, move position center
 for_window [class="Thunar"] floating enable, move position center
 for_window [class="Nm-connection-editor"] floating enable, resize set 500 px 500 px, move position center
