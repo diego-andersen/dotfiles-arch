@@ -1,0 +1,2 @@
+GEOMETRY_PROMPT_PLUGINS=(hostname exec_time virtualenv git jobs)
+GEOMETRY_COLOR_CONDA=magenta

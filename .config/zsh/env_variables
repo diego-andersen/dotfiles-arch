@@ -1,5 +1,13 @@
 # vim:ft=sh
 
+# XDG directories
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CACHE_HOME=$HOME/.cache
+
+# Scripts directory
+export SCRIPTS=$HOME/scripts
+
 # SSH
-export SSH_KEY_PATH="~/.ssh/id_rsa"
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export SSH_KEY_PATH=$HOME/.ssh/id_rsa
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
