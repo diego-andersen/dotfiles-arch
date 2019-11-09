@@ -47,6 +47,7 @@ exec --no-startup-id light-locker
 exec --no-startup-id libinput-gestures-setup start
 exec --no-startup-id redshift-gtk
 exec --no-startup-id unclutter
+exec --no-startup-id thunar --daemon
 
 #---------------------Shortcuts---------------------#
 
@@ -58,7 +59,7 @@ bindsym $mod+Return exec --no-startup-id kitty
 # Start floating terminal
 bindsym $mod+Shift+Return exec --no-startup-id kitty --name floating
 # Start file browser
-bindsym $mod+f exec --no-startup-id thunar
+bindsym $mod+F3 exec --no-startup-id thunar
 # Take screenshot
 bindsym $mod+Print exec --no-startup-id scrot '%Y-%m-%d-%H%M%S_screenshot.png' -e 'mv $f ~/Images/screenshots/'
 
@@ -70,6 +71,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Rofi menus
+bindsym $mod+F2 exec --no-startup-id rofi_startmenu
 bindsym $mod+space exec --no-startup-id rofi_launcher
 bindsym $mod+Tab exec --no-startup-id rofi_window_switcher
 bindsym $mod+Shift+x exec --no-startup-id rofi_powermenu
@@ -184,7 +186,7 @@ assign [class="Firefox"] $ws2
 #----------------------Modes------------------------#
 
 # Resize mode
-mode "resize" {
+mode "Resize" {
 	# vim bindings
         bindsym h resize shrink width 5 px or 5 ppt
         bindsym j resize shrink height 5 px or 5 ppt
@@ -203,16 +205,16 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "Resize"
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume	exec --no-startup-id pactl set-sink-volume 0 +10%  # Increase volume
-bindsym XF86AudioLowerVolume	exec --no-startup-id pactl set-sink-volume 0 -10%  # Decrease volume
-bindsym XF86AudioMute		    exec --no-startup-id pactl set-sink-mute 0 toggle  # Mute
+bindsym XF86AudioRaiseVolume	exec --no-startup-id $SCRIPTS/volume_control.sh up
+bindsym XF86AudioLowerVolume	exec --no-startup-id $SCRIPTS/volume_control.sh down
+bindsym XF86AudioMute		    exec --no-startup-id $SCRIPTS/volume_control.sh mute
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp	    exec --no-startup-id xbacklight -inc 10 # Increase brightness
-bindsym XF86MonBrightnessDown	exec --no-startup-id xbacklight -dec 10 # Decrease brightness
+bindsym XF86MonBrightnessUp	    exec --no-startup-id $SCRIPTS/brightness_control.sh up
+bindsym XF86MonBrightnessDown	exec --no-startup-id $SCRIPTS/brightness_control.sh down
 
 # Media player controls
 #bindsym XF86AudioPlay	exec --no-startup-id playerctl play
