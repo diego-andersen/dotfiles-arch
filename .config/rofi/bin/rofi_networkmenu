@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 python $XDG_CONFIG_HOME/rofi/scripts/networkmenu.py \
     -rofi \

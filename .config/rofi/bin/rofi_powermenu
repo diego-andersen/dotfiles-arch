@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 $XDG_CONFIG_HOME/rofi/scripts/rofi_dmenu power

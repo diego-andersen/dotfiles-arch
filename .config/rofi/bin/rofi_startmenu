@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+rofi -show drun \
+     -modi drun \
+     -theme themes/apps.rasi \
+     -display-drun Launch \
+     -drun-display-format "{name}"
