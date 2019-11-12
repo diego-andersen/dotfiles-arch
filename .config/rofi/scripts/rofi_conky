@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 WINDOW_ID_CONKY=/tmp/conky_window_id
 
@@ -6,7 +6,7 @@ WINDOW_ID_CONKY=/tmp/conky_window_id
 $XDG_CONFIG_HOME/rofi/scripts/rofi_dmenu conky &
 ROFI_PID=$!
 
-sleep 1.0
+sleep 0.6
 
 # Show conky
 ID_CONKY=$(cat $WINDOW_ID_CONKY)
