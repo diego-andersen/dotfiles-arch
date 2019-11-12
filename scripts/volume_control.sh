@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # Script modified from this amazing gist:
 # https://gist.github.com/Blaradox/030f06d165a82583ae817ee954438f2e
