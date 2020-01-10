@@ -2,11 +2,13 @@
     /* General */
 
     text-font:                      "Noto Sans Display 14";
+    text-font-small:                "Noto Sans Display 10";
     text-font-large:                "Noto Sans Display 18";
-    text-font-mono:                 "Hack Nerd Font Mono 14";
-    icon-font-large:                "Hack Nerd Font Mono 60";
+    text-font-mono:                 "Inconsolata 12";
+    icon-font-xsmall:               "icomoon-feather 12";
     icon-font-small:                "Hack Nerd Font Mono 24";
     icon-font-medium:               "Hack Nerd Font Mono 50";
+    icon-font-large:                "Hack Nerd Font Mono 60";
 
     window-border-radius:           8px;
     element-border-radius:          4px;
@@ -14,18 +16,18 @@
     scrollbar-width:                4px;
     scrollbar-border:               0px;
     scrollbar-padding:              0px;
-    scrollbar-margin:               0px;
+    scrollbar-margin:               4px;
 
     /* List menus: launcher, window switcher, network menu */
 
     list-y-offset:                  -150px;
     list-window-width:              55ch;
     list-window-padding:            10px;
-    list-window-border:             0px;
+    list-window-border:             1px;
     list-inputbar-margin:           0px;
     list-prompt-padding:            10px 1ch;
-    list-listview-padding:          20px 10px 10px;
-    list-element-padding:           5px 10px;
+    list-listview-padding:          10px 0px;
+    list-element-padding:           5px 1ch;
     list-element-margin:            @inputbar-margin;
     list-element-border:            0px 0px 0px 8px;
     list-element-spacing:           0.25em;
@@ -48,42 +50,43 @@
 
     /* Sidebar menu (e.g. Conky) */
 
-    side-width:                 480px;
-    side-height:                1049px;
-    side-y-offset:              -31px;
-    side-padding:               20px 32px;
-    side-spacing:               1ch;
-    side-border:                2px;
-    side-element-padding:       0.5ch 0ch;
-    side-element-border:        2px;
-    side-element-border-radius: 4px;
+    side-width:                     480px;
+    side-height:                    1049px;
+    side-y-offset:                  -31px;
+    side-padding:                   20px 32px;
+    side-spacing:                   1ch;
+    side-border:                    1px;
+    side-element-padding:           0.5ch 0ch;
+    side-element-border:            2px;
+    side-element-border-radius:     4px;
 
     /* Confirmation dialog */
 
-    confirm-width:              400px;
-    confirm-height:             200px;
-    confirm-border:             2px;
-    confirm-padding:            10px 60px 0px;
-    confirm-textbox-border:     0px 0px 2px 0px;
-    confirm-listview-padding:   21px 20px 0px; 
-    confirm-element-padding:    8px;
+    confirm-width:                  400px;
+    confirm-height:                 200px;
+    confirm-border:                 2px;
+    confirm-padding:                10px 60px 0px;
+    confirm-textbox-border:         0px 0px 2px 0px;
+    confirm-listview-padding:       21px 20px 0px;
+    confirm-element-padding:        8px;
 
     /* appsmenu */
 
-    apps-window-width:          40ch;
-    apps-y-offset:              -35px;
-    apps-prompt-padding:        5px 1ch;
+    apps-window-width:              40ch;
+    apps-window-border:             1px;
+    apps-y-offset:                  -35px;
+    apps-prompt-padding:            10px 1ch;
 
     /* mpdmenu */
 
-    mpd-window-padding:         379px 111px;
-    mpd-inputbar-margin:        10px 0px;
-    mpd-prompt-padding:         14px 20px 10px 20px;
-    mpd-prompt-margin:          0px 0px 0px -2px;
-    mpd-element-border:         12px;
+    mpd-window-padding:             379px 111px;
+    mpd-inputbar-margin:            10px 0px;
+    mpd-prompt-padding:             14px 20px 10px 20px;
+    mpd-prompt-margin:              0px 0px 0px -2px;
+    mpd-element-border:             12px;
 
     /* Every @option-element-padding minus @mpd-element-border */
-    mpd-element-padding:        76px 88px 69px -16px;
+    mpd-element-padding:            76px 88px 69px -16px;
 
     /* networkmenu */
     network-textbox-prompt-colon-padding: 14px 10px 10px 10px;

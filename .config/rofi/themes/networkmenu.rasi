@@ -1,7 +1,18 @@
 @import "common/list_menu.rasi"
 
+* {
+    font:               @text-font-small;
+}
+
 #window {
     width:              65ch;
+    location:           south east;
+    anchor:             south east;
+    y-offset:           @apps-y-offset;
+}
+
+#mainbox {
+    children:           [ listview, inputbar ];
 }
 
 #textbox-separator {

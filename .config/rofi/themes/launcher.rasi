@@ -1,5 +1,11 @@
 @import "common/list_menu.rasi"
 
+#window {
+    location:           center;
+    anchor:             north;
+    y-offset:           @list-y-offset;
+}
+
 #textbox-separator {
 	str:				"  : :  ";
 }

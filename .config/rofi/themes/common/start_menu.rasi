@@ -5,11 +5,18 @@
 }
 
 #window {
-    width:              @list-window-width;
+    location:           south west;
+    anchor:             south west;
+    y-offset:           @apps-y-offset;
+    width:              @apps-window-width;
 	padding:			@list-window-padding;
     border:             @list-window-border;
     border-radius:      @window-border-radius;
-    border-color:       @foreground;
+    border-color:       @foreground-alt;
+}
+
+#mainbox {
+    children:           [ listview, inputbar ];
 }
 
 #inputbar {
@@ -39,7 +46,7 @@
 
 #listview {
     columns:            1;
-    dynamic:            true;
+    dynamic:            false;
     fixed-height:       false;
     scrollbar:          true;
     scrollbar-width:    @scrollbar-width;

@@ -1,0 +1,12 @@
+@import "common/popup_menu.rasi"
+
+#window {
+    width:              @popup-6-width;
+}
+
+#listview {
+    lines:              6;
+    fixed-height:       true;
+    cycle:              true;
+    spacing:            @popup-listview-spacing;
+}
