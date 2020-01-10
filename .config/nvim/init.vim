@@ -7,7 +7,7 @@ endif
 call plug#begin('~/.local/share/plugged')
 
 " Appearance
-Plug 'joshdick/onedark.vim'
+Plug 'chriskempson/base16-vim'
 Plug 'itchyny/lightline.vim'
 
 " IDE
@@ -23,29 +23,26 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-" onedark.vim override: Don't set a background color when running in a terminal.
-" `gui` is the hex color code used in GUI mode/nvim true-color mode
-" `cterm` is the color code used in 256-color mode
-" `cterm16` is the color code used in 16-color mode
-if (has("autocmd") && !has("gui_running"))
-  augroup colorset
-    autocmd!
-    let s:colors = onedark#GetColors()
-    let s:black = s:colors.black
-    let s:white = s:colors.white
-    autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white })
-    autocmd ColorScheme * call onedark#set_highlight("Visual", { "fg": s:black, "bg": s:white })
-  augroup END
-endif
-
 " Color scheme
+
+" Python imports should be the same colour as keywords, not functions
+function! s:base16_customize() abort
+  call Base16hi("pythonImport", g:base16_gui0E, "", g:base16_cterm0E, "")
+endfunction
+
+augroup on_change_colorschema
+  autocmd!
+  autocmd ColorScheme * call s:base16_customize()
+augroup END
+
 syntax on
-colorscheme onedark
-let g:onedark_terminal_italics = 1
+colorscheme base16-ocean
+hi Normal guibg=NONE
+hi LineNr guibg=NONE
 
 " Lightline options
 let g:lightline = {
-    \ 'colorscheme': 'onedark',
+    \ 'colorscheme': 'one',
     \ 'active': {
     \   'left': [['mode', 'paste'], ['readonly', 'absolutepath', 'modified']]
     \ }
@@ -55,11 +52,12 @@ let g:lightline = {
 set encoding=utf-8
 set noshowmode      " Don't show Vim mode in input bar (Airline already does)
 set showcmd         " Show last typed command in status bar
+set autoread        " Auto-reload open file when external changes are made
 
 " Appearance
 set number	        " Show line numbers
+set relativenumber  " Show line numbers relative to current line
 set nowrap	        " Don't wrap lines
-set ruler	        " Show cursor line/col position
 set wildmenu	    " Visual auto-complete menu on tab
 set showmatch	    " Highlight matching brackets
 
@@ -71,11 +69,13 @@ set expandtab		" Replace tabs with spaces
 set autoindent
 
 " Pane splitting behaviour
-set splitbelow
-set splitright
+set splitbelow splitright
 
 " Disable automatic commenting on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Auto-reload config on write
+autocmd bufwritepost init.vim source ~/.config/nvim/init.vim
 
 " Search
 set hlsearch	" Highlight search matches
