@@ -5,7 +5,7 @@ export PATH=$HOME/scripts:$HOME/bin:$PATH
 if [ "$TERM" != "linux" ]; then
     # Path to oh-my-zsh installation.
     export ZSH="/home/wristcontrol/.oh-my-zsh"
-    
+
     # Oh-my-zsh theme
     ZSH_THEME="spaceship"
     source $HOME/.config/zsh/spaceship_prompt
@@ -31,9 +31,6 @@ source ~/.config/zsh/tty_colors
 
 # ls command color output
 export LS_COLORS=$(cat ~/.config/zsh/ls_colors | ~/scripts/gen_ls_colors.sh)
-
-# Environment variables
-source $HOME/.config/zsh/env_variables
 
 # Aliases
 source $HOME/.config/zsh/aliases
