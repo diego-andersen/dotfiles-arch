@@ -4,4 +4,4 @@
 rofi -show drun \
      -modi run#drun#ssh \
      -theme themes/launcher.rasi \
-     -display-drun Launch
+     -display-drun 
