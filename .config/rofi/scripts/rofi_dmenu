@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 params=$XDG_CONFIG_HOME/rofi/scripts/parameters.json
 
