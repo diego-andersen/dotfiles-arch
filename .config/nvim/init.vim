@@ -62,11 +62,11 @@ set wildmenu	    " Visual auto-complete menu on tab
 set showmatch	    " Highlight matching brackets
 
 " Indentation
-set tabstop=4		" Pressing TAB inserts X spaces
-set softtabstop=4	" Convert tabs to X spaces
-set shiftwidth=4    " One indent level = one tab
-set expandtab		" Replace tabs with spaces
-set autoindent
+set tabstop=4		" One TAB = X spaces
+set softtabstop=4	" Convert TAB to X spaces during editing operations
+set shiftwidth=4    " One indent level = X spaces
+set expandtab		" Replace tab characters with spaces in insert mode
+set autoindent      " Auto-indent on newline
 
 " Pane splitting behaviour
 set splitbelow splitright
@@ -97,11 +97,8 @@ nnoremap <silent> <CR> :noh<CR><CR>
 
 " LANGUAGE-SPECIFIC BEHAVIOUR
 
-" Python
-au BufNewFile,BufRead *.py
-    \ | setlocal tabstop=4
-    \ | setlocal softtabstop=4
-    \ | setlocal shiftwidth=4
-    \ | setlocal expandtab
-    \ | setlocal autoindent
-    \ | setlocal fileformat=unix
+" JSON
+au BufNewFile,BufRead *.json
+    \ | setlocal tabstop=2
+    \ | setlocal softtabstop=2
+    \ | setlocal shiftwidth=2
