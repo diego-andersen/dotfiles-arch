@@ -21,7 +21,7 @@ set $c-text			    #d8dee9
 set $c-text-inactive	#999999
 set $c-bg			    #3b4252
 set $c-bg-inactive		#3b4252
-set $c-border		    #eceff4
+set $c-border		    #81a1c1
 set $c-border-inactive  #4c566a
 set $c-bg-urgent		#bf616a
 set $c-ind      		#d08770
@@ -42,7 +42,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Startup applications
 exec_always --no-startup-id ~/.fehbg &
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id compton -b
+exec --no-startup-id picom --experimental-backends --blur-method dual_kawase --blur-strength 10
 exec --no-startup-id light-locker
 exec --no-startup-id libinput-gestures-setup start
 exec --no-startup-id redshift-gtk
@@ -214,10 +214,10 @@ bindsym XF86MonBrightnessUp	    exec --no-startup-id $SCRIPTS/brightness_control
 bindsym XF86MonBrightnessDown	exec --no-startup-id $SCRIPTS/brightness_control.sh down
 
 # Media player controls
-#bindsym XF86AudioPlay	exec --no-startup-id playerctl play
-#bindsym XF86AudioPause	exec --no-startup-id playerctl pause
-#bindsym XF86AudioNext	exec --no-startup-id playerctl next
-#bindsym XF86AudioPrev	exec --no-startup-id playerctl previous
+bindsym XF86AudioPlay	exec --no-startup-id playerctl play
+bindsym XF86AudioPause	exec --no-startup-id playerctl pause
+bindsym XF86AudioNext	exec --no-startup-id playerctl next
+bindsym XF86AudioPrev	exec --no-startup-id playerctl previous
 
 #------------Class-specific behaviour---------------#
 
@@ -225,5 +225,4 @@ for_window [class=".*"] title_format "  %title"
 for_window [class="kitty" instance="floating"] floating enable, resize set 1100 px 700 px, move position center
 for_window [class="Thunar"] floating enable, move position center
 for_window [class="Nm-connection-editor"] floating enable, resize set 500 px 500 px, move position center
-for_window [class="Gsimplecal"] floating enable, move position 1650 800
 for_window [class="Lxappearance"] floating enable, move position center
