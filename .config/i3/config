@@ -91,8 +91,7 @@ set $right	l
 # Workspace cycling
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
-bindsym $mod+Control+Tab workspace back_and_forth
-bindcode $mod+49 exec --no-startup-id rofi_startmenu window
+bindsym $mod+Control+Tab exec --no-startup-id rofi_startmenu window
 
 # Change focus (vim)
 bindsym $mod+$left	focus left
@@ -140,8 +139,8 @@ bindsym $mod+e layout toggle split
 # Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# Change focus between tiling / floating windows
-#bindsym $mod+Shift+Tab focus mode_toggle
+# Change focus between tiling/floating windows
+bindcode $mod+49 focus mode_toggle
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
