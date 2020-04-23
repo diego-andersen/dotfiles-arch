@@ -1,7 +1,0 @@
-#!/usr/bin/env zsh
-
-# i3wm doens't like commas in exec commands -- see rofi documentation under -modi
-rofi -show drun \
-     -modi run#drun#ssh \
-     -theme themes/launcher.rasi \
-     -display-drun 

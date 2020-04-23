@@ -1,0 +1,34 @@
+@import "common/list_menu.rasi"
+
+#window {
+    width:              @start-window-width;
+    location:           south west;
+    anchor:             south west;
+    y-offset:           @polybar-offset;
+}
+
+#mainbox {
+    children:           [ mode-switcher, listview, inputbar ];
+}
+
+#inputbar {
+    children:           [ textbox-separator, entry ];
+}
+
+#textbox-separator {
+	str:				"";
+    padding:            0.5em 1ch;
+}
+
+#listview {
+    lines:              12;
+    dynamic:            false;
+    fixed-height:       true;
+}
+
+#mode-switcher {
+    spacing:            @start-switcher-spacing;
+    border:             @start-switcher-border;
+    border-radius:      @start-switcher-border-radius;
+    border-color:       @accent;
+}

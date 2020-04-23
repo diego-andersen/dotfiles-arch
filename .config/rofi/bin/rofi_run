@@ -1,3 +1,0 @@
-#!/usr/bin/env zsh
-
-rofi -show run -modi run -theme themes/launcher.rasi

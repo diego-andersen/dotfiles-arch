@@ -42,7 +42,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Startup applications
 exec_always --no-startup-id ~/.fehbg &
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id picom --experimental-backends --blur-method dual_kawase --blur-strength 10
+exec --no-startup-id picom --experimental-backends --blur-method dual_kawase --blur-strength 9
 exec --no-startup-id light-locker
 exec --no-startup-id libinput-gestures-setup start
 exec --no-startup-id redshift-gtk
@@ -54,26 +54,23 @@ exec --no-startup-id thunar --daemon
 # Use Win key
 set $mod Mod4
 
+# Basic I/O
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
 # Start terminal
 bindsym $mod+Return exec --no-startup-id kitty
-# Start floating terminal
 bindsym $mod+Shift+Return exec --no-startup-id kitty --name floating
-# Start file browser
-bindsym $mod+F3 exec --no-startup-id thunar
+
+# Start common programs
+bindsym $mod+f exec --no-startup-id thunar
+
 # Take screenshot
 bindsym $mod+Print exec --no-startup-id scrot '%Y-%m-%d-%H%M%S_screenshot.png' -e 'mv $f ~/Images/screenshots/'
 
-# Kill focused window
-bindsym $mod+Shift+q kill
-# Reload configuration file
-bindsym $mod+Shift+c reload
-# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-
 # Rofi menus
-bindsym $mod+F2 exec --no-startup-id rofi_startmenu
-bindsym $mod+space exec --no-startup-id rofi_launcher
-bindsym $mod+Tab exec --no-startup-id rofi_window_switcher
+bindsym $mod+space exec --no-startup-id rofi_startmenu drun
 bindsym $mod+Shift+x exec --no-startup-id rofi_powermenu
 bindsym $mod+Shift+i exec --no-startup-id rofi_conky
 bindsym $mod+Shift+n exec --no-startup-id rofi_networkmenu
@@ -90,6 +87,12 @@ set $up		k
 set $down	j
 set $left	h
 set $right	l
+
+# Workspace cycling
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+Control+Tab workspace back_and_forth
+bindcode $mod+49 exec --no-startup-id rofi_startmenu window
 
 # Change focus (vim)
 bindsym $mod+$left	focus left
@@ -138,7 +141,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # Change focus between tiling / floating windows
-bindsym $mod+Shift+Tab focus mode_toggle
+#bindsym $mod+Shift+Tab focus mode_toggle
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

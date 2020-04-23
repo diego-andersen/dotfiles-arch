@@ -5,13 +5,15 @@
     text-font-small:                "Noto Sans Display 10";
     text-font-large:                "Noto Sans Display 18";
     text-font-mono:                 "Inconsolata 12";
-    icon-font-xsmall:               "icomoon-feather 12";
     icon-font-small:                "Hack Nerd Font Mono 24";
     icon-font-medium:               "Hack Nerd Font Mono 50";
     icon-font-large:                "Hack Nerd Font Mono 60";
 
-    window-border-radius:           8px;
+    window-border-radius:           4px;
     element-border-radius:          4px;
+
+    align-middle:                   0.5;
+    polybar-offset:                 -34px;
 
     scrollbar-width:                4px;
     scrollbar-border:               0px;
@@ -21,16 +23,18 @@
     /* List menus: launcher, window switcher, network menu */
 
     list-y-offset:                  -150px;
-    list-window-width:              55ch;
+    list-window-width:              60ch;
     list-window-padding:            10px;
     list-window-border:             1px;
-    list-inputbar-margin:           0px;
+    list-inputbar-margin:           0em 1ch;
+    list-inputbar-border:           1px;
     list-prompt-padding:            10px 1ch;
-    list-listview-padding:          10px 0px;
+    list-listview-padding:          0.5em 0em;
     list-element-padding:           5px 1ch;
     list-element-margin:            @inputbar-margin;
     list-element-border:            0px 0px 0px 8px;
     list-element-spacing:           0.25em;
+    list-button-padding:            0.5em 0ch;
 
     /* Fullscreen menus: powermenu */
 
@@ -70,12 +74,14 @@
     confirm-listview-padding:       21px 20px 0px;
     confirm-element-padding:        8px;
 
-    /* appsmenu */
+    /* Start menu */
 
-    apps-window-width:              40ch;
-    apps-window-border:             1px;
-    apps-y-offset:                  -35px;
-    apps-prompt-padding:            10px 1ch;
+    start-window-width:             60ch;
+    start-window-border:            1px;
+    start-prompt-padding:           10px 1ch;
+    start-switcher-spacing:         0px;
+    start-switcher-border:          0px 0px 1px;
+    start-switcher-border-radius:   4px 4px 0px 0px;
 
     /* mpdmenu */
 

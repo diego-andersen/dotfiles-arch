@@ -7,7 +7,7 @@ rofi.threads:		0
 
 ! "Behaviour"
 ! rofi.run-command:		    {cmd}
-! rofi.run-list-command:               
+! rofi.run-list-command:
 ! rofi.run-shell-command:	{terminal} -e {cmd}
 ! rofi.window-command:		xkill -id {window}
 rofi.scroll-method:		    1 ! "0: Page 1: Centered"
@@ -39,7 +39,7 @@ rofi.pid: /run/user/1000/rofi.pid
 
 ! "Prompt replacements"
 rofi.display-window: window
-rofi.display-drun: drun
+rofi.display-drun: apps
 rofi.display-ssh: ssh
 
 ! "Window switcher settings"

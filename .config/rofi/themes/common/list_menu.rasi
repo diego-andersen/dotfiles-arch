@@ -14,46 +14,37 @@
 
 #inputbar {
     children:			[ prompt, textbox-separator, entry ];
-    margin:             @list-inputbar-margin;
 	background-color:	@background-alt;
+    margin:             @list-inputbar-margin;
+    border:             @list-inputbar-border;
 	border-radius:		@element-border-radius;
+    border-color:       @accent;
 }
 
 #prompt {
-	horizontal-align:	0.5;
-	vertical-align:		0.5;
+	horizontal-align:	@align-middle;
+	vertical-align:		@align-middle;
  	background-color:	@foreground-alt;
  	text-color:			@background;
 	padding:			@list-prompt-padding;
 }
 
 #textbox-separator {
-	horizontal-align:	0.5;
-	vertical-align:		0.5;
+	horizontal-align:	@align-middle;
+	vertical-align:		@align-middle;
 	expand:				false;
 }
 
 #entry {
-	vertical-align:		0.5;
+	vertical-align:		@align-middle;
 }
 
 #listview {
     columns:            1;
-    dynamic:            true;
-    fixed-height:       false;
     scrollbar:          true;
     scrollbar-width:    @scrollbar-width;
     padding:            @list-listview-padding;
     spacing:            @list-element-spacing;
-}
-
-#scrollbar {
-    background-color:   @background-alt;
-    border:             @scrollbar-border;
-    handle-color:       @foreground-alt;
-    handle-width:       @scrollbar-width;
-    padding:            @scrollbar-padding;
-    margin:             @scrollbar-margin;
 }
 
 #element {
@@ -73,4 +64,22 @@
 
 #element.urgent {
     background-color:   @urgent;
+}
+
+#scrollbar {
+    background-color:   @background-alt;
+    border:             @scrollbar-border;
+    handle-color:       @foreground-alt;
+    handle-width:       @scrollbar-width;
+    padding:            @scrollbar-padding;
+    margin:             @scrollbar-margin;
+}
+
+#button {
+    background-color:   @background-alt;
+    padding:            @list-button-padding;
+}
+
+#button.selected {
+    background-color:   transparent;
 }

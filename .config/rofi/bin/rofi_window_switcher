@@ -1,6 +1,0 @@
-#!/usr/bin/env zsh
-
-rofi -show window \
-     -modi window \
-     -theme themes/launcher.rasi \
-     -display-window 

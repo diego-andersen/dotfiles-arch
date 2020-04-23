@@ -8,7 +8,7 @@
     width:              65ch;
     location:           south east;
     anchor:             south east;
-    y-offset:           @apps-y-offset;
+    y-offset:           @polybar-offset;
 }
 
 #mainbox {
