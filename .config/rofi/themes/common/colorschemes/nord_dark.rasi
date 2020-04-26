@@ -1,6 +1,6 @@
 * {
-    accent:             #81a1c1;
-    accent-alt:         #88c0d0;
+    accent:             #88c0d0;
+    accent-alt:         #81a1c1;
     background:         #4c566ad9;
     background-alt:     #3b4252d9;
     foreground:         #eceff4;
@@ -8,6 +8,6 @@
     urgent:             #bf616a;
     urgent-alt:         #d08770;
 
-    toggle-on:          #81a1c1;
+    toggle-on:          #88c0d0;
     toggle-off:         #3b4252;
 }

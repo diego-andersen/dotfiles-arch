@@ -21,7 +21,7 @@ set $c-text			    #d8dee9
 set $c-text-inactive	#999999
 set $c-bg			    #3b4252
 set $c-bg-inactive		#3b4252
-set $c-border		    #81a1c1
+set $c-border		    #88c0d0
 set $c-border-inactive  #4c566a
 set $c-bg-urgent		#bf616a
 set $c-ind      		#d08770
