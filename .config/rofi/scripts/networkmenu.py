@@ -63,6 +63,32 @@ def ssid_to_utf8(ap):
 
     return ret
 
+def fix_string_width(string_in, width=0, pad_char=""):
+    """Truncates or pads a string with spaces to a fixed width.
+    Used in loops or list comprehensions to ensure an entire list
+    of strings is of the same width. Optionally returns the string
+    untouched (default behaviour).
+
+    Args:
+        string_in (str): Input string.
+        width (int): Desired character width.
+        pad_char (str): Padding character. Defaults to empty string, which
+            effectively results in space character.
+    Returns:
+        string_out (str): Fixed-width string.
+    """
+
+    if width > 0:
+        # Pad out to width (ignores if already wider)
+        string_out = "{:{}<{}}".format(string_in, pad_char, width)
+
+        # Truncate to width (ignores if already narrower)
+        if len(string_out) > width:
+            string_out = string_out[:width - 1] + "…"
+    else:
+        string_out = string_in
+
+    return string_out
 
 def get_ap_security(ap):
     """Parse an access point's security flags and return the type of security present.
@@ -200,7 +226,8 @@ class NetworkMenu:
         # Generate list of possible actions for each network type
         if self.adapter:
             self.ap_actions = self.create_ap_actions(
-                *self.create_ap_list(self.active_connections)
+                *self.create_ap_list(self.active_connections),
+                width=45
             )
         else:
             self.ap_actions = []
@@ -577,7 +604,7 @@ class NetworkMenu:
 
                 self.set_new_connection(ap, password)
 
-    def create_ap_actions(self, aps, active_ap, active_connection):
+    def create_ap_actions(self, aps, active_ap, active_connection, width=0):
         """For a list of APs, return a corresponding list of Actions.
 
         The Actions in question are [activate/deactivate] and are derived from
@@ -594,11 +621,16 @@ class NetworkMenu:
         active_ap_bssid = active_ap.get_bssid() if active_ap else ""
 
         # List all AP names and their security types (WPA, ...)
-        # Max lengths of each type are used below to ensure consistent spacing
         names = [ssid_to_utf8(ap) for ap in aps]
-        max_len_name = max([len(name) for name in names]) if names else 0
         secs = [get_ap_security(ap) for ap in aps]
-        max_len_sec = max([len(sec) for sec in secs]) if secs else 0
+
+        # Width 11 corresponds to 'WPA1 802.1X', can truncate after that
+        max_len_sec = 11
+        secs = [fix_string_width(s, max_len_sec) for s in secs if s]
+
+        # 'bars' length is always 4, 6 is 2x3 spaces used to delimit fields
+        name_len = width - (max_len_sec + 4 + 6)
+        names = [fix_string_width(n, width=name_len) for n in names if n]
 
         ap_actions = []
 
@@ -609,8 +641,8 @@ class NetworkMenu:
             bars = strength_to_bars(ap.get_strength())
 
             # Generate a string containing AP name, security type, signal strength
-            action_name = "{:<{}s}   {:<{}s}   {:<}".format(
-                name, max_len_name, sec, max_len_sec, bars
+            action_name = "{}   {}   {:<}".format(
+                name, sec, bars
             )
 
             if is_active:
@@ -809,7 +841,7 @@ class NetworkMenu:
         for dev in self.client.get_devices():
             if type(dev) == NM.DeviceWifi:
                 try:
-                    dev.request_scan()
+                    dev.request_scan_async()
                 except gi.repository.GLib.Error as err:
                     if not err.code == 6:  # Too frequent rescan error
                         raise err
