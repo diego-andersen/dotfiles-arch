@@ -541,7 +541,6 @@ class NetworkMenu:
             data: (NM.SimpleConnection): NM connection object that's being passed
                 around the entire time.
         """
-        import pdb; pdb.set_trace()
         try:
             act_conn = self.client.add_and_activate_connection_finish(result)
             conn = act_conn.get_connection()
