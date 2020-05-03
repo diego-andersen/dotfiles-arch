@@ -251,7 +251,7 @@ class NetworkMenu:
         # Other actions involve enabling/disabling adapters, rescanning available connections, etc.
         self.other_actions = self.create_other_actions()
 
-    def _dmenu_call(self, num_lines=1, prompt="Networks"):
+    def _dmenu_call(self, num_lines=1, prompt=""):
         """
         Return a list of strings that constitute a dmenu call when joined together.
 
@@ -283,7 +283,7 @@ class NetworkMenu:
         cmd_args.extend(["-l", str(num_lines)])
 
         # Override prompt if supplied
-        if prompt == "Networks":
+        if prompt == "":
             prompt_override = kwargs.pop("-p", None) or self.custom_prompt
             if prompt_override:
                 prompt = prompt_override
@@ -301,7 +301,7 @@ class NetworkMenu:
 
         return result
 
-    def _rofi_call(self, num_lines=1, prompt="Networks", active_lines=None):
+    def _rofi_call(self, num_lines=1, prompt="", active_lines=None):
         """
         Return a list of strings that constitute a rofi call when joined together.
 
@@ -329,7 +329,7 @@ class NetworkMenu:
             cmd_args.extend(["-a", ",".join([str(n) for n in active_lines])])
 
         # Use custom prompt for Networks menu if supplied
-        if prompt == "Networks" and self.custom_prompt:
+        if prompt == "" and self.custom_prompt:
             prompt = self.custom_prompt
 
         cmd_args.extend(["-p", str(prompt)])
@@ -348,7 +348,7 @@ class NetworkMenu:
 
         return result
 
-    def dmenu_cmd(self, num_lines=1, prompt="Networks", active_lines=None):
+    def dmenu_cmd(self, num_lines=1, prompt="", active_lines=None):
         if self.menu == "rofi":
             return self._rofi_call(num_lines, prompt, active_lines)
         elif self.menu == "dmenu":
@@ -457,7 +457,7 @@ class NetworkMenu:
         """
         sel = (
             Popen(
-                self.dmenu_cmd(num_lines=0, prompt="Passphrase"),
+                self.dmenu_cmd(num_lines=0, prompt="Password"),
                 stdin=PIPE,
                 stdout=PIPE,
             )
@@ -527,12 +527,21 @@ class NetworkMenu:
 
         return profile
 
-    def verify_conn(self, result, data):
+    def verify_conn(self, client, result, data):
         """Callback function for add_and_activate_connection_async.
 
         Check if connection completes successfully. Delete the connection if there
         is an error.
+
+        Args:
+            client: For some inexplicable reason, an additional NM.Client object is
+                passed to verify_conn() during set_new_connection(), so this dummy
+                argument is there to prevent an error.
+            result (Gio.Task): Result of add_and_activate_connection_async().
+            data: (NM.SimpleConnection): NM connection object that's being passed
+                around the entire time.
         """
+        import pdb; pdb.set_trace()
         try:
             act_conn = self.client.add_and_activate_connection_finish(result)
             conn = act_conn.get_connection()
