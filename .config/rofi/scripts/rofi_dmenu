@@ -1,17 +1,23 @@
 #!/usr/bin/env bash
 
-params=$XDG_CONFIG_HOME/rofi/scripts/parameters.json
+# Exit if no arguments supplied
+if [ $# -eq 0 ]
+  then
+    exit 1
+fi
+
+PARAMS=$XDG_CONFIG_HOME/rofi/scripts/parameters.json
 
 # Set field separator to tab to exploit jq's tsv output
 IFS=$'\t'
 
 # Read Rofi parameters from file
 load_rofi_params() {
-	FORMAT=$(jq -cr ."$1".format $params)
-    OPTIONS=( $(jq -cr '.'"$1"'.options | @tsv' $params) )
-    ACTIONS=( $(jq -cr '.'"$1"'.actions | @tsv' $params) )
-    CONFIRM=( $(jq -cr '.'"$1"'.confirm | @tsv' $params) )
-	THEME=$(jq -cr ."$1".theme $params)
+	FORMAT=$(jq -cr ."$1".format $PARAMS)
+    OPTIONS=( $(jq -cr '.'"$1"'.options | @tsv' $PARAMS) )
+    ACTIONS=( $(jq -cr '.'"$1"'.actions | @tsv' $PARAMS) )
+    CONFIRM=( $(jq -cr '.'"$1"'.confirm | @tsv' $PARAMS) )
+	THEME=$(jq -cr ."$1".theme $PARAMS)
 }
 
 list_options() {
@@ -35,16 +41,20 @@ execute_action() {
 }
 
 rofi_dmenu() {
+    # NOTE: 'rofi -format i' returns a zero-ordered index of the selected option
     list_options | rofi -dmenu -theme "$THEME" -format "$FORMAT"
 }
 
-load_rofi_params $1
+# Script execution starts here
+if [ "${1}" != "--source-only" ]; then
+    load_rofi_params $1
 
-# NOTE: 'rofi -format i' returns a zero-ordered index of the selected option
-SELECTION="$(rofi_dmenu)"
+    SELECTION="$(rofi_dmenu)"
 
-if [[ $SELECTION ]]; then
-    execute_action $SELECTION &
-else
-    exit 1
+    if [[ $SELECTION ]]; then
+        execute_action $SELECTION &
+    else
+        exit 1
+    fi
 fi
+
