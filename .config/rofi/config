@@ -4,23 +4,23 @@ rofi.show-match:	true
 rofi.monitor:		-1
 rofi.terminal:		kitty
 rofi.threads:		0
+rofi.scroll-method:	1 ! "0: Page 1: Centered"
+rofi.cycle:			true
+rofi.auto-select:	false
+rofi.click-to-exit:	true
 
-! "Behaviour"
+! "Terminal commands"
 ! rofi.run-command:		    {cmd}
 ! rofi.run-list-command:
-! rofi.run-shell-command:	{terminal} -e {cmd}
+rofi.run-shell-command:     {terminal} {cmd}
 ! rofi.window-command:		xkill -id {window}
-rofi.scroll-method:		    1 ! "0: Page 1: Centered"
-rofi.cycle:			        true
-rofi.auto-select:		    false
-rofi.click-to-exit:		    true
 
 ! "Display"
 rofi.drun-display-format: {name} [<span weight='light' size='x-small'>({generic})</span>]
 
 ! "ssh options"
-rofi.ssh-client:		    ssh
-! rofi.ssh-command:		    {terminal} -e {ssh-client} {host}
+! rofi.ssh-client:		    ssh
+rofi.ssh-command:		    {terminal} {ssh-client} {host}
 ! rofi.parse-hosts:		    false
 ! rofi.parse-known-hosts:	true
 
@@ -46,17 +46,17 @@ rofi.display-ssh: ssh
 rofi.window-format: {w} : {t}
 
 ! "Paste primary selection"
-! rofi.kb-primary-paste:	Control+V,Shift+Insert
+! rofi.kb-primary-paste:	    Control+V,Shift+Insert
 ! "Paste clipboard"
-! rofi.kb-secondary-paste:	Control+v,Insert
+! rofi.kb-secondary-paste:	    Control+v,Insert
 ! "Clear input line"
-! rofi.kb-clear-line:		Control+w
+! rofi.kb-clear-line:		    Control+w
 ! "Beginning of line"
-! rofi.kb-move-front:		Control+a
+! rofi.kb-move-front:		    Control+a
 ! "End of line"
-! rofi.kb-move-end:		    Control+e
+! rofi.kb-move-end:		        Control+e
 ! "Move back one word"
-! rofi.kb-move-word-back:	Alt+b
+! rofi.kb-move-word-back:	    Alt+b
 ! "Move forward one word"
 ! rofi.kb-move-word-forward:	Alt+f
 ! "Move back one char"
@@ -84,9 +84,9 @@ rofi.window-format: {w} : {t}
 ! "Delete entry from history"
 ! rofi.kb-delete-entry:		    Shift+Delete
 ! "Switch to the next mode."
-rofi.kb-mode-next:		    Alt+Right
+rofi.kb-mode-next:		        Alt+Right
 ! "Switch to the previous mode."
-rofi.kb-mode-previous:	    Alt+Left
+rofi.kb-mode-previous:	        Alt+Left
 ! "Go to the previous column"
 ! rofi.kb-row-left:		        Control+Page_Up
 ! "Go to the next column"
