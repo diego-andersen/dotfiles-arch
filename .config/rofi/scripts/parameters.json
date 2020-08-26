@@ -94,18 +94,21 @@
             "",
             "",
             "",
-            "",
+            "凌",
             ""
         ],
         "actions": [
-            "mpc -q prev",
+            "mpc -q prev && notify-send -u low $(mpc current)",
             "mpc -q stop",
-            "mpc -q toggle",
-            "mpc -q next",
+            "mpc -q toggle && notify-send -u low $(mpc current)",
+            "mpc -q next && notify-send -u low $(mpc current)",
             "mpc -q repeat",
             "mpc -q random"
         ],
         "confirm": [
+            false,
+            false,
+            false,
             false,
             false,
             false
