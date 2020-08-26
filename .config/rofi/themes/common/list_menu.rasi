@@ -9,7 +9,7 @@
 	padding:			@list-window-padding;
     border:             @list-window-border;
     border-radius:      @window-border-radius;
-    border-color:       @foreground;
+    border-color:       @accent;
 }
 
 #inputbar {
@@ -24,7 +24,7 @@
 #prompt {
 	horizontal-align:	@align-middle;
 	vertical-align:		@align-middle;
- 	background-color:	@foreground-alt;
+ 	background-color:	@accent;
  	text-color:			@background;
 	padding:			@list-prompt-padding;
 }
@@ -53,13 +53,13 @@
 }
 
 #element.selected {
-    background-color:   @foreground-alt;
-    text-color:         @background-alt;
+    background-color:   @accent;
+    text-color:         @background;
 }
 
 #element.active {
     background-color:   @toggle-on;
-    text-color:         @toggle-off;
+    text-color:         @background;
 }
 
 #element.urgent {
