@@ -26,6 +26,7 @@
 }
 
 #element {
+    text-color:         @accent;
     horizontal-align:   0.5;
     vertical-align:     0.5;
     padding:            @fullscreen-element-padding;
@@ -34,5 +35,5 @@
 }
 
 #element.selected {
-    border-color:       @foreground;
+    border-color:       @accent;
 }
