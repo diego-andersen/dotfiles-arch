@@ -66,7 +66,7 @@
             false,
             false
         ],
-        "theme": "~/.config/rofi/themes/3_item_popup.rasi"
+        "theme": "~/.config/rofi/themes/popup_3.rasi"
     },
     "scrot": {
         "format": "i",
@@ -85,7 +85,7 @@
             false,
             false
         ],
-        "theme": "~/.config/rofi/themes/3_item_popup.rasi"
+        "theme": "~/.config/rofi/themes/popup_3.rasi"
     },
     "mpd": {
         "format": "i",

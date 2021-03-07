@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+source rofi_dmenu --source-only
+
+mpd_dmenu() {
+    list_options | rofi -dmenu -theme "$THEME" -format "$FORMAT" -e "$NOW_PLAYING"
+}
+
+load_rofi_params mpd
+
+# Gets the current status of mpd (for us to parse it later on)
+STATUS="$(mpc status)"
+
+# Replace Play with Pause if appropriate
+if [[ $STATUS == *"[playing]"* ]]; then
+    OPTIONS=${OPTIONS[@]/""/""}
+fi
+
+# Mark Repeat and/or Random as acive if they are
+ACTIVE=""
+
+if [[ $STATUS == *"repeat: on"* ]]; then
+    ACTIVE="-a 5"
+fi
+
+if [[ $STATUS == *"random: on"* ]]; then
+    [ -n "$ACTIVE" ] && ACTIVE+=",6" || ACTIVE="-a 6"
+fi
+
+NOW_PLAYING=$(mpc current)
+
+SELECTION="$(mpd_dmenu)"
+
+if [[ $SELECTION ]]; then
+    execute_action $SELECTION &
+else
+    exit 1
+fi
