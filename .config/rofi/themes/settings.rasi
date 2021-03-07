@@ -3,7 +3,7 @@
  * Every other .rasi file should import this.
  */
 
-@import "colorschemes/nord_dark.rasi"
+@import "colorschemes/sakura.rasi"
 @import "resolutions/1920x1080.rasi"
 
 * {
@@ -14,8 +14,4 @@
 #window {
     transparency:       "real";
     background-color:   @background;
-}
-
-#element.selected {
-    background-color:   @background-alt;
 }

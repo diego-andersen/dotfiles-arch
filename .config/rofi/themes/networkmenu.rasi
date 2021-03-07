@@ -1,28 +1,79 @@
-@import "common/list_menu.rasi"
+@import "settings.rasi"
 
 * {
-    font:               @text-font-small;
+    font:               @text-font-mono;
 }
 
 #window {
-    width:              65ch;
     location:           south east;
     anchor:             south east;
     y-offset:           @polybar-offset;
+    width:              @net-window-width;
+	padding:			@net-window-padding;
+    border:             @net-window-border;
+    border-radius:      @window-border-radius;
+    border-color:       @accent;
 }
 
 #mainbox {
     children:           [ listview, inputbar ];
 }
 
-#textbox-separator {
-	str:				"    ";
-}
-
 #listview {
     lines:              10;
+    columns:            1;
+    padding:            @net-listview-padding;
+    spacing:            @net-listview-spacing;
+    scrollbar:          true;
+    scrollbar-width:    @scrollbar-width;
 }
 
 #element {
-    font:               @text-font-mono;
+	padding:			@net-element-padding;
+    border-radius:      @element-border-radius;
+}
+
+#element.selected {
+    background-color:   @accent;
+    text-color:         @background;
+}
+
+#element.active {
+    background-color:   @toggle-on;
+    text-color:         @background;
+}
+
+#element.urgent {
+    background-color:   @urgent;
+}
+
+#scrollbar {
+    background-color:   @background-alt;
+    border:             @scrollbar-border;
+    handle-color:       @foreground-alt;
+    handle-width:       @scrollbar-width;
+    padding:            @scrollbar-padding;
+    margin:             @scrollbar-margin;
+}
+
+#inputbar {
+    children:           [ prompt, entry ];
+	background-color:	@background-alt;
+    margin:             @net-inputbar-margin;
+    border:             @net-inputbar-border;
+	border-radius:		@element-border-radius;
+    border-color:       @accent;
+}
+
+#prompt {
+	horizontal-align:	@align-middle;
+	vertical-align:		@align-middle;
+    padding:            @net-prompt-padding;
+ 	background-color:	@accent;
+ 	text-color:			@background;
+}
+
+#entry {
+    padding:            @net-entry-padding;
+    vertical-align:     @align-middle;
 }

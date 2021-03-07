@@ -1,0 +1,49 @@
+@import "settings.rasi"
+
+* {
+    font:               @icon-font-medium;
+}
+
+#window {
+    children:           [ mainbox ];
+    location:           center;
+    anchor:             center;
+    width:              @popup-3-width;
+    padding:            @popup-window-padding;
+    border:             @popup-window-border;
+    border-radius:      @window-border-radius;
+    border-color:       @accent;
+}
+
+#mainbox {
+    children:           [ listview ];
+}
+
+#listview {
+    layout:             horizontal;
+    lines:              3;
+    fixed-height:       true;
+    cycle:              true;
+    spacing:            @popup-listview-spacing;
+    padding:            @popup-listview-padding;
+}
+
+#element {
+    children:           [ element-text ];
+    text-color:         @accent;
+    horizontal-align:   @align-middle;
+    vertical-align:     @align-middle;
+    padding:            @popup-element-padding;
+    border:             @popup-element-border;
+    border-radius:      @element-border-radius;
+}
+
+#element-text {
+    expand:             true;
+}
+
+#element.selected {
+    border-color:       @accent-alt;
+}
+
+/* vim:ft=css

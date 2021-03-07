@@ -1,0 +1,92 @@
+* {
+    /* General */
+
+    text-font:                      "Noto Sans Display 14";
+    text-font-small:                "Noto Sans Display 10";
+    text-font-large:                "Noto Sans Display 18";
+    text-font-mono:                 "Inconsolata 12";
+    icon-font-small:                "Hack Nerd Font Mono 24";
+    icon-font-medium:               "Hack Nerd Font Mono 50";
+    icon-font-large:                "Hack Nerd Font Mono 60";
+
+    window-border-radius:           4px;
+    element-border-radius:          4px;
+
+    align-middle:                   0.5;
+    polybar-offset:                 -34px;
+
+    scrollbar-width:                4px;
+    scrollbar-border:               0px;
+    scrollbar-padding:              0px;
+    scrollbar-margin:               4px;
+
+    /* Powermenu */
+
+    power-window-padding:           40% 25%;
+    power-listview-spacing:         1ch;
+    power-element-border:           5px;
+    power-element-border-radius:    5px;
+    power-element-padding:          0.5ch 1ch;
+
+    /* Popup menus: i3layout, scrot, confirm */
+
+    popup-3-width:                  13ch;
+    popup-window-padding:           1ch 1ch;
+    popup-window-border:            4px;
+    popup-listview-padding:         0ch 0.24ch;
+    popup-listview-spacing:         0.5ch;
+    popup-element-padding:          0.5ch 1ch;
+    popup-element-border:           2px;
+
+    /* Conky memu */
+
+    conky-window-width:             480px;
+    conky-window-height:            calc(100% - 34px);
+    conky-window-padding:           20px 42px;
+    conky-window-border:            1px;
+    conky-listview-spacing:         1ch;
+    conky-element-padding:          0.5ch 1ch;
+    conky-element-border:           2px;
+
+    /* Start menu */
+
+    start-window-width:             60ch;
+    start-window-padding:           10px;
+    start-window-border:            1px;
+    start-switcher-spacing:         0px;
+    start-switcher-border:          0px 0px 1px;
+    start-switcher-border-radius:   4px 4px 0px 0px;
+    start-button-padding:           0.5em 0ch;
+    start-listview-padding:         0.5em 0em;
+    start-element-spacing:          0.25em;
+    start-element-padding:          5px 1ch;
+    start-inputbar-margin:          0em 1ch;
+    start-inputbar-border:          1px;
+    start-prompt-padding:           0em 2ch;
+    start-entry-padding:            0.5em 1ch;
+
+    /* Networkmenu */
+
+    net-window-width:               56ch;
+    net-window-padding:             10px;
+    net-window-border:              1px;
+    net-inputbar-margin:            0em 1ch;
+    net-inputbar-border:            1px;
+    net-prompt-padding:             0.5em 1ch;
+    net-listview-padding:           0.5em 0em;
+    net-element-padding:            5px 1ch;
+    net-entry-padding:              0.5em 1ch;
+    net-listview-spacing:           0.25em;
+
+    /* Confirmation dialog */
+
+    confirm-width:                  400px;
+    confirm-height:                 200px;
+    confirm-border:                 2px;
+    confirm-padding:                10px 40px 0px;
+    confirm-mesg-border:            0px 0px 2px 0px;
+    confirm-listview-padding:       1ch 0.5em 0ch;
+    confirm-element-padding:        0.75em 2ch 1em;
+}
+
+/* vim:ft=css

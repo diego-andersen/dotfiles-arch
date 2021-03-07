@@ -1,0 +1,62 @@
+@import "settings.rasi"
+
+#window {
+    location:           center;
+    anchor:             center;
+    width:              @confirm-width;
+    height:             @confirm-height;
+    padding:            @confirm-padding;
+    border:             @confirm-border;
+    border-radius:      @window-border-radius;
+    border-color:       @accent;
+}
+
+#mainbox {
+    children:           [ message, listview ];
+}
+
+#message {
+    expand:             true;
+    border:             @confirm-mesg-border;
+    border-color:       @accent;
+}
+
+#textbox {
+    horizontal-align:   @align-middle;
+    vertical-align:     @align-middle;
+    font:               @icon-font-large;
+    text-color:         @accent;
+}
+
+#listview {
+    layout:             horizontal;
+    lines:              2;
+    fixed-height:       true;
+    cycle:              true;
+    spacing:            3em;
+    padding:            @confirm-listview-padding;
+    margin:             0px 10px 10px;
+}
+
+#element {
+    children:           [ element-text ];
+    horizontal-align:   @align-middle;
+    vertical-align:     @align-middle;
+    padding:            @confirm-element-padding;
+    border:             @popup-element-border;
+    border-radius:      @element-border-radius;
+}
+
+#element-index {
+    text-color:         @foreground;
+    background-color:   @background;
+}
+
+#element-text {
+    font:               @text-font;
+}
+
+#element.selected {
+    text-color:         @background;
+    background-color:   @accent;
+}

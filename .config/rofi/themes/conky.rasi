@@ -1,10 +1,44 @@
-@import "common/side_menu.rasi"
+@import "settings.rasi"
+
+* {
+    font:               @icon-font-small;
+}
 
 #window {
+    location:           south east;
+    anchor:             south east;
     x-offset:           0px;
+    y-offset:           @polybar-offset;
+    width:              @conky-window-width;
+    height:             @conky-window-height;
+    padding:            @conky-window-padding;
+    border:             @conky-window-border;
+    border-color:       @accent;
+    border-radius:      @window-border-radius;
+}
+
+#mainbox {
+    children:           [ listview ];
 }
 
 #listview {
-    spacing:            @side-spacing;
+    layout:             horizontal;
     lines:              5;
+    spacing:            @conky-listview-spacing;
 }
+
+#element {
+    children:           [ element-text ];
+    text-color:         @accent;
+    horizontal-align:   @align-middle;
+    vertical-align:     @align-middle;
+    padding:            @conky-element-padding;
+    border:             @conky-element-border;
+    border-radius:      @element-border-radius;
+}
+
+#element.selected {
+    border-color:       @accent;
+}
+
+/* vim:ft=css

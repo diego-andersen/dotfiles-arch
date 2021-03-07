@@ -1,29 +1,22 @@
-@import "common/list_menu.rasi"
+@import "settings.rasi"
+
+* {
+    font:               @text-font;
+}
 
 #window {
-    width:              @start-window-width;
     location:           south west;
     anchor:             south west;
     y-offset:           @polybar-offset;
+    width:              @start-window-width;
+	padding:			@start-window-padding;
+    border:             @start-window-border;
+    border-radius:      @window-border-radius;
+    border-color:       @accent;
 }
 
 #mainbox {
     children:           [ mode-switcher, listview, inputbar ];
-}
-
-#inputbar {
-    children:           [ textbox-separator, entry ];
-}
-
-#textbox-separator {
-	str:				"";
-    padding:            0.5em 1ch;
-}
-
-#listview {
-    lines:              12;
-    dynamic:            false;
-    fixed-height:       true;
 }
 
 #mode-switcher {
@@ -31,4 +24,78 @@
     border:             @start-switcher-border;
     border-radius:      @start-switcher-border-radius;
     border-color:       @accent;
+}
+
+#button {
+    background-color:   @background-alt;
+    padding:            @start-button-padding;
+}
+
+#button.selected {
+    text-color:         @background;
+    background-color:   @accent;
+}
+
+#listview {
+    lines:              12;
+    columns:            1;
+    dynamic:            false;
+    fixed-height:       true;
+    padding:            @start-listview-padding;
+    spacing:            @start-element-spacing;
+    scrollbar:          true;
+    scrollbar-width:    @scrollbar-width;
+}
+
+#element {
+	padding:			@start-element-padding;
+    border-radius:      @element-border-radius;
+}
+
+#element.selected {
+    background-color:   @accent;
+    text-color:         @background;
+}
+
+#element.active {
+    background-color:   @toggle-on;
+    text-color:         @background;
+}
+
+#element.urgent {
+    background-color:   @urgent;
+}
+
+#scrollbar {
+    background-color:   @background-alt;
+    border:             @scrollbar-border;
+    handle-color:       @foreground-alt;
+    handle-width:       @scrollbar-width;
+    padding:            @scrollbar-padding;
+    margin:             @scrollbar-margin;
+}
+
+#inputbar {
+    children:           [ textbox-separator, entry ];
+	background-color:	@background-alt;
+    margin:             @start-inputbar-margin;
+    border:             @start-inputbar-border;
+	border-radius:		@element-border-radius;
+    border-color:       @accent;
+}
+
+#textbox-separator {
+    str:                "";
+    font:               @icon-font-small;
+	horizontal-align:	@align-middle;
+	vertical-align:		@align-middle;
+    padding:            @start-prompt-padding;
+    background-color:   @accent;
+    color:              @background;
+    expand:             false;
+}
+
+#entry {
+	vertical-align:		@align-middle;
+    padding:            @start-entry-padding;
 }

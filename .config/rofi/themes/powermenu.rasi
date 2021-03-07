@@ -1,10 +1,31 @@
-@import "common/fullscreen_menu.rasi"
+@import "settings.rasi"
+
+* {
+    font:               @icon-font-large;
+}
 
 #window {
-    padding:    @fullscreen-5-window-padding;
+    padding:            @power-window-padding;
+    fullscreen:         true;
+    children:           [ listview ];
 }
 
 #listview {
-    spacing:    @fullscreen-5-listview-spacing;
-    lines:      5;
+    layout:             horizontal;
+    lines:              5;
+    spacing:            @power-listview-spacing;
+}
+
+#element {
+    children:           [ element-text ];
+    text-color:         @accent;
+    horizontal-align:   @align-middle;
+    vertical-align:     @align-middle;
+    padding:            @power-element-padding;
+    border-radius:      @power-element-border-radius;
+}
+
+#element.selected {
+    text-color:         @background;
+    background-color:   @accent;
 }
