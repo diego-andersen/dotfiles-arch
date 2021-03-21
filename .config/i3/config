@@ -5,27 +5,27 @@
 font pango:Noto Sans 12
 
 # Window border settings
-default_border 		    pixel 2
-default_floating_border	pixel 2
+default_border 		    pixel 4
+default_floating_border	pixel 4
 hide_edge_borders	    smart_no_gaps
 title_align             left
 
 # Gaps
 smart_gaps on
-gaps inner 5
+gaps inner 8
 gaps outer 0
 smart_borders no_gaps
 
 # Colour definitions
-set $c-text			    #d8dee9
+set $c-text			    #f2f2f2
 set $c-text-inactive	#999999
-set $c-bg			    #3b4252
-set $c-bg-inactive		#3b4252
-set $c-border		    #88c0d0
-set $c-border-inactive  #4c566a
-set $c-bg-urgent		#bf616a
-set $c-ind      		#d08770
-set $c-ind-inactive     #4c566a
+set $c-bg			    #347090
+set $c-bg-inactive		#347090
+set $c-border		    #ddabd1
+set $c-border-inactive  #347090
+set $c-bg-urgent		#d94a3c
+set $c-ind      		#347090
+set $c-ind-inactive     #347090
 
 # Window colours
 # colorclass		    border			    background	    text			    indicator	    child_border
@@ -43,7 +43,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id ~/.fehbg &
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id picom --experimental-backends --blur-method dual_kawase --blur-strength 9
-exec --no-startup-id light-locker
+exec --no-startup-id light-locker --lock-on-suspend --lock-on-lid
 exec --no-startup-id libinput-gestures-setup start
 exec --no-startup-id redshift-gtk
 exec --no-startup-id unclutter
@@ -145,42 +145,29 @@ bindcode $mod+49 focus mode_toggle
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
-
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
+bindsym $mod+Shift+1 move container to workspace 1; workspace 1
+bindsym $mod+Shift+2 move container to workspace 2; workspace 2
+bindsym $mod+Shift+3 move container to workspace 3; workspace 3
+bindsym $mod+Shift+4 move container to workspace 4; workspace 4
+bindsym $mod+Shift+5 move container to workspace 5; workspace 5
+bindsym $mod+Shift+6 move container to workspace 6; workspace 6
+bindsym $mod+Shift+7 move container to workspace 7; workspace 7
+bindsym $mod+Shift+8 move container to workspace 8; workspace 8
+bindsym $mod+Shift+9 move container to workspace 9; workspace 9
+bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 
 #----------------------Modes------------------------#
 
@@ -225,6 +212,6 @@ bindsym XF86AudioPrev	exec --no-startup-id playerctl previous
 
 for_window [class=".*"] title_format "  %title"
 for_window [class="kitty" instance="floating"] floating enable, resize set 1100 px 700 px, move position center
-for_window [class="Thunar"] floating enable, move position center
+for_window [class="Thunar"] floating enable, resize set 1100 px 700 px, move position center
 for_window [class="Nm-connection-editor"] floating enable, resize set 500 px 500 px, move position center
 for_window [class="Lxappearance"] floating enable, move position center
