@@ -3,107 +3,107 @@
 # COLOUR REFERENCE
 
 # Styles
-# 0	default
-# 1	bold
-# 2	italic
-# 4	underlined
-# 5	flashing text
-# 7	reverse field (swap fg/bg)
-# 8	concealed (invisible)
+# 0 default
+# 1 bold
+# 2 italic
+# 4 underlined
+# 5 flashing text
+# 7 reverse field (swap fg/bg)
+# 8 concealed (invisible)
 
-# Colour	Foreground	Background
-# black		30		40
-# red		31		41
-# green		32		42
-# yellow	33		43
-# blue		34		44
-# magenta	35		45
-# cyan		36		46
-# white		37		47
-# light black	90		100
-# light red	91		101
-# light green	92		102
-# light yellow	93		103
-# light blue	94		104
-# light magenta	95		105
-# light cyan	96		106
-# light white	97		107
+# COLOUR        FOREGROUND  BACKGROUND
+# black         30          40
+# red           31          41
+# green         32          42
+# yellow        33          43
+# blue          34          44
+# magenta       35          45
+# cyan          36          46
+# white         37          47
+# light black   90          100
+# light red     91          101
+# light green   92          102
+# light yellow  93          103
+# light blue    94          104
+# light magenta 95          105
+# light cyan    96          106
+# light white   97          107
 
 # Basic filesystem items
-# Item	Style	BG	FG	# description
-no	00			# normal (non-filename) text
-fi	00			# file
-di	01		34	# directory
-ex	00		32	# executable
-ln	00		36	# symlink
-pi	00		33	# pipe (fifo file)
-so	00		35	# socket
-bd	01		33	# block device (buffered) special file
-cd	01		33	# character device (buffered) special file
-or	01	41	37	# orphan symlink (non-existent target)
-mi	01	41	37	# missing (non-existent file pointed to by symlink)
-do	01		92	# door
-ow	00	42	37	# other-writable (directory that is o+w and not sticky)
-sg	00	105	37	# setgid (file that is setgid g+s)
-st	00	105	37	# directory with the sticky bit set (+t) and not other-writable
-su	00	44	37	# setuid (file that is setuid u+s)
-tw	00	105	37	# directory that is sticky and other-writable (+t, o+w)
+# Item  Style   BG  FG  # description
+no  00          # normal (non-filename) text
+fi  00          # file
+di  01      34  # directory
+ex  00      32  # executable
+ln  00      36  # symlink
+pi  00      33  # pipe (fifo file)
+so  00      35  # socket
+bd  01      33  # block device (buffered) special file
+cd  01      33  # character device (buffered) special file
+or  01  41  37  # orphan symlink (non-existent target)
+mi  01  41  37  # missing (non-existent file pointed to by symlink)
+do  01      92  # door
+ow  00  42  37  # other-writable (directory that is o+w and not sticky)
+sg  00  105 37  # setgid (file that is setgid g+s)
+st  00  105 37  # directory with the sticky bit set (+t) and not other-writable
+su  00  44  37  # setuid (file that is setuid u+s)
+tw  00  105 37  # directory that is sticky and other-writable (+t, o+w)
 
 # Data files
-*.csv	95
-*.dsv	95
-*.db	95
-*.sql	95
-*.meta	95
+*.csv   95
+*.dsv   95
+*.db    95
+*.sql   95
+*.meta  95
 
 # Conf files
-*.xml	95
-*.yaml	95
-*.yml	95
-*.conf	95
+*.xml   95
+*.yaml  95
+*.yml   95
+*.conf  95
 
 # Image files
-*.jpg	35
-*.jpeg	35
-*.gif	35
-*.bmp	35
-*.tif	35
-*.tiff	35
-*.png	35
+*.jpg   35
+*.jpeg  35
+*.gif   35
+*.bmp   35
+*.tif   35
+*.tiff  35
+*.png   35
 
 # Audio files
-*.aac	36
-*.au	36
-*.flac	36
-*.m4a	36
-*.mid	36
-*.midi	36
-*.mka	36
-*.mp3	36
-*.mpc	36
-*.ogg	36
-*.ra	36
-*.wav	36
+*.aac   36
+*.au    36
+*.flac  36
+*.m4a   36
+*.mid   36
+*.midi  36
+*.mka   36
+*.mp3   36
+*.mpc   36
+*.ogg   36
+*.ra    36
+*.wav   36
 
 # Video files
-*.avi	36
-*.mov	36
-*.mpg	36
-*.mpeg	36
-*.m2v	36
-*.mkv	36
-*.webm	36
-*.ogm	36
-*.mp4	36
-*.m4v	36
-*.mp4v	36
-*.vob	36
-*.qt	36
-*.nuv	36
-*.wmv	36
-*.asf	36
-*.rm	36
-*.rmvb	36
-*.flc	36
-*.fli	36
-*.flv	36
+*.avi   36
+*.mov   36
+*.mpg   36
+*.mpeg  36
+*.m2v   36
+*.mkv   36
+*.webm  36
+*.ogm   36
+*.mp4   36
+*.m4v   36
+*.mp4v  36
+*.vob   36
+*.qt    36
+*.nuv   36
+*.wmv   36
+*.asf   36
+*.rm    36
+*.rmvb  36
+*.flc   36
+*.fli   36
+*.flv   36
