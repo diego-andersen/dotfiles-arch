@@ -5,6 +5,7 @@
 }
 
 #window {
+    background-color:   @background-alt;
     padding:            @power-window-padding;
     fullscreen:         true;
     children:           [ listview ];
