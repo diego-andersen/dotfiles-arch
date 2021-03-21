@@ -1,12 +1,12 @@
 * {
-    accent:             #c88faeb3;
-    accent-alt:         #68bbdfb3;
-    background:         #f2f2f2cc;
-    background-alt:     #f2f2f2;
-    foreground:         #4c566a;
+    accent:             #c88fae;
+    accent-alt:         #68bbdf;
+    background:         #f2f2f2;
+    background-alt:     #fafafab3;
+    foreground:         #347090;
     foreground-alt:     #999999;
-    toggle-on:          #68bbdfb3;
-    toggle-off:         #b51d09b3;
-    urgent:             #b51d09b3;
-    urgent-alt:         #d37430b3;
+    toggle-on:          #ddabd1;
+    toggle-off:         #d94a3c;
+    urgent:             #d94a3c;
+    urgent-alt:         #e7a43b;
 }
