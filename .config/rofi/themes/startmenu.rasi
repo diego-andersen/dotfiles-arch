@@ -27,6 +27,7 @@
 }
 
 #button {
+    text-color:         @foreground-alt;
     background-color:   @background-alt;
     padding:            @start-button-padding;
 }
