@@ -28,17 +28,18 @@ endif
 " Python imports should be the same colour as keywords, not functions
 function! s:base16_customize() abort
   call Base16hi("pythonImport", g:base16_gui0E, "", g:base16_cterm0E, "")
+  call Base16hi("Normal", "", "NONE", "", "NONE")
+  call Base16hi("LineNr", "", "NONE", "", "NONE")
 endfunction
 
 augroup on_change_colorschema
   autocmd!
-  autocmd ColorScheme * call s:base16_customize()
+  autocmd ColorScheme base16* call s:base16_customize()
 augroup END
 
-syntax on
-colorscheme base16-ocean
-hi Normal guibg=NONE
-hi LineNr guibg=NONE
+syntax enable
+colorscheme base16-tomorrow
+set background=light
 
 " Lightline options
 let g:lightline = {
