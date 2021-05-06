@@ -1,7 +1,6 @@
 [global]
     ### Display ###
 
-    monitor = 0
     follow = keyboard
 
     # The geometry of the window:
@@ -16,7 +15,8 @@
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
     geometry = "300x3-4-35"
-    transparency = 15
+    corner_radius = 4
+    transparency = 35
     notification_height = 30
     padding = 10
     horizontal_padding = 10
@@ -37,6 +37,7 @@
     markup = full
     format = "<b>%s</b>\n%b"
     alignment = left
+    vertical_alignment = center
     word_wrap = no
     ignore_newline = no
     ellipsize = end
@@ -44,13 +45,13 @@
     show_age_threshold = 60
     stack_duplicates = true
     hide_duplicate_count = false
-    show_indicators = no
+    show_indicators = yes
 
     ### Icons ###
 
     icon_position = left
     max_icon_size = 48
-    icon_path = "/usr/share/icons/Papirus/48x48/apps/:/usr/share/icons/Papirus/48x48/status/:/usr/share/icons/Papirus/48x48/devices/"
+    icon_path = "/usr/share/icons/Tela/scalable/apps/:/usr/share/icons/Tela/symbolic/status/:/usr/share/icons/Tela/scalable/devices/"
 
     ### History ###
 
@@ -82,18 +83,18 @@
 [urgency_low]
     background = "#4c566a"
     foreground = "#999999"
-    timeout = 3
+    timeout = 2
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#4c566a"
-    foreground = "#eceff4"
-    timeout = 3
+    background = "#f2f2f2"
+    foreground = "#347090"
+    timeout = 2
     #icon = /path/to/icon
 
 [urgency_critical]
-    background = "#bf616a"
-    foreground = "#eceff4"
+    background = "#d94a3c"
+    foreground = "#f2f2f2"
     timeout = 0
     #icon = /path/to/icon
 
@@ -107,3 +108,5 @@
     appname = volume
     history_ignore = yes
     timeout = 1
+
+# vim: ft=cfg
