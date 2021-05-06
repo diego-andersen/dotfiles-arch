@@ -53,6 +53,10 @@
     border-radius:      @element-border-radius;
 }
 
+#element-icon {
+    size:               32px;
+}
+
 #element.selected {
     background-color:   @accent;
     text-color:         @background;
