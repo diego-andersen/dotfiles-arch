@@ -4,7 +4,7 @@
     text-font:                      "Noto Sans Display 14";
     text-font-small:                "Noto Sans Display 10";
     text-font-large:                "Noto Sans Display 18";
-    text-font-mono:                 "Inconsolata 12";
+    text-font-mono:                 "Noto Sans Mono 10";
     icon-font-small:                "Hack Nerd Font Mono 24";
     icon-font-medium:               "Hack Nerd Font Mono 50";
     icon-font-large:                "Hack Nerd Font Mono 60";
@@ -63,7 +63,7 @@
     start-inputbar-margin:          0em 1ch;
     start-inputbar-border:          1px;
     start-prompt-padding:           0em 2ch;
-    start-entry-padding:            0.5em 1ch;
+    start-entry-padding:            0.3em 1ch;
 
     /* Networkmenu */
 
