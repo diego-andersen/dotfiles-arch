@@ -19,12 +19,23 @@ if [ "$TERM" != "linux" ]; then
     source $ZSH/oh-my-zsh.sh
 fi
 
+# History
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=5000
+SAVEHIST=5000
+setopt SHARE_HISTORY
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_DUPS
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR=vim
 else
-  export EDITOR='nvim'
+  export EDITOR=nvim
 fi
+
+export BAT_THEME=ansi-light
 
 # TTY colors (outside of X11)
 source ~/.config/zsh/tty_colors
