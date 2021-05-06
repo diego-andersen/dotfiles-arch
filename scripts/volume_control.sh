@@ -14,13 +14,13 @@ function is_mute {
 }
 
 function send_notification {
-  iconSound=~/.config/dunst/icons/volume_light.png
+  iconSound=~/.config/dunst/icons/volume_dark_blue.png
   iconMuted=~/.config/dunst/icons/muted_grey.png
 
   # Make the bar with the special character ─ (it's not dash -)
   # https://en.wikipedia.org/wiki/Box-drawing_character
   volume=$(get_volume)
-  bar=$(seq --separator="─" 0 "$((volume / 5))" | sed 's/[0-9]//g')
+  bar=$(seq --separator="▐" 0 "$((volume / 10))" | sed 's/[0-9]//g')
 
   if is_mute ; then
     dunstify -a volume -i $iconMuted -r 2593 -u low "    $bar"
