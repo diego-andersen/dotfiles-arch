@@ -35,7 +35,7 @@ else
   export EDITOR=nvim
 fi
 
-export BAT_THEME=ansi-light
+export BAT_THEME=ansi
 
 # TTY colors (outside of X11)
 source ~/.config/zsh/tty_colors
