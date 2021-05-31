@@ -2,5 +2,5 @@
 
 # i3wm doens't like commas in exec commands -- see rofi documentation under -modi
 rofi -show $1 \
-     -modi drun#run#ssh#window \
+     -modi drun#file-browser#ssh#window \
      -theme themes/startmenu.rasi

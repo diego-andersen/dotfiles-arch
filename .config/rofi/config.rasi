@@ -1,0 +1,29 @@
+configuration {
+	show-icons: true;
+	terminal: "kitty";
+	ssh-command: "{terminal} {ssh-client} {host}";
+	run-shell-command: "{terminal} {cmd}";
+	window-match-fields: "all";
+	drun-match-fields: "name,generic,exec,categories";
+	drun-display-format: "{name} [<span weight='light' size='x-small'>({generic})</span>]";
+	disable-history: false;
+	sort: true;
+	sorting-method: "fzf";
+	case-sensitive: false;
+	cycle: true;
+	auto-select: false;
+	matching: "normal";
+	tokenize: true;
+	threads: 0;
+	scroll-method: 1;
+	window-format: "{w} : {t}";
+	click-to-exit: true;
+	show-match: true;
+	pid: "/run/user/1000/rofi.pid";
+	display-drun: "apps";
+    display-file-browser: "files";
+	display-ssh: "ssh";
+	display-window: "window";
+	kb-mode-next: "Alt+Right";
+	kb-mode-previous: "Alt+Left";
+}
