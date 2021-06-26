@@ -107,9 +107,9 @@ set $left	h
 set $right	l
 
 # Workspace cycling
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
-bindsym $mod+Control+Tab exec --no-startup-id rofi_startmenu window
+bindsym Mod1+Tab workspace next
+bindsym Mod1+Shift+Tab workspace prev
+bindsym $mod+Tab exec --no-startup-id rofi_startmenu window
 
 # Change focus (vim)
 bindsym $mod+$left	focus left
