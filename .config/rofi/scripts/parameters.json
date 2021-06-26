@@ -76,9 +76,9 @@
             ""
         ],
         "actions": [
-            "sleep 1; scrot 'screenshot_%Y-%m-%d_%H-%M-%S.png' -e 'mv $f ~/Images/screenshots/'",
-            "scrot -s 'screenshot_%Y-%m-%d_%H-%M-%S.png' -e 'mv $f ~/Images/screenshots/'",
-            "sleep 1; scrot -u 'screenshot_%Y-%m-%d_%H-%M-%S.png' -e 'mv $f ~/Images/screenshots/'"
+            "scrot -d 2 'screenshot_%Y-%m-%d_%H-%M-%S.png' -e 'mv $f ~/Screenshots/'",
+            "scrot -s 'screenshot_%Y-%m-%d_%H-%M-%S.png' -e 'mv $f ~/Screenshots/'",
+            "scrot -d 2 -u 'screenshot_%Y-%m-%d_%H-%M-%S.png' -e 'mv $f ~/Screenshots/'"
         ],
         "confirm": [
             false,
