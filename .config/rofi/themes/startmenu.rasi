@@ -38,7 +38,7 @@
 }
 
 #listview {
-    lines:              12;
+    lines:              10;
     columns:            1;
     dynamic:            false;
     fixed-height:       true;
@@ -49,12 +49,16 @@
 }
 
 #element {
-	padding:			@start-element-padding;
     border-radius:      @element-border-radius;
 }
 
 #element-icon {
-    size:               32px;
+    size:               @start-icon-size;
+    padding:            @start-icon-padding;
+}
+
+#element-text {
+    padding:            @start-text-padding;
 }
 
 #element.selected {
