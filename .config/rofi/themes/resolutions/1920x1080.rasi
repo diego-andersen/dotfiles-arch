@@ -1,10 +1,9 @@
 * {
     /* General */
 
-    text-font:                      "Noto Sans Display 14";
-    text-font-small:                "Noto Sans Display 10";
+    text-font:                      "Noto Sans Display 12";
     text-font-large:                "Noto Sans Display 18";
-    text-font-mono:                 "Noto Sans Mono 10";
+    text-font-mono:                 "Noto Sans Mono 11";
     icon-font-small:                "Hack Nerd Font Mono 24";
     icon-font-medium:               "Hack Nerd Font Mono 50";
     icon-font-large:                "Hack Nerd Font Mono 60";
@@ -13,7 +12,7 @@
     element-border-radius:          4px;
 
     align-middle:                   0.5;
-    polybar-offset:                 -34px;
+    polybar-offset:                 -39px;
 
     scrollbar-width:                4px;
     scrollbar-border:               0px;
@@ -41,7 +40,7 @@
     /* Conky memu */
 
     conky-window-width:             480px;
-    conky-window-height:            calc(100% - 34px);
+    conky-window-height:            calc(100% - 39px);
     conky-window-padding:           20px 42px;
     conky-window-border:            1px;
     conky-listview-spacing:         1ch;
@@ -50,7 +49,7 @@
 
     /* Start menu */
 
-    start-window-width:             60ch;
+    start-window-width:             55ch;
     start-window-padding:           10px;
     start-window-border:            1px;
     start-switcher-spacing:         0px;
@@ -59,7 +58,9 @@
     start-button-padding:           0.5em 0ch;
     start-listview-padding:         0.5em 0em;
     start-element-spacing:          0.25em;
-    start-element-padding:          5px 1ch;
+    start-icon-size:                32px;
+    start-icon-padding:             0ch 0.5em;
+    start-text-padding:             1ch 0em;
     start-inputbar-margin:          0em 1ch;
     start-inputbar-border:          1px;
     start-prompt-padding:           0em 2ch;
