@@ -46,6 +46,7 @@ exec --no-startup-id picom --experimental-backends --blur-method dual_kawase --b
 exec --no-startup-id light-locker --lock-on-suspend --lock-on-lid
 exec --no-startup-id libinput-gestures-setup start
 exec --no-startup-id redshift-gtk
+exec --no-startup-id nm-applet
 exec --no-startup-id unclutter
 exec --no-startup-id thunar --daemon
 
@@ -65,6 +66,8 @@ bindsym $mod+Shift+Return exec --no-startup-id kitty --name floating
 
 # Start common programs
 bindsym $mod+f exec --no-startup-id thunar
+bindsym $mod+b exec --no-startup-id firefox
+bindsym $mod+m exec --no-startup-id rhythmbox
 
 # Take screenshot
 bindsym $mod+Print exec --no-startup-id scrot '%Y-%m-%d-%H%M%S_screenshot.png' -e 'mv $f ~/Images/screenshots/'
