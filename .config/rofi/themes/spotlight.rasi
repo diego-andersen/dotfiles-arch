@@ -1,0 +1,73 @@
+@import "settings.rasi"
+
+* {
+    font:               @text-font;
+}
+
+#window {
+    location:           center;
+    anchor:             north;
+    y-offset:           -20ch;
+    width:              @spotlight-window-width;
+	padding:			@spotlight-window-padding;
+    border:             @spotlight-window-border;
+    border-radius:      @window-border-radius;
+    border-color:       @accent;
+}
+
+#inputbar {
+    children:           [ textbox-separator, entry ];
+	background-color:	@background-alt;
+    margin:             @spotlight-inputbar-margin;
+    border:             @spotlight-inputbar-border;
+	border-radius:		@element-border-radius;
+    border-color:       @accent;
+}
+
+#textbox-separator {
+    str:                "";
+    font:               @icon-font-small;
+	horizontal-align:	@align-middle;
+	vertical-align:		@align-middle;
+    padding:            @spotlight-prompt-padding;
+    background-color:   @accent;
+    color:              @background;
+    expand:             false;
+}
+
+#entry {
+	vertical-align:		@align-middle;
+    padding:            @spotlight-entry-padding;
+    placeholder:        "Search...";
+    placeholder-color:  @foreground-alt;
+}
+
+#listview {
+    lines:              10;
+    columns:            1;
+    dynamic:            true;
+    fixed-height:       false;
+    padding:            @spotlight-listview-padding;
+    spacing:            @spotlight-element-spacing;
+    scrollbar:          true;
+    scrollbar-width:    @scrollbar-width;
+}
+
+#element.selected {
+    background-color:   @accent;
+    text-color:         @background;
+}
+
+#element.alternate {
+    background-color:   @background-alt;
+}
+
+#scrollbar {
+    background-color:   @background-alt;
+    border:             @scrollbar-border;
+    handle-color:       @foreground-alt;
+    handle-width:       @scrollbar-width;
+    padding:            @scrollbar-padding;
+    margin:             @scrollbar-margin;
+}
+

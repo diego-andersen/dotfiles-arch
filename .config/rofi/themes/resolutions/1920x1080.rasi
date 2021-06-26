@@ -27,6 +27,37 @@
     power-element-border-radius:    5px;
     power-element-padding:          0.5ch 1ch;
 
+    /* Start menu */
+
+    start-window-width:             55ch;
+    start-window-padding:           10px;
+    start-window-border:            1px;
+    start-switcher-spacing:         0px;
+    start-switcher-border:          0px 0px 1px;
+    start-switcher-border-radius:   4px 4px 0px 0px;
+    start-button-padding:           0.5em 0ch;
+    start-listview-padding:         0.5em 0em;
+    start-element-spacing:          0.25em;
+    start-icon-size:                32px;
+    start-icon-padding:             0ch 0.5em;
+    start-text-padding:             1ch 0em;
+    start-inputbar-margin:          0ch 0.5em;
+    start-inputbar-border:          1px;
+    start-prompt-padding:           0em 2ch;
+    start-entry-padding:            0.3em 1ch;
+
+    /* Spotlight menu */
+
+    spotlight-window-width:         80ch;
+    spotlight-window-padding:       10px;
+    spotlight-window-border:        1px;
+    spotlight-inputbar-margin:      0ch 0.5em;
+    spotlight-inputbar-border:      1px;
+    spotlight-listview-padding:     0.5ch 0em 0.5ch 0.5em;
+    spotlight-element-spacing:      1ch;
+    spotlight-prompt-padding:       0em 2ch;
+    spotlight-entry-padding:        1ch;
+
     /* Popup menus: i3layout, scrot, confirm */
 
     popup-3-width:                  13ch;
@@ -47,34 +78,15 @@
     conky-element-padding:          0.5ch 1ch;
     conky-element-border:           2px;
 
-    /* Start menu */
-
-    start-window-width:             55ch;
-    start-window-padding:           10px;
-    start-window-border:            1px;
-    start-switcher-spacing:         0px;
-    start-switcher-border:          0px 0px 1px;
-    start-switcher-border-radius:   4px 4px 0px 0px;
-    start-button-padding:           0.5em 0ch;
-    start-listview-padding:         0.5em 0em;
-    start-element-spacing:          0.25em;
-    start-icon-size:                32px;
-    start-icon-padding:             0ch 0.5em;
-    start-text-padding:             1ch 0em;
-    start-inputbar-margin:          0em 1ch;
-    start-inputbar-border:          1px;
-    start-prompt-padding:           0em 2ch;
-    start-entry-padding:            0.3em 1ch;
-
     /* Networkmenu */
 
     net-window-width:               56ch;
     net-window-padding:             10px;
     net-window-border:              1px;
-    net-inputbar-margin:            0em 1ch;
+    net-inputbar-margin:            0ch 0.5em;
     net-inputbar-border:            1px;
-    net-prompt-padding:             0.5em 1ch;
-    net-listview-padding:           0.5em 0em;
+    net-prompt-padding:             0.5ch 1em;
+    net-listview-padding:           0.5ch 0em;
     net-element-padding:            5px 1ch;
     net-entry-padding:              0.5em 1ch;
     net-listview-spacing:           0.25em;
