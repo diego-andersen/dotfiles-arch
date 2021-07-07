@@ -14,31 +14,30 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x3-4-35"
+    geometry = "350x1-10-39"
     corner_radius = 4
-    transparency = 35
-    notification_height = 30
-    padding = 10
-    horizontal_padding = 10
+    transparency = 15
+    notification_height = 0
+    padding = 20
+    horizontal_padding = 30
     frame_width = 2
-    frame_color = "#d8dee9"
     separator_height = 2
     separator_color = frame
 
     indicate_hidden = yes
-    shrink = no
+    shrink = yes
     sort = yes
     idle_threshold = 120
 
     ### Text ###
 
-    font = Noto Sans Display 10
+    font = Noto Sans Display 11
     line_height = 0
     markup = full
     format = "<b>%s</b>\n%b"
     alignment = left
     vertical_alignment = center
-    word_wrap = no
+    word_wrap = yes
     ignore_newline = no
     ellipsize = end
 
@@ -50,6 +49,7 @@
     ### Icons ###
 
     icon_position = left
+    min_icon_size = 48
     max_icon_size = 48
     icon_path = "/usr/share/icons/Tela/scalable/apps/:/usr/share/icons/Tela/symbolic/status/:/usr/share/icons/Tela/scalable/devices/"
 
@@ -83,20 +83,22 @@
 [urgency_low]
     background = "#4c566a"
     foreground = "#999999"
-    timeout = 2
-    #icon = /path/to/icon
+    highlight = "#999999"
+    frame_color = "#999999"
+    timeout = 3
 
 [urgency_normal]
     background = "#f2f2f2"
     foreground = "#347090"
-    timeout = 2
-    #icon = /path/to/icon
+    highlight = "#ddabd1"
+    frame_color = "#ddabd1"
+    timeout = 3
 
 [urgency_critical]
     background = "#d94a3c"
     foreground = "#f2f2f2"
+    frame_color = "#f2f2f2"
     timeout = 0
-    #icon = /path/to/icon
 
 # Ignore history for volume/brightness changes
 [brightness_change]
