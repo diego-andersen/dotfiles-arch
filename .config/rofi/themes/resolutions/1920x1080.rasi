@@ -43,7 +43,7 @@
     start-text-padding:             1ch 0em;
     start-inputbar-margin:          0ch 0.5em;
     start-inputbar-border:          1px;
-    start-prompt-padding:           0em 2ch;
+    start-prompt-padding:           0ch 0.75em 1ch;
     start-entry-padding:            0.3em 1ch;
 
     /* Spotlight menu */
@@ -55,7 +55,7 @@
     spotlight-inputbar-border:      1px;
     spotlight-listview-padding:     0.5ch 0em 0.5ch 0.5em;
     spotlight-element-spacing:      1ch;
-    spotlight-prompt-padding:       0em 2ch;
+    spotlight-prompt-padding:       0ch 0.75em;
     spotlight-entry-padding:        1ch;
 
     /* Popup menus: i3layout, scrot, confirm */
@@ -85,7 +85,7 @@
     net-window-border:              1px;
     net-inputbar-margin:            0ch 0.5em;
     net-inputbar-border:            1px;
-    net-prompt-padding:             0.5ch 1em;
+    net-prompt-padding:             1ch 0.5em 0ch;
     net-listview-padding:           0.5ch 0em;
     net-element-padding:            5px 1ch;
     net-entry-padding:              0.5em 1ch;

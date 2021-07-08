@@ -66,8 +66,7 @@
 }
 
 #prompt {
-	horizontal-align:	@align-middle;
-	vertical-align:		@align-middle;
+    font:               @text-font-large;
     padding:            @net-prompt-padding;
  	background-color:	@accent;
  	text-color:			@background;
