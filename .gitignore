@@ -1,3 +1,4 @@
 .dotfiles
 *.idea/
 *.backup
+.zcompdump*
