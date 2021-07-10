@@ -54,6 +54,7 @@ set encoding=utf-8
 set noshowmode      " Don't show Vim mode in input bar (Airline already does)
 set showcmd         " Show last typed command in status bar
 set autoread        " Auto-reload open file when external changes are made
+set nofoldenable    " Don't fold anything when opening a file
 
 " Appearance
 set number	        " Show line numbers
