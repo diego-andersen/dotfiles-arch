@@ -220,3 +220,4 @@ for_window [class="kitty" instance="floating"] floating enable, resize set 1100 
 for_window [class="Thunar"] floating enable, resize set 1100 px 700 px, move position center
 for_window [class="Nm-connection-editor"] floating enable, resize set 500 px 500 px, move position center
 for_window [class="Lxappearance"] floating enable, move position center
+for_window [class="Gsimplecal"] floating enable, move position 1640 px 790 px
