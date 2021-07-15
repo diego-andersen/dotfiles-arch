@@ -57,8 +57,9 @@ set $mod Mod4
 
 # Basic I/O
 bindsym $mod+Shift+q kill
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+c "reload; exec --no-startup-id notify-send -u normal -i /usr/share/archlinux/icons/archlinux-icon-crystal-16.svg i3wm \\"Reloaded config\\""
+bindsym $mod+Shift+r "restart; exec --no-startup-id notify-send -u normal -i /usr/share/archlinux/icons/archlinux-icon-crystal-16.svg i3wm \\"Restarded window manager\\""
+bindsym $mod+Shift+x exec --no-startup-id light-locker-command -l
 
 # Start terminal
 bindsym $mod+Return exec --no-startup-id kitty
@@ -75,7 +76,7 @@ bindsym $mod+Print exec --no-startup-id scrot '%Y-%m-%d-%H%M%S_screenshot.png' -
 # Rofi menus
 bindsym $mod+space exec --no-startup-id rofi_startmenu drun
 bindsym $mod+Control+space exec --no-startup-id rofi_spotlight
-bindsym $mod+Shift+x exec --no-startup-id rofi_powermenu
+bindsym $mod+Shift+BackSpace exec --no-startup-id rofi_powermenu
 bindsym $mod+Shift+i exec --no-startup-id rofi_conky
 bindsym $mod+Shift+n exec --no-startup-id rofi_networkmenu
 bindsym $mod+Shift+e exec --no-startup-id rofi_i3layout
