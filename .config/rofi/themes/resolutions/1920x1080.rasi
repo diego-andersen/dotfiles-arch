@@ -46,6 +46,19 @@
     start-prompt-padding:           0ch 0.75em 1ch;
     start-entry-padding:            0.3em 1ch;
 
+    /* Networkmenu */
+
+    net-window-width:               53ch;
+    net-window-padding:             10px;
+    net-window-border:              1px;
+    net-inputbar-margin:            0ch 0.5em;
+    net-inputbar-border:            1px;
+    net-prompt-padding:             1ch 0.5em 0ch;
+    net-listview-padding:           0.5ch 0em;
+    net-element-padding:            5px 1ch;
+    net-entry-padding:              0.5em 1ch;
+    net-listview-spacing:           0.25em;
+
     /* Spotlight menu */
 
     spotlight-window-width:         80ch;
@@ -58,16 +71,6 @@
     spotlight-prompt-padding:       0ch 0.75em;
     spotlight-entry-padding:        1ch;
 
-    /* Popup menus: i3layout, scrot, confirm */
-
-    popup-3-width:                  13ch;
-    popup-window-padding:           1ch 1ch;
-    popup-window-border:            4px;
-    popup-listview-padding:         0ch 0.24ch;
-    popup-listview-spacing:         0.5ch;
-    popup-element-padding:          0.5ch 1ch;
-    popup-element-border:           2px;
-
     /* Conky memu */
 
     conky-window-width:             480px;
@@ -78,18 +81,15 @@
     conky-element-padding:          0.5ch 1ch;
     conky-element-border:           2px;
 
-    /* Networkmenu */
+    /* Popup menus: i3layout, scrot */
 
-    net-window-width:               56ch;
-    net-window-padding:             10px;
-    net-window-border:              1px;
-    net-inputbar-margin:            0ch 0.5em;
-    net-inputbar-border:            1px;
-    net-prompt-padding:             1ch 0.5em 0ch;
-    net-listview-padding:           0.5ch 0em;
-    net-element-padding:            5px 1ch;
-    net-entry-padding:              0.5em 1ch;
-    net-listview-spacing:           0.25em;
+    popup-3-width:                  13ch;
+    popup-window-padding:           1ch 1ch;
+    popup-window-border:            4px;
+    popup-listview-padding:         0ch 0.24ch;
+    popup-listview-spacing:         0.5ch;
+    popup-element-padding:          0.5ch 1ch;
+    popup-element-border:           2px;
 
     /* Confirmation dialog */
 

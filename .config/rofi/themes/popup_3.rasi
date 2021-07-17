@@ -43,7 +43,8 @@
 }
 
 #element.selected {
-    border-color:       @accent-alt;
+    text-color:         @background;
+    background-color:   @accent;
 }
 
 /* vim:ft=css
