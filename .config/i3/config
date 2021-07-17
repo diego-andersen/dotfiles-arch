@@ -5,9 +5,9 @@
 font pango:Noto Sans 12
 
 # Window border settings
-default_border 		    pixel 4
-default_floating_border	pixel 4
-hide_edge_borders	    smart_no_gaps
+default_border          pixel 4
+default_floating_border pixel 4
+hide_edge_borders       smart_no_gaps
 title_align             left
 
 # Gaps
@@ -40,9 +40,9 @@ client.urgent		    $c-bg-urgent		$c-bg-urgent	$c-text			    $c-ind	        $c-bg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Startup applications
+exec_always --no-startup-id picom --experimental-backends --blur-method dual_kawase --blur-strength 9
 exec_always --no-startup-id ~/.fehbg &
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id picom --experimental-backends --blur-method dual_kawase --blur-strength 9
 exec --no-startup-id light-locker --lock-on-suspend --lock-on-lid
 exec --no-startup-id libinput-gestures-setup start
 exec --no-startup-id redshift-gtk
@@ -159,7 +159,7 @@ bindsym $mod+e layout toggle split
 # Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# Change focus between tiling/floating windows
+# Change focus between tiling/floating windows with mod + `
 bindcode $mod+49 focus mode_toggle
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -220,4 +220,5 @@ for_window [class="kitty" instance="floating"] floating enable, resize set 1100 
 for_window [class="Thunar"] floating enable, resize set 1100 px 700 px, move position center
 for_window [class="Nm-connection-editor"] floating enable, resize set 500 px 500 px, move position center
 for_window [class="Lxappearance"] floating enable, move position center
+for_window [class="Xfce4-power-manager-settings"] floating enable, move position center
 for_window [class="Gsimplecal"] floating enable, move position 1640 px 790 px
