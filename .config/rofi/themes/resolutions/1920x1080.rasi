@@ -93,13 +93,15 @@
 
     /* Confirmation dialog */
 
-    confirm-width:                  400px;
+    confirm-width:                  350px;
     confirm-height:                 200px;
     confirm-border:                 2px;
     confirm-padding:                10px 40px 0px;
     confirm-mesg-border:            0px 0px 2px 0px;
+    confirm-listview-spacing:       3em;
     confirm-listview-padding:       1ch 0.5em 0ch;
-    confirm-element-padding:        0.75em 2ch 1em;
+    confirm-listview-margin:        0ch 0px 0px;
+    confirm-element-padding:        1.5ch 1em 2ch;
 }
 
 /* vim:ft=css

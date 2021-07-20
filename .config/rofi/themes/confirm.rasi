@@ -33,9 +33,9 @@
     lines:              2;
     fixed-height:       true;
     cycle:              true;
-    spacing:            3em;
+    spacing:            @confirm-listview-spacing;
     padding:            @confirm-listview-padding;
-    margin:             0px 10px 10px;
+    margin:             @confirm-listview-margin;
 }
 
 #element {
@@ -58,5 +58,5 @@
 
 #element.selected {
     text-color:         @background;
-    background-color:   @accent;
+    background-color:   @toggle-on;
 }
