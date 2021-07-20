@@ -17,22 +17,22 @@ gaps outer 0
 smart_borders no_gaps
 
 # Colour definitions
-set $c-text			    #f2f2f2
-set $c-text-inactive	#999999
-set $c-bg			    #c88fae
-set $c-bg-inactive		#f2f2f2
-set $c-border		    #c88fae
-set $c-border-inactive  #f2f2f2
-set $c-bg-urgent		#d94a3c
-set $c-ind      		#347090
-set $c-ind-inactive     #f2f2f2
+set $c-txt      #f2f2f2
+set $c-txt-i    #999999
+set $c-bgr      #c88fae
+set $c-bgr-i    #f2f2f2
+set $c-bgr-u    #d94a3c
+set $c-brd      #c88fae
+set $c-brd-i    #f2f2f2
+set $c-ind      #347090
+set $c-ind-i    #f2f2f2
 
 # Window colours
-# colorclass		    border			    background	    text			    indicator	    child_border
-client.focused		    $c-border   		$c-bg		    $c-text			    $c-ind	        $c-border
-client.focused_inactive	$c-border-inactive	$c-bg-inactive	$c-text-inactive	$c-ind-inactive	$c-border-inactive
-client.unfocused	    $c-border-inactive	$c-bg-inactive	$c-text-inactive	$c-ind-inactive	$c-border-inactive
-client.urgent		    $c-bg-urgent		$c-bg-urgent	$c-text			    $c-ind	        $c-bg-urgent
+# colorclass            border      bg         text        indicator   child_border
+client.focused          $c-brd      $c-bgr     $c-txt      $c-ind      $c-brd
+client.focused_inactive $c-brd-i    $c-bgr-i   $c-txt-i    $c-ind-i    $c-brd-i
+client.unfocused        $c-brd-i    $c-bgr-i   $c-txt-i    $c-ind-i    $c-brd-i
+client.urgent           $c-bgr-u    $c-bgr-u   $c-txt      $c-ind      $c-bgr-u
 
 #---------------------Auto-start--------------------#
 
@@ -83,13 +83,13 @@ bindsym $mod+Shift+e exec --no-startup-id rofi_i3layout
 bindsym $mod+Shift+Print exec --no-startup-id rofi_scrot
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/scripts/volume_control.sh up
-bindsym XF86AudioLowerVolume exec --no-startup-id ~/scripts/volume_control.sh down
-bindsym XF86AudioMute exec --no-startup-id ~/scripts/volume_control.sh mute
+bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/bin/volume_control up
+bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/bin/volume_control down
+bindsym XF86AudioMute exec --no-startup-id $HOME/bin/volume_control mute
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec --no-startup-id ~/scripts/brightness_control.sh up
-bindsym XF86MonBrightnessDown exec --no-startup-id ~/scripts/brightness_control.sh down
+bindsym XF86MonBrightnessUp exec --no-startup-id $HOME/bin/brightness_control up
+bindsym XF86MonBrightnessDown exec --no-startup-id $HOME/bin/brightness_control down
 
 # Media player controls
 bindsym XF86AudioPlay exec --no-startup-id playerctl play
