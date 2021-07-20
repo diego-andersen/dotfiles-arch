@@ -1,5 +1,5 @@
 # Fix $PATH
-export PATH=$HOME/scripts:$HOME/bin:$PATH
+export PATH=$HOME/bin:$PATH
 
 # Don't use oh-my-zsh on TTY (.psf fonts can't render most things)
 if [ "$TERM" != "linux" ]; then
@@ -41,7 +41,7 @@ export BAT_THEME=ansi
 source ~/.config/zsh/tty_colors
 
 # ls command color output
-export LS_COLORS=$(cat ~/.config/zsh/ls_colors | ~/scripts/gen_ls_colors.sh)
+export LS_COLORS=$(cat ~/.config/zsh/ls_colors | $HOME/bin/gen_ls_colors)
 
 # Aliases
 source $HOME/.config/zsh/aliases
