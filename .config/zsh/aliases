@@ -1,5 +1,7 @@
 # vim:ft=sh
 
 alias fucking="sudo"
-alias fuck="sudo"
+alias fuck="sudo !!"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
+alias sudo='sudo -v; sudo '
