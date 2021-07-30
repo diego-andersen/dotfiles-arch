@@ -2,7 +2,7 @@
 #---------------------Appearance--------------------#
 
 # Font for window titles and bar
-font pango:Noto Sans 12
+font pango:Noto Sans Disaplay 12, Source Han Sans 12
 
 # Window border settings
 default_border          pixel 4
@@ -85,17 +85,17 @@ bindsym $mod+Shift+Print exec --no-startup-id rofi_scrot
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/bin/volume_control up
 bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/bin/volume_control down
-bindsym XF86AudioMute exec --no-startup-id $HOME/bin/volume_control mute
+bindsym XF86AudioMute        exec --no-startup-id $HOME/bin/volume_control mute
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec --no-startup-id $HOME/bin/brightness_control up
+bindsym XF86MonBrightnessUp   exec --no-startup-id $HOME/bin/brightness_control up
 bindsym XF86MonBrightnessDown exec --no-startup-id $HOME/bin/brightness_control down
 
 # Media player controls
-bindsym XF86AudioPlay exec --no-startup-id playerctl play
+bindsym XF86AudioPlay  exec --no-startup-id playerctl play
 bindsym XF86AudioPause exec --no-startup-id playerctl pause
-bindsym XF86AudioNext exec --no-startup-id playerctl next
-bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86AudioNext  exec --no-startup-id playerctl next
+bindsym XF86AudioPrev  exec --no-startup-id playerctl previous
 
 #----------------------Movement---------------------#
 
@@ -114,28 +114,28 @@ bindsym Mod1+Shift+Tab workspace prev
 bindsym $mod+Tab exec --no-startup-id rofi_startmenu window
 
 # Change focus (vim)
-bindsym $mod+$left	focus left
-bindsym $mod+$down	focus down
-bindsym $mod+$up	focus up
-bindsym $mod+$right	focus right
+bindsym $mod+$left  focus left
+bindsym $mod+$down  focus down
+bindsym $mod+$up    focus up
+bindsym $mod+$right focus right
 
 # Change focus (arrows)
-bindsym $mod+Left	focus left
-bindsym $mod+Down	focus down
-bindsym $mod+Up		focus up
-bindsym $mod+Right	focus right
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
+bindsym $mod+Right focus right
 
 # Move focused window (vim)
-bindsym $mod+Shift+$left	move left
-bindsym $mod+Shift+$down	move down
-bindsym $mod+Shift+$up		move up
-bindsym $mod+Shift+$right	move right
+bindsym $mod+Shift+$left  move left
+bindsym $mod+Shift+$down  move down
+bindsym $mod+Shift+$up    move up
+bindsym $mod+Shift+$right move right
 
 # Move focused window (arrows)
-bindsym $mod+Shift+Left		move left
-bindsym $mod+Shift+Down		move down
-bindsym $mod+Shift+Up		move up
-bindsym $mod+Shift+Right	move right
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Up    move up
+bindsym $mod+Shift+Right move right
 
 # Focus parent container
 bindsym $mod+a focus parent
