@@ -1,0 +1,13 @@
+#!/bin/bash
+
+case $1 in
+    single)
+        notify-send -u low SUMMARY "Single line" -t 0
+        notify-send -u normal SUMMARY "Single line" -t 0
+        ;;
+    normal)
+        notify-send -u low SUMMARY "Content\nMore Content" -t 0
+        notify-send -u normal SUMMARY "Content\nMore Content" -t 0
+        notify-send -u critical SUMMARY "Content\nMore Content" -t 0
+        ;;
+esac
