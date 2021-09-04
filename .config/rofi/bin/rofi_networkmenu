@@ -5,6 +5,5 @@ python $XDG_CONFIG_HOME/rofi/scripts/networkmenu.py \
     --rofi_theme $XDG_CONFIG_HOME/rofi/themes/networkmenu.rasi \
     --rofi_highlight_active \
     --rofi_obscure_pw \
-    --prompt  \
     --use_gui_nm_editor \
     --terminal kitty

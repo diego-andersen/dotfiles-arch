@@ -27,6 +27,9 @@
 }
 
 #element.selected {
-    text-color:         @background;
     background-color:   @accent;
+}
+
+#element-text.selected {
+    text-color:         @background;
 }

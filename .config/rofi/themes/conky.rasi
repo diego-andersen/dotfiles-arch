@@ -1,7 +1,7 @@
 @import "settings.rasi"
 
 * {
-    font:               @icon-font-small;
+    font:               @icon-font-medium;
 }
 
 #window {
@@ -25,6 +25,7 @@
     layout:             horizontal;
     lines:              5;
     spacing:            @conky-listview-spacing;
+    margin:             0ch 5px;
 }
 
 #element {
@@ -38,7 +39,10 @@
 }
 
 #element.selected {
-    border-color:       @accent;
+    background-color:   @accent;
 }
 
-/* vim:ft=css
+#element-text.selected {
+    text-color:         @background;
+}
+

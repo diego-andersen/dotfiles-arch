@@ -1,31 +1,29 @@
 @import "settings.rasi"
 
 #window {
+    children:           [ mainbox ];
     location:           center;
     anchor:             center;
     width:              @confirm-width;
-    height:             @confirm-height;
     padding:            @confirm-padding;
     border:             @confirm-border;
     border-radius:      @window-border-radius;
     border-color:       @accent;
+    font:               @icon-font-large;
 }
 
 #mainbox {
-    children:           [ message, listview ];
+    children:           [ prompt, listview ];
+    orientation: horizontal;
 }
 
-#message {
-    expand:             true;
-    border:             @confirm-mesg-border;
-    border-color:       @accent;
-}
-
-#textbox {
+#prompt {
     horizontal-align:   @align-middle;
     vertical-align:     @align-middle;
-    font:               @icon-font-large;
     text-color:         @accent;
+    padding:            @confirm-prompt-padding;
+    border:             @confirm-prompt-border;
+    border-color:       @accent;
 }
 
 #listview {
@@ -42,21 +40,19 @@
     children:           [ element-text ];
     horizontal-align:   @align-middle;
     vertical-align:     @align-middle;
-    padding:            @confirm-element-padding;
     border:             @popup-element-border;
     border-radius:      @element-border-radius;
 }
 
-#element-index {
-    text-color:         @foreground;
-    background-color:   @background;
-}
-
 #element-text {
-    font:               @text-font;
+    padding:            @confirm-element-padding;
+    font:               @icon-font-large;
 }
 
 #element.selected {
+    background-color:   @accent;
+}
+
+#element-text.selected {
     text-color:         @background;
-    background-color:   @toggle-on;
 }

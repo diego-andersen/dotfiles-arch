@@ -1,7 +1,7 @@
 @import "settings.rasi"
 
 * {
-    font:               @icon-font-medium;
+    font:               @icon-font-large;
 }
 
 #window {
@@ -39,12 +39,13 @@
 }
 
 #element-text {
-    expand:             true;
+    text-color:         @foreground;
 }
 
 #element.selected {
-    text-color:         @background;
     background-color:   @accent;
 }
 
-/* vim:ft=css
+#element-text.selected {
+    text-color:         @background;
+}

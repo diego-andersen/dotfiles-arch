@@ -21,7 +21,7 @@ configuration {
 	show-match: true;
 	pid: "/run/user/1000/rofi.pid";
 	display-drun: "apps";
-    display-file-browser: "files";
+    display-filebrowser: "files";
 	display-ssh: "ssh";
 	display-window: "window";
 	kb-mode-next: "Alt+Right";

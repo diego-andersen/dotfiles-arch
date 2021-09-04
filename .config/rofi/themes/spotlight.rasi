@@ -16,7 +16,7 @@
 }
 
 #inputbar {
-    children:           [ textbox-separator, entry ];
+    children:           [ textbox-separator, entry, case-indicator ];
 	background-color:	@background-alt;
     margin:             @spotlight-inputbar-margin;
     border:             @spotlight-inputbar-border;
@@ -42,19 +42,33 @@
     placeholder-color:  @foreground-alt;
 }
 
+#case-indicator {
+    vertical-align:     @align-middle;
+    padding:            @spotlight-case-padding;
+}
+
 #listview {
     lines:              10;
     columns:            1;
     dynamic:            true;
     fixed-height:       false;
     padding:            @spotlight-listview-padding;
-    spacing:            @spotlight-element-spacing;
+    spacing:            @spotlight-listview-spacing;
+    margin:             @spotlight-listview-margin;
     scrollbar:          true;
     scrollbar-width:    @scrollbar-width;
 }
 
+#element {
+    padding:            @spotlight-element-padding;
+}
+
 #element.selected {
     background-color:   @accent;
+    border-radius:      @element-border-radius;
+}
+
+#element-text.selected {
     text-color:         @background;
 }
 

@@ -7,6 +7,7 @@
 #window {
     location:           south east;
     anchor:             south east;
+    x-offset:           @i3-right-gap;
     y-offset:           @polybar-offset;
     width:              @net-window-width;
 	padding:			@net-window-padding;
@@ -23,28 +24,41 @@
     lines:              10;
     columns:            1;
     padding:            @net-listview-padding;
-    spacing:            @net-listview-spacing;
     scrollbar:          true;
     scrollbar-width:    @scrollbar-width;
 }
 
 #element {
-	padding:			@net-element-padding;
     border-radius:      @element-border-radius;
+}
+
+#element-text {
+	padding:			@net-text-padding;
+    text-color:         @foreground;
 }
 
 #element.selected {
     background-color:   @accent;
+}
+
+#element-text.selected {
     text-color:         @background;
 }
 
 #element.active {
     background-color:   @toggle-on;
+}
+
+#element-text.active {
     text-color:         @background;
 }
 
 #element.urgent {
     background-color:   @urgent;
+}
+
+#element-text.urgent {
+    text-color:         @background;
 }
 
 #scrollbar {
@@ -66,7 +80,8 @@
 }
 
 #prompt {
-    font:               @text-font-large;
+    str:                "";
+    font:               @icon-font-small;
     padding:            @net-prompt-padding;
  	background-color:	@accent;
  	text-color:			@background;

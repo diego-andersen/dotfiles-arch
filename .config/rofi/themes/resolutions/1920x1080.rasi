@@ -4,8 +4,8 @@
     text-font:                      "Noto Sans Display 12";
     text-font-large:                "Noto Sans Display 18";
     text-font-mono:                 "Noto Sans Mono 11";
-    icon-font-small:                "Hack Nerd Font Mono 24";
-    icon-font-medium:               "Hack Nerd Font Mono 50";
+    icon-font-small:                "Hack Nerd Font Mono 20";
+    icon-font-medium:               "Hack Nerd Font Mono 24";
     icon-font-large:                "Hack Nerd Font Mono 60";
 
     window-border-radius:           4px;
@@ -13,11 +13,13 @@
 
     align-middle:                   0.5;
     polybar-offset:                 -39px;
+    i3-left-gap:                    8px;
+    i3-right-gap:                   -8px;
 
     scrollbar-width:                4px;
     scrollbar-border:               0px;
     scrollbar-padding:              0px;
-    scrollbar-margin:               4px;
+    scrollbar-margin:               0px 0px 0px 10px;
 
     /* Powermenu */
 
@@ -35,41 +37,42 @@
     start-switcher-spacing:         0px;
     start-switcher-border:          0px 0px 1px;
     start-switcher-border-radius:   4px 4px 0px 0px;
-    start-button-padding:           0.5em 0ch;
-    start-listview-padding:         0.5em 0em;
-    start-element-spacing:          0.25em;
-    start-icon-size:                32px;
-    start-icon-padding:             0ch 0.5em;
-    start-text-padding:             1ch 0em;
-    start-inputbar-margin:          0ch 0.5em;
+    start-button-padding:           1.5ch 0ch;
+    start-listview-padding:         0.5ch 0ch;
+    start-icon-size:                24px;
+    start-icon-padding:             1ch;
+    start-text-padding:             1ch 0ch;
+    start-inputbar-margin:          0ch 1ch;
     start-inputbar-border:          1px;
-    start-prompt-padding:           0ch 0.75em 1ch;
-    start-entry-padding:            0.3em 1ch;
+    start-prompt-padding:           0.5ch 1.5ch;
+    start-entry-padding:            0.5ch 1ch;
 
     /* Networkmenu */
 
     net-window-width:               53ch;
     net-window-padding:             10px;
     net-window-border:              1px;
-    net-inputbar-margin:            0ch 0.5em;
+    net-listview-padding:           0.5ch 0ch;
+    net-text-padding:               0.5ch;
+    net-inputbar-margin:            0ch 0.5ch;
     net-inputbar-border:            1px;
-    net-prompt-padding:             1ch 0.5em 0ch;
-    net-listview-padding:           0.5ch 0em;
-    net-element-padding:            5px 1ch;
-    net-entry-padding:              0.5em 1ch;
-    net-listview-spacing:           0.25em;
+    net-prompt-padding:             0.5ch 1.5ch;
+    net-entry-padding:              0.5ch 1ch;
 
     /* Spotlight menu */
 
     spotlight-window-width:         80ch;
     spotlight-window-padding:       10px;
     spotlight-window-border:        1px;
-    spotlight-inputbar-margin:      0ch 0.5em;
+    spotlight-inputbar-margin:      0ch 1ch;
     spotlight-inputbar-border:      1px;
-    spotlight-listview-padding:     0.5ch 0em 0.5ch 0.5em;
-    spotlight-element-spacing:      1ch;
-    spotlight-prompt-padding:       0ch 0.75em;
-    spotlight-entry-padding:        1ch;
+    spotlight-listview-padding:     0.5ch;
+    spotlight-listview-spacing:     0ch;
+    spotlight-listview-margin:      0.5ch;
+    spotlight-element-padding:      1ch;
+    spotlight-prompt-padding:       0.5ch 1.5ch;
+    spotlight-entry-padding:        0.5ch 1ch;
+    spotlight-case-padding:         0ch 2ch;
 
     /* Conky memu */
 
@@ -85,23 +88,20 @@
 
     popup-3-width:                  13ch;
     popup-window-padding:           1ch 1ch;
-    popup-window-border:            4px;
-    popup-listview-padding:         0ch 0.24ch;
-    popup-listview-spacing:         0.5ch;
+    popup-window-border:            2px;
+    popup-listview-padding:         0px;
+    popup-listview-spacing:         0.9ch;
     popup-element-padding:          0.5ch 1ch;
-    popup-element-border:           2px;
 
     /* Confirmation dialog */
 
-    confirm-width:                  350px;
-    confirm-height:                 200px;
-    confirm-border:                 2px;
-    confirm-padding:                10px 40px 0px;
-    confirm-mesg-border:            0px 0px 2px 0px;
-    confirm-listview-spacing:       3em;
-    confirm-listview-padding:       1ch 0.5em 0ch;
-    confirm-listview-margin:        0ch 0px 0px;
-    confirm-element-padding:        1.5ch 1em 2ch;
+    confirm-width:                  12ch;
+    confirm-border:                 5px;
+    confirm-padding:                0.5ch;
+    confirm-prompt-padding:         0ch 1ch;
+    confirm-prompt-border:          0px 5px 0px 0px;
+    confirm-listview-spacing:       0ch;
+    confirm-listview-padding:       0ch 0ch 0ch 1ch;
+    confirm-listview-margin:        0ch;
+    confirm-element-padding:        0.5ch 1ch;
 }
-
-/* vim:ft=css

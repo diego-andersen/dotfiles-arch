@@ -7,6 +7,7 @@
 #window {
     location:           south west;
     anchor:             south west;
+    x-offset:           @i3-left-gap;
     y-offset:           @polybar-offset;
     width:              @start-window-width;
 	padding:			@start-window-padding;
@@ -30,6 +31,7 @@
     text-color:         @foreground-alt;
     background-color:   @background-alt;
     padding:            @start-button-padding;
+    horizontal-align:   @align-middle;
 }
 
 #button.selected {
@@ -43,7 +45,6 @@
     dynamic:            false;
     fixed-height:       true;
     padding:            @start-listview-padding;
-    spacing:            @start-element-spacing;
     scrollbar:          true;
     scrollbar-width:    @scrollbar-width;
 }
@@ -59,6 +60,7 @@
 
 #element-text {
     padding:            @start-text-padding;
+    text-color:         @foreground;
 }
 
 #element.selected {
@@ -66,13 +68,24 @@
     text-color:         @background;
 }
 
+#element-text.selected {
+    text-color:         @background;
+}
+
 #element.active {
     background-color:   @toggle-on;
+}
+
+#element-text.active {
     text-color:         @background;
 }
 
 #element.urgent {
     background-color:   @urgent;
+}
+
+#element-text.urgent {
+    text-color:         @background;
 }
 
 #scrollbar {
