@@ -53,18 +53,18 @@ def is_modemmanager_installed():
 
 
 def ssid_to_utf8(ap):
-    """ Convert binary ssid to utf-8 """
+    """Convert access point's binary ssid to utf-8 """
     ssid = ap.get_ssid()
 
     if not ssid:
         return ""
+    else:
+        return NM.utils_ssid_to_utf8(ssid.get_data())
 
-    ret = NM.utils_ssid_to_utf8(ssid.get_data())
-
-    return ret
 
 def fix_string_width(string_in, width=0, pad_char=""):
     """Truncates or pads a string with spaces to a fixed width.
+
     Used in loops or list comprehensions to ensure an entire list
     of strings is of the same width. Optionally returns the string
     untouched (default behaviour).
@@ -77,10 +77,9 @@ def fix_string_width(string_in, width=0, pad_char=""):
     Returns:
         string_out (str): Fixed-width string.
     """
-
     if width > 0:
         # Pad out to width (ignores if already wider)
-        string_out = "{:{}<{}}".format(string_in, pad_char, width)
+        string_out = f"{string_in:{pad_char}<{width}}"
 
         # Truncate to width (ignores if already narrower)
         if len(string_out) > width:
@@ -132,15 +131,15 @@ def get_ap_security(ap):
 def strength_to_bars(wifi_strength):
     """Turn numeric Wifi signal strength into pretty-print representation."""
     if wifi_strength > 90:
-        return "▮▮▮▮"
+        return ""
     elif wifi_strength > 70:
-        return "▮▮▮▯"
+        return ""
     elif wifi_strength > 50:
-        return "▮▮▯▯"
+        return ""
     elif wifi_strength > 30:
-        return "▮▯▯▯"
+        return ""
     else:
-        return "▯▯▯▯"
+        return ""
 
 
 class Action:
@@ -255,7 +254,7 @@ class NetworkMenu:
         """
         Return a list of strings that constitute a dmenu call when joined together.
 
-        NOTE: Additional styling options are set by passing --dmenu style to the module,
+        NOTE: Additional styling options are set by passing --dmenu_style to the module,
         and are stored in self.dmenu_style.
 
         Args:
@@ -264,7 +263,7 @@ class NetworkMenu:
 
         Returns:
             result (list): Must be a list of single-word strings, where the first is a
-                           command and the rest are its arguments.
+                command and the rest are its arguments.
         """
         result = ["dmenu", "-i"]
         cmd_args = []
@@ -291,7 +290,7 @@ class NetworkMenu:
         cmd_args.extend(["-p", str(prompt)])
 
         # Loop through remaining kwargs
-        kwargs = [("-{}".format(k), v) for k, v in kwargs.items()]
+        kwargs = [(f"-{k}", v) for k, v in kwargs.items()]
         cmd_args.extend([str(i) for kv in kwargs for i in kv])
 
         # Filter out empty items
@@ -316,7 +315,7 @@ class NetworkMenu:
 
         Returns:
             result (list): Must be a list of single-word strings, where the first is a
-                           command and the rest are its arguments.
+                command and the rest are its arguments.
         """
         result = ["rofi", "-dmenu", "-i"]
 
@@ -649,9 +648,7 @@ class NetworkMenu:
             bars = strength_to_bars(ap.get_strength())
 
             # Generate a string containing AP name, security type, signal strength
-            action_name = "{}   {}   {:<}".format(
-                name, sec, bars
-            )
+            action_name = f"{name}   {sec}   {bars:<}"
 
             if is_active:
                 ap_actions.append(
@@ -706,7 +703,7 @@ class NetworkMenu:
 
         for con in cons:
             is_active = con.get_id() in active_con_ids
-            action_name = u"{}:{}".format(con.get_id(), label)
+            action_name = f"{con.get_id()}:{label}"
 
             if is_active:
                 active_connection = [
@@ -715,8 +712,8 @@ class NetworkMenu:
 
                 if len(active_connection) != 1:
                     raise ValueError(
-                        u"Multiple active connections match"
-                        " the connection: {}".format(con.get_id())
+                        "Multiple active connections match"
+                        f" the connection: {con.get_id()}"
                     )
                 active_connection = active_connection[0]
 
@@ -785,7 +782,7 @@ class NetworkMenu:
 
         return [
             Action(
-                name="{} WWAN".format(wwan_action),
+                name=f"{wwan_action} WWAN",
                 func=self.toggle_wwan,
                 args=not wwan_enabled,
             )
@@ -840,7 +837,7 @@ class NetworkMenu:
             sys.exit()
 
         action = [c for c in conn_acts if str(c) == sel.rstrip("\n")]
-        assert len(action) == 1, "Selection was ambiguous: {}".format(str(sel))
+        assert len(action) == 1, f"Selection was ambiguous: {str(sel)}"
 
         action[0]()
 
@@ -867,12 +864,12 @@ class NetworkMenu:
 
         actions = [
             Action(
-                name="{} Wifi".format(wifi_action),
+                name=f"{wifi_action} Wifi",
                 func=self.toggle_wifi,
                 args=[not wifi_enabled],
             ),
             Action(
-                name="{} Networking".format(networking_action),
+                name=f"{networking_action} Networking",
                 func=self.toggle_networking,
                 args=[not networking_enabled],
             ),
@@ -933,10 +930,7 @@ class NetworkMenu:
         # Indices of inputs that match what was selected by user
         action_idx = [idx for idx, i in enumerate(inp) if str(i) == sel.rstrip("\n")]
 
-        assert len(action_idx) == 1, "Selection was ambiguous: '{}'".format(
-            str(sel.strip())
-        )
-
+        assert len(action_idx) == 1, f"Selection was ambiguous: '{str(sel.strip())}'"
         # Actual action matching user input
         action = all_actions[action_idx[0]]
 
