@@ -18,7 +18,6 @@ configuration {
 	scroll-method: 1;
 	window-format: "{w} : {t}";
 	click-to-exit: true;
-	show-match: true;
 	pid: "/run/user/1000/rofi.pid";
 	display-drun: "apps";
     display-filebrowser: "files";
