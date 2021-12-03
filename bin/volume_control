@@ -53,9 +53,9 @@ function send_notification {
   bar=$bar_full$bar_empty
 
   if [ $(is_mute) = "yes" ]; then
-    dunstify -a volume -i $iconMuted -r 2593 -u low "    $bar"
+    dunstify -a volume -i $iconMuted -r 2593 -u low "$bar"
   else
-    dunstify -a volume -i $iconSound -r 2593 -u normal "    $bar"
+    dunstify -a volume -i $iconSound -r 2593 -u normal "$bar"
   fi
 }
 
