@@ -4,10 +4,22 @@ case $1 in
     single)
         notify-send -u low SUMMARY "Single line" -t 0
         notify-send -u normal SUMMARY "Single line" -t 0
+        exit 0
         ;;
     normal)
         notify-send -u low SUMMARY "Content\nMore Content" -t 0
         notify-send -u normal SUMMARY "Content\nMore Content" -t 0
         notify-send -u critical SUMMARY "Content\nMore Content" -t 0
+        exit 0
         ;;
 esac
+
+echo "Dunst notification testing script."
+echo
+echo "Syntax: dunst_test [COMMAND]"
+echo
+echo "COMMAND:"
+echo "    single: Test low and normal urgency with a single-line notification."
+echo "    normal: Test all urgencies with a multi-line notification."
+
+exit 1
