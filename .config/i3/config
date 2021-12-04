@@ -100,8 +100,8 @@ bindsym XF86AudioPrev  exec --no-startup-id playerctl previous
 # Dunst
 bindsym Control+space exec --no-startup-id dunstctl close
 bindsym Control+Shift+space exec --no-startup-id dunstctl close-all
-bindsym Control+Alt+space exec --no-startup-id dunstctl context
-bindsym Control+Alt+Shift+space exec --no-startup-id dunstctl history-pop
+bindsym Control+Mod1+space exec --no-startup-id dunstctl context
+bindsym Control+Shift+grave exec --no-startup-id dunstctl history-pop
 
 #----------------------Movement---------------------#
 
