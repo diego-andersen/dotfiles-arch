@@ -97,6 +97,12 @@ bindsym XF86AudioPause exec --no-startup-id playerctl pause
 bindsym XF86AudioNext  exec --no-startup-id playerctl next
 bindsym XF86AudioPrev  exec --no-startup-id playerctl previous
 
+# Dunst
+bindsym Control+space exec --no-startup-id dunstctl close
+bindsym Control+Shift+space exec --no-startup-id dunstctl close-all
+bindsym Control+Alt+space exec --no-startup-id dunstctl context
+bindsym Control+Alt+Shift+space exec --no-startup-id dunstctl history-pop
+
 #----------------------Movement---------------------#
 
 # Don't shift window focus when moving the mouse
