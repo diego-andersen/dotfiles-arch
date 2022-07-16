@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 # Script modified from this gist:
 # https://gist.github.com/Blaradox/030f06d165a82583ae817ee954438f2e
@@ -18,7 +18,7 @@ function is_mute {
 function raise_vol {
     currentVol=$(get_volume)
 
-    if [ $currentVol = 120 ]; then
+    if [ $currentVol == 120 ]; then
         newVol=120;
     else
         newVol="$(( $currentVol + 10 ))";
@@ -30,7 +30,7 @@ function raise_vol {
 function lower_vol {
     currentVol=get_volume
 
-    if [ $currentVol = 0 ]; then
+    if [ $currentVol == 0 ]; then
         newVol=0;
     else
         newVol="$(( $currentVol - 10 ))";
@@ -52,7 +52,7 @@ function send_notification {
   bar_empty=$(seq --separator="□" 0 "$vol_empty" | sed 's/[0-9]//g')
   bar=$bar_full$bar_empty
 
-  if [ $(is_mute) = "yes" ]; then
+  if [ "$(is_mute)" == "yes" ]; then
     dunstify -a volume -i $iconMuted -r 2593 -u low "$bar"
   else
     dunstify -a volume -i $iconSound -r 2593 -u normal "$bar"
